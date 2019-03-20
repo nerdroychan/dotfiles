@@ -1,8 +1,10 @@
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
 set expandtab
 set smarttab
 set showcmd
+set showmode
 set showmatch
 set hlsearch
 set incsearch
@@ -16,3 +18,17 @@ set number
 set mouse=a
 filetype plugin indent on
 syntax on
+set t_Co=256
+set cursorline
+set autochdir
+set noerrorbells
+" set visualbell
+set background=dark
+
+" vim-plug
+call plug#begin('~/.vim/plugged')
+
+Plug 'NLKNguyen/papercolor-theme'
+call plug#end()
+
+colorscheme PaperColor
