@@ -39,4 +39,4 @@ Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
 colorscheme PaperColor
-map <C-n> :NERDTreeMirror<CR>
+map <C-n> :NERDTreeToggle<CR>
