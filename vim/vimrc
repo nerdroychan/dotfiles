@@ -14,7 +14,7 @@ set autoindent
 set textwidth=79
 set formatoptions=c
 set ruler
-set number
+set number relativenumber
 set mouse=a
 filetype plugin indent on
 syntax on
@@ -36,7 +36,25 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'rust-lang/rust.vim'
+Plug 'majutsushi/tagbar'
+Plug 'ajh17/VimCompletesMe'
+Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
 
-colorscheme PaperColor
+colorscheme papercolor
 map <C-n> :NERDTreeToggle<CR>
+map <C-m> :TagbarToggle<CR>
+" higlight column right after max textwidth
+set colorcolumn=+1
+
+
+" Disable vertical line at max string length in NERDTree
+autocmd FileType * setlocal colorcolumn=+1
+autocmd FileType nerdtree setlocal colorcolumn=""
+
+set colorcolumn=80
+
+
+set wildmenu wildmode=full
+set wildchar=<Tab> wildcharm=<C-Z>
