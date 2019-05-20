@@ -10,5 +10,5 @@ fcitx &
 redshift-gtk -l 31:121 &
 pasystray & 
 
-feh --bg-fill /home/chen/Wallpapers/1.jpg
+feh --bg-fill $HOME/wallpaper.jpg
 exec i3
