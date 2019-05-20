@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
+set $mod Mod1
 
 # Set Vim remapping
 set $up k
@@ -182,3 +182,5 @@ bindsym $MOD+SHIFT+x exec "i3lock -c 666666 -f"
 # bind thunar
 bindsym $MOD+i exec "thunar"
 
+# bind scrot
+bindsym $MOD+Shift+s exec "scrot"
