@@ -176,6 +176,9 @@ bar {
         position top
 }
 
+# hide border
+hide_edge_borders smart
+
 # bind i3lock
 bindsym $MOD+SHIFT+x exec "i3lock -c 666666 -f"
 
@@ -184,3 +187,6 @@ bindsym $MOD+i exec "thunar"
 
 # bind scrot
 bindsym $MOD+Shift+s exec "scrot"
+
+# bind chromium
+bindsym $MOD+c exec "chromium"

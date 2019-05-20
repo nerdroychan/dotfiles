@@ -9,6 +9,7 @@ export GDK_SCALE=2
 fcitx &
 redshift-gtk -l 31:121 &
 pasystray & 
+imwheel &
 
 feh --bg-fill $HOME/wallpaper.jpg
 exec i3
