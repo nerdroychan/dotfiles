@@ -19,7 +19,7 @@ set mouse=a
 filetype plugin indent on
 syntax on
 set t_Co=256
-set cursorline
+" set cursorline
 set autochdir
 set noerrorbells
 " set visualbell
@@ -35,14 +35,16 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'NLKNguyen/papercolor-theme'
+Plug 'NLKNguyen/papercolor-theme', { 'as': 'papercolor'}
 Plug 'rust-lang/rust.vim'
 Plug 'majutsushi/tagbar'
 Plug 'ajh17/VimCompletesMe'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'fenetikm/falcon'
 call plug#end()
 
-colorscheme papercolor
+color falcon
+
 map <C-n> :NERDTreeToggle<CR>
 map <C-m> :TagbarToggle<CR>
 " higlight column right after max textwidth
@@ -54,7 +56,6 @@ autocmd FileType * setlocal colorcolumn=+1
 autocmd FileType nerdtree setlocal colorcolumn=""
 
 set colorcolumn=80
-
 
 set wildmenu wildmode=full
 set wildchar=<Tab> wildcharm=<C-Z>
