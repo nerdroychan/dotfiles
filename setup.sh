@@ -18,3 +18,6 @@ ln -sf $DIR/kitty/*.conf $HOME/.config/kitty
 # tmux
 rm $HOME/.tmux.conf
 ln -sf $DIR/tmux/tmux.conf $HOME/.tmux.conf
+
+# xinitrc
+ln -sf $DIR/xinitrc $HOME/.xinitrc.conf
