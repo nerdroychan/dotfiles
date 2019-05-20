@@ -180,3 +180,4 @@ bindsym $MOD+SHIFT+x exec "i3lock -c 666666 -f"
 
 # bind thunar
 bindsym $MOD+i exec "thunar"
+
