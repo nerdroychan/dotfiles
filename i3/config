@@ -140,7 +140,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -180,7 +180,10 @@ bar {
 hide_edge_borders smart
 
 # bind i3lock
-bindsym $MOD+SHIFT+z exec "i3lock -c 666666 -f"
+bindsym $MOD+z exec "i3lock -c 666666 -f"
+
+# bind suspend
+bindsym $mod+Shift+z exec "i3lock -c 666666 -f && sleep 3 && systemctl suspend"
 
 # bind thunar
 bindsym $MOD+i exec "thunar"
@@ -190,3 +193,4 @@ bindsym $MOD+Shift+s exec "scrot"
 
 # bind chromium
 bindsym $MOD+c exec "chromium"
+
