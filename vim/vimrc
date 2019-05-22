@@ -35,15 +35,16 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'NLKNguyen/papercolor-theme', { 'as': 'papercolor'}
 Plug 'rust-lang/rust.vim'
 Plug 'majutsushi/tagbar'
 Plug 'ajh17/VimCompletesMe'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'fenetikm/falcon'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
-color falcon
+"colorscheme falcon
+colorscheme gruvbox
 
 map <C-n> :NERDTreeToggle<CR>
 map <C-m> :TagbarToggle<CR>
