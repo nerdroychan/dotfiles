@@ -38,12 +38,10 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'rust-lang/rust.vim'
 Plug 'majutsushi/tagbar'
 Plug 'ajh17/VimCompletesMe'
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'fenetikm/falcon'
+Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 call plug#end()
 
-"colorscheme falcon
 colorscheme gruvbox
 
 map <C-n> :NERDTreeToggle<CR>
