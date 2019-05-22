@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DIR=`pwd`
+DIR=$(cd `dirname $0` && pwd)
 echo "Current directory:" $DIR
 
 # vim
