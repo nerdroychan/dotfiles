@@ -46,15 +46,28 @@ colorscheme gruvbox
 
 map <C-n> :NERDTreeToggle<CR>
 map <C-m> :TagbarToggle<CR>
+
 " higlight column right after max textwidth
 set colorcolumn=+1
-
-
 " Disable vertical line at max string length in NERDTree
 autocmd FileType * setlocal colorcolumn=+1
 autocmd FileType nerdtree setlocal colorcolumn=""
-
 set colorcolumn=80
-
 set wildmenu wildmode=full
 set wildchar=<Tab> wildcharm=<C-Z>
+
+" No arrow keys
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+" Left and right can switch buffers
+nnoremap <left> :bp<CR>
+nnoremap <right> :bn<CR>
+
+" Move by line
+nnoremap j gj
+nnoremap k gk
