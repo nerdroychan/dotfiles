@@ -49,12 +49,14 @@ map <C-m> :TagbarToggle<CR>
 
 " higlight column right after max textwidth
 set colorcolumn=+1
+
 " Disable vertical line at max string length in NERDTree
 autocmd FileType * setlocal colorcolumn=+1
 autocmd FileType nerdtree setlocal colorcolumn=""
-set colorcolumn=80
-set wildmenu wildmode=full
-set wildchar=<Tab> wildcharm=<C-Z>
+
+" Convenient buffer mgmt
+set wildchar=<Tab> wildmenu wildmode=full
+set wildcharm=<C-Z>
 
 " No arrow keys
 nnoremap <up> <nop>
