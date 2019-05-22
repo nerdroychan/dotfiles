@@ -21,6 +21,3 @@ ln -sf $DIR/tmux/tmux.conf $HOME/.tmux.conf
 
 # xinitrc
 ln -sf $DIR/xinitrc $HOME/.xinitrc
-
-# imwheel
-ln -sf $DIR/imwheelrc $HOME/.imwheelrc
