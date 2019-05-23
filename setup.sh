@@ -25,3 +25,6 @@ ln -sf $DIR/xinitrc $HOME/.xinitrc
 # xkbmap
 rm $HOME/.xkbmap
 ln -sf $DIR/xkbmap $HOME/.xkbmap
+
+# zsh
+ln -sf $DIR/zsh/zshrc $HOME/.zshrc
