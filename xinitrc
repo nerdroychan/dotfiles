@@ -8,6 +8,7 @@ export XMODIFIERS=@im=fcitx
 fcitx &
 pasystray &
 redshift-gtk -l 31:121 &
+numlockx &
 
 feh --bg-fill $HOME/wallpaper.jpg
 
