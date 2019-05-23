@@ -12,4 +12,6 @@ numlockx &
 
 feh --bg-fill $HOME/wallpaper.jpg
 
+xkbcomp -w 0 $HOME/.xkbmap/keymap $DISPLAY
+
 exec i3
