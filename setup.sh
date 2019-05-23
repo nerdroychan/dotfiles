@@ -23,4 +23,5 @@ ln -sf $DIR/tmux/tmux.conf $HOME/.tmux.conf
 ln -sf $DIR/xinitrc $HOME/.xinitrc
 
 # xkbmap
+rm $HOME/.xkbmap
 ln -sf $DIR/xkbmap $HOME/.xkbmap
