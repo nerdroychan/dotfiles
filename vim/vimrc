@@ -76,7 +76,3 @@ nnoremap k gk
 
 " Buf switch made easy
 nnoremap ` :b <C-Z>
-
-" Quick save
-nnoremap <C-S> :update<cr>
-inoremap <C-S> <Esc>:update<cr>gi
