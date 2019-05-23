@@ -23,7 +23,7 @@ set $left h
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Source Code Pro 8
+font pango:Source Code Pro 9
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -194,3 +194,5 @@ bindsym $MOD+Shift+s exec "scrot"
 # bind chromium
 bindsym $MOD+c exec "chromium"
 
+# disable mouse hover focusing
+focus_follows_mouse no
