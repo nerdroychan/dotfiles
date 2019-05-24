@@ -44,8 +44,8 @@ call plug#end()
 
 colorscheme gruvbox
 
-map <C-n> :NERDTreeToggle<CR>
-map <C-m> :TagbarToggle<CR>
+map <F1> :NERDTreeToggle<CR>
+map <F2> :TagbarToggle<CR> 
 
 " higlight column right after max textwidth
 set colorcolumn=+1
