@@ -40,6 +40,7 @@ Plug 'majutsushi/tagbar'
 Plug 'ajh17/VimCompletesMe'
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 colorscheme gruvbox
@@ -71,8 +72,7 @@ nnoremap <left> :bp<CR>
 nnoremap <right> :bn<CR>
 
 " Move by line
-nnoremap j gj
-nnoremap k gk
+nnoremap j gj nnoremap k gk
 
 " Buf switch made easy
 nnoremap ` :b <C-Z>
