@@ -71,8 +71,9 @@ inoremap <right> <nop>
 nnoremap <left> :bp<CR>
 nnoremap <right> :bn<CR>
 
-" Move by line
-nnoremap j gj nnoremap k gk
+" Move by displayed lines
+nnoremap j gj
+nnoremap k gk
 
 " Buf switch made easy
 nnoremap ` :b <C-Z>
