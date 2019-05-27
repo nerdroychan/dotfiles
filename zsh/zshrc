@@ -102,3 +102,8 @@ source $ZSH/oh-my-zsh.sh
 stty -ixon
 
 export all_proxy="http://127.0.0.1:6000"
+
+alias c="clear"
+
+alias ..="cd .."
+alias ...="cd ../.."
