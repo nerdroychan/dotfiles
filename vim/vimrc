@@ -77,3 +77,6 @@ nnoremap k gk
 
 " Buf switch made easy
 nnoremap ` :b <C-Z>
+
+" Unset highlight after search
+nnoremap <CR> :noh<CR><CR>
