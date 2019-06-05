@@ -101,10 +101,13 @@ source $ZSH/oh-my-zsh.sh
 # disable ^S
 stty -ixon
 
-export all_proxy="http://127.0.0.1:6000"
+alias proxy="env http_proxy=http://127.0.0.1:6000"
 alias psudo="sudo env http_proxy=http://127.0.0.1:6000"
 
 alias c="clear"
 
 alias ..="cd .."
 alias ...="cd ../.."
+
+alias t="tmux a || tmux"
+alias tls="tmux ls"
