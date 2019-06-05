@@ -111,3 +111,5 @@ alias ...="cd ../.."
 
 alias t="tmux a || tmux"
 alias tls="tmux ls"
+
+alias aria2c="aria2c --dir=${HOME}/Downloads"
