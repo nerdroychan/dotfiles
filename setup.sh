@@ -3,6 +3,10 @@
 DIR=$(cd `dirname $0` && pwd)
 echo "Current directory:" $DIR
 
+# global .gitignore
+ln -sf "$DIR"/gitignore_global "$HOME"/.gitignore_global
+git config --global core.excludesfile "$HOME"/.gitignore_global
+
 # vim
 rm "$HOME"/.vim
 ln -sf "$DIR"/vim "$HOME"/.vim
