@@ -1,27 +1,17 @@
-#!/bin/bash
+#!/bin/sh
+
 EXTERNAL_OUTPUT="DP1"
 INTERNAL_OUTPUT="eDP1"
 
-# if we don't have a file, start at zero
-if [ ! -f "/tmp/monitor_mode.dat" ] ; then
-  monitor_mode="all"
+mode=$1"m"
 
-# otherwise read the value from the file
-else
-  monitor_mode=`cat /tmp/monitor_mode.dat`
+if [ $mode = "em" ]; then
+        xrandr --output $INTERNAL_OUTPUT --off
+        xrandr --output $EXTERNAL_OUTPUT --auto --dpi 192
+elif [ $mode = "im" ]; then
+        xrandr --output $INTERNAL_OUTPUT --auto --dpi 144
+        xrandr --output $EXTERNAL_OUTPUT --off
+elif [ $mode = "bm" ]; then
+        xrandr --output $INTERNAL_OUTPUT --auto --dpi 144
+        xrandr --output $EXTERNAL_OUTPUT --auto --dpi 192 --left-of $INTERNAL_OUTPUT
 fi
-
-if [ $monitor_mode = "all" ]; then
-        monitor_mode="EXTERNAL"
-        xrandr --output $INTERNAL_OUTPUT --off --output $EXTERNAL_OUTPUT --auto
-        echo "EXTERNAL"
-elif [ $monitor_mode = "EXTERNAL" ]; then
-        monitor_mode="INTERNAL"
-        xrandr --output $INTERNAL_OUTPUT --auto --output $EXTERNAL_OUTPUT --off
-        echo "INTERNAL"
-else
-        monitor_mode="all"
-        xrandr --output $INTERNAL_OUTPUT --auto --output $EXTERNAL_OUTPUT --auto --left-of $INTERNAL_OUTPUT
-        echo "BOTH"
-fi
-echo "${monitor_mode}" > /tmp/monitor_mode.dat

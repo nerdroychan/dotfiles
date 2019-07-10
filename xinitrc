@@ -1,6 +1,5 @@
-xrandr --dpi 192 --output DP1 --primary
+xrandr --output eDP1 --auto --dpi 144
 
-export GDK_SCALE=2
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
