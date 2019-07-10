@@ -34,10 +34,18 @@ ln -sf "$DIR"/xkbmap "$HOME"/.xkbmap
 ln -sf "$DIR"/zsh/zshrc "$HOME"/.zshrc
 
 # fontconfig (arch)
-echo -n "Set fontconfigs? (y/n)"
+echo -n "Set fontconfigs? (y/n) "
 read ans
 if [ "$ans" != "${ans#[Yy]}" ]; then
     sudo rm /etc/fonts/conf.avail/64-language-selector-prefer.conf &>/dev/null
     sudo cp "$DIR"/fontconfig/64-language-selector-prefer.conf /etc/fonts/conf.avail/
     sudo ln -sf /etc/fonts/conf.avail/64-language-selector-prefer.conf /etc/fonts/conf.d/64-language-selector-prefer.conf
+fi
+
+# libinput (arch)
+echo -n "Set libinput? (y/n) "
+read ans
+if [ "$ans" != "${ans#[Yy]}" ]; then
+    sudo rm /etc/X11/xorg.conf.d/30-touchpad.conf
+    sudo cp "$DIR"/libinput/30-touchpad.conf /etc/X11/xorg.conf.d/
 fi

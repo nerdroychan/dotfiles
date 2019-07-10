@@ -6,11 +6,12 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
 fcitx &
+pulseaudio --start &
 pasystray &
 redshift-gtk -l 31:121 &
 numlockx &
 
-feh --bg-fill $HOME/wallpaper.jpg
+feh --bg-fill $HOME/.wallpaper.jpg
 
 xkbcomp -w 0 $HOME/.xkbmap/keymap $DISPLAY
 
