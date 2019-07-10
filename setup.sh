@@ -32,3 +32,12 @@ ln -sf "$DIR"/xkbmap "$HOME"/.xkbmap
 
 # zsh
 ln -sf "$DIR"/zsh/zshrc "$HOME"/.zshrc
+
+# fontconfig (arch)
+echo -n "Set fontconfigs? (y/n)"
+read ans
+if [ "$ans" != "${ans#[Yy]}" ]; then
+    sudo rm /etc/fonts/conf.avail/64-language-selector-prefer.conf &>/dev/null
+    sudo cp "$DIR"/fontconfig/64-language-selector-prefer.conf /etc/fonts/conf.avail/
+    sudo ln -sf /etc/fonts/conf.avail/64-language-selector-prefer.conf /etc/fonts/conf.d/64-language-selector-prefer.conf
+fi
