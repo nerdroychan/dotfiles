@@ -6,13 +6,12 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
-fcitx
-pulseaudio --kill
-pulseaudio --daemonize
+fcitx &
 pasystray &
 redshift-gtk -l 31:121 &
-numlockx
+numlockx &
+copyq &
 
-i3 
+$HOME/.pulseaudio-toggle.sh d
 
-exec killall fcitx pulseaudio pasystray redshift-gtk
+exec i3 
