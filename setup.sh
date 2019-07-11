@@ -54,3 +54,6 @@ if [ "$ans" != "${ans#[Yy]}" ]; then
     sudo rm /etc/X11/xorg.conf.d/30-touchpad.conf
     sudo cp "$DIR"/libinput/30-touchpad.conf /etc/X11/xorg.conf.d/
 fi
+
+# display toggle
+ln -sf "$DIR"/misc/display-toggle.sh "$HOME"/.display-toggle.sh
