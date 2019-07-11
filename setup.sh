@@ -57,3 +57,6 @@ fi
 
 # display toggle
 ln -sf "$DIR"/misc/display-toggle.sh "$HOME"/.display-toggle.sh
+
+# audio toggle
+ln -sf "$DIR"/misc/pulseaudio-toggle.sh "$HOME"/.pulseaudio-toggle.sh
