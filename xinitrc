@@ -1,4 +1,4 @@
-xrandr --auto --dpi 144
+xrandr --auto
 
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 
