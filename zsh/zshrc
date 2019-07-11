@@ -120,4 +120,5 @@ if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
 fi
 
 alias dt="$HOME/.display-toggle.sh"
+alias pt="$HOME/.pulseaudio-toggle.sh"
 alias startx4k="env GDK_SCALE=2 startx"
