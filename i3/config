@@ -36,7 +36,7 @@ font pango:Noto Sans Mono 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+q kill
@@ -180,26 +180,23 @@ bar {
 hide_edge_borders smart
 
 # bind i3lock
-bindsym $MOD+z exec "i3lock -c 666666 -f"
+bindsym $MOD+z exec --no-startup-id "i3lock -c 666666 -f"
 
 # bind suspend
-bindsym $mod+Shift+z exec "i3lock -c 666666 -f && sleep 3 && systemctl suspend"
+bindsym $mod+Shift+z exec --no-startup-id "i3lock -c 666666 -f && sleep 3 && systemctl suspend"
 
 # bind thunar
-bindsym $MOD+i exec "thunar"
-
-# bind scrot
-bindsym $MOD+Shift+s exec "scrot"
+bindsym $MOD+i exec --no-startup-id "thunar"
 
 # bind chromium
-bindsym $MOD+c exec "chromium"
+bindsym $MOD+c exec --no-startup-id "chromium"
 
 # disable mouse hover focusing
 focus_follows_mouse no
 
 # set screen brightness
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 
 # set volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer --increase 10
@@ -208,3 +205,7 @@ bindsym XF86AudioMute exec --no-startup-id pamixer -t
 
 # wallpaper
 exec --no-startup-id feh --bg-tile $HOME/.wallpaper.jpg
+
+
+
+exec --no-startup-id exec
