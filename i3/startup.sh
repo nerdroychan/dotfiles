@@ -1,6 +1,6 @@
 #!/bin/sh
 
-feh --bg-tile $HOME/.wallpaper.jpg
+feh --bg-fill $HOME/.wallpaper.jpg
 
 killall -w fcitx copyq redshift-gtk pasystray
 
