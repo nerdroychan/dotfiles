@@ -187,6 +187,7 @@ bindsym $mod+Shift+z exec --no-startup-id "i3lock -c 666666 -f && sleep 3 && sys
 
 # bind thunar
 bindsym $mod+i exec --no-startup-id "thunar"
+bindsym $mod+Shift+i exec --no-startup-id "GDK_SCALE=1 thunar"
 
 # bind chromium
 bindsym $mod+c exec --no-startup-id "chromium"
