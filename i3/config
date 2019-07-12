@@ -197,17 +197,12 @@ bindsym $mod+Shift+c exec --no-startup-id "GDK_SCALE=1 chromium"
 focus_follows_mouse no
 
 # set screen brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 10"
+bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 10"
 
 # set volume
-bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer --increase 10
-bindsym XF86AudioLowerVolume exec --no-startup-id pamixer --decrease 10
-bindsym XF86AudioMute exec --no-startup-id pamixer -t
+bindsym XF86AudioRaiseVolume exec --no-startup-id "pamixer --increase 10"
+bindsym XF86AudioLowerVolume exec --no-startup-id "pamixer --decrease 10"
+bindsym XF86AudioMute exec --no-startup-id "pamixer -t"
 
-# wallpaper
-exec --no-startup-id feh --bg-tile $HOME/.wallpaper.jpg
-
-
-
-exec --no-startup-id exec
+exec_always --no-startup-id "$HOME/.config/i3/startup.sh"
