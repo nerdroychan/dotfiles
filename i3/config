@@ -204,6 +204,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 10"
 bindsym XF86AudioRaiseVolume exec --no-startup-id "pamixer --increase 10"
 bindsym XF86AudioLowerVolume exec --no-startup-id "pamixer --decrease 10"
 bindsym XF86AudioMute exec --no-startup-id "pamixer -t"
+bindsym XF86AudioMicMute exec --no-startup-id "pactl set-card-profile 0 output:hdmi-stereo"
 
 exec --no-startup-id "$HOME/.config/i3/startup.sh"
 bindsym $mod+Shift+y exec --no-startup-id "$HOME/.config/i3/startup.sh"
