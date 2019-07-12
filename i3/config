@@ -205,4 +205,5 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id "pamixer --increase 10"
 bindsym XF86AudioLowerVolume exec --no-startup-id "pamixer --decrease 10"
 bindsym XF86AudioMute exec --no-startup-id "pamixer -t"
 
-exec_always --no-startup-id "$HOME/.config/i3/startup.sh"
+exec --no-startup-id "$HOME/.config/i3/startup.sh"
+bindsym $mod+Shift+y exec --no-startup-id "$HOME/.config/i3/startup.sh"
