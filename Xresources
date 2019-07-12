@@ -1,1 +1,5 @@
 Xcursor.size: 36
+
+Xft.dpi: 144
+Xft.hinting: 1
+Xft.antialias: 1

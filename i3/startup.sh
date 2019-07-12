@@ -2,8 +2,8 @@
 
 feh --bg-tile $HOME/.wallpaper.jpg
 
-killall fcitx copyq redshift-gtk pasystray
-sleep 1
+killall -w fcitx copyq redshift-gtk pasystray
+
 fcitx &
 redshift-gtk -l 31:121 &
 pasystray &
