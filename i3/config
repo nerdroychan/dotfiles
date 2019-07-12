@@ -136,7 +136,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+t reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -180,16 +180,17 @@ bar {
 hide_edge_borders smart
 
 # bind i3lock
-bindsym $MOD+z exec --no-startup-id "i3lock -c 666666 -f"
+bindsym $mod+z exec --no-startup-id "i3lock -c 666666 -f"
 
 # bind suspend
 bindsym $mod+Shift+z exec --no-startup-id "i3lock -c 666666 -f && sleep 3 && systemctl suspend"
 
 # bind thunar
-bindsym $MOD+i exec --no-startup-id "thunar"
+bindsym $mod+i exec --no-startup-id "thunar"
 
 # bind chromium
-bindsym $MOD+c exec --no-startup-id "chromium"
+bindsym $mod+c exec --no-startup-id "chromium"
+bindsym $mod+Shift+c exec --no-startup-id "GDK_SCALE=1 chromium"
 
 # disable mouse hover focusing
 focus_follows_mouse no
