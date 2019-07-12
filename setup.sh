@@ -11,6 +11,7 @@ git config --global core.excludesfile "$HOME"/.gitignore_global
 rm "$HOME"/.vim
 ln -sf "$DIR"/vim "$HOME"/.vim
 
+# i3
 mkdir -p "$HOME"/.config/i3
 rm "$HOME"/.config/i3/*
 ln -sf "$DIR"/i3/* "$HOME"/.config/i3/
