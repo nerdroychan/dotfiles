@@ -5,6 +5,8 @@ INTERNAL_OUTPUT="eDP1"
 
 mode=$1"m"
 
+xrandr --output $EXTERNAL_OUTPUT --auto --output $INTERNAL_OUTPUT --auto
+
 if [ $mode = "em" ]; then
     xrandr --output $INTERNAL_OUTPUT --off \
            --output $EXTERNAL_OUTPUT --auto --mode 3840x2160 \
@@ -18,6 +20,4 @@ elif [ $mode = "bm" ]; then
            --output $EXTERNAL_OUTPUT --auto --mode 3840x2160 \
            --output $INTERNAL_OUTPUT --auto --scale 2x2 --pos 3840x0 \
                                      --panning 3840x2160+3840+0
-else
-    xrandr --auto
 fi
