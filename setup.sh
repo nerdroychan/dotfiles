@@ -29,8 +29,9 @@ ln -sf "$DIR"/alacritty/*.yml "$HOME"/.config/alacritty/
 # tmux
 ln -sf "$DIR"/tmux/tmux.conf "$HOME"/.tmux.conf
 
-# xinitrc
+# xorg
 ln -sf "$DIR"/xinitrc "$HOME"/.xinitrc
+ln -sf "$DIR"/Xresources "$HOME"/.Xresources
 
 # xkbmap
 rm "$HOME"/.xkbmap

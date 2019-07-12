@@ -5,7 +5,6 @@ INTERNAL_OUTPUT="eDP1"
 
 mode=$1"m"
 
-
 if [ $mode = "em" ]; then
     xrandr --output $EXTERNAL_OUTPUT --auto --output $INTERNAL_OUTPUT --auto && \
     xrandr --output $INTERNAL_OUTPUT --off \
