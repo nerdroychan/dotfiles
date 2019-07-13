@@ -45,8 +45,8 @@ call plug#end()
 
 colorscheme gruvbox
 
-map <F1> :NERDTreeToggle<CR>
-map <F2> :TagbarToggle<CR> 
+map <F2> :NERDTreeToggle<CR>
+map <F3> :TagbarToggle<CR> 
 
 " higlight column right after max textwidth
 set colorcolumn=+1
@@ -58,6 +58,7 @@ autocmd FileType nerdtree setlocal colorcolumn=""
 " Convenient buffer mgmt
 set wildchar=<Tab> wildmenu wildmode=full
 set wildcharm=<C-Z>
+nnoremap gb :ls<CR>:b<Space>
 
 " No arrow keys
 nnoremap <up> <nop>
