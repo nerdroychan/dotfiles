@@ -122,4 +122,4 @@ fi
 alias dt="$HOME/.display-toggle.sh"
 alias pt="$HOME/.pulseaudio-toggle.sh"
 
-alias 4k="GDK_SCALE=2 GDK_DPI_SCALE=1 QT_AUTO_SCREEN_SCALE_FACTOR=0 QT_SCREEN_SCALE_FACTORS=2"
+alias 4k="QHD=1 "
