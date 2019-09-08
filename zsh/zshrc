@@ -122,4 +122,5 @@ fi
 alias dt="$HOME/.display-toggle.sh"
 alias pt="$HOME/.pulseaudio-toggle.sh"
 
-alias 4k="QHD=1 "
+alias fhd="xrdb -merge -I$HOME ~/.Xresources"
+alias qhd="xrdb -merge -I$HOME ~/.Xresources4k"
