@@ -1,4 +1,4 @@
-[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+[[ -f ~/.Xresources4k ]] && xrdb -merge -I$HOME ~/.Xresources4k
 
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
