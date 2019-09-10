@@ -206,3 +206,4 @@ bindsym XF86AudioMicMute exec --no-startup-id "pactl set-card-profile 0 output:h
 
 exec --no-startup-id "$HOME/.config/i3/startup.sh"
 bindsym $mod+Shift+y exec --no-startup-id "$HOME/.config/i3/startup.sh"
+bindsym $mod+Shift+w exec --no-startup-id "feh --bg-fill $HOME/.wallpaper.jpg"
