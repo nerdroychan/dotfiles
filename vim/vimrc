@@ -44,6 +44,9 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'bling/vim-bufferline'
 call plug#end()
 
+" Do not show buffers on command row
+let g:bufferline_echo = 0
+
 colorscheme gruvbox
 
 map <F2> :NERDTreeToggle<CR>
