@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # Set Vim remapping
 set $up k
@@ -189,7 +189,7 @@ bindsym $mod+Shift+z exec --no-startup-id "i3lock -c 666666 -f && sleep 3 && sys
 bindsym $mod+i exec --no-startup-id "thunar"
 
 # bind chromium
-bindsym $mod+c exec --no-startup-id "chromium"
+bindsym $mod+c exec --no-startup-id "firefox"
 
 # disable mouse hover focusing
 focus_follows_mouse no
@@ -203,6 +203,9 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer set Master 5%+ -M"
 bindsym XF86AudioLowerVolume exec --no-startup-id "amixer set Master 5%- -M"
 bindsym XF86AudioMute exec --no-startup-id "pamixer -t"
 bindsym XF86AudioMicMute exec --no-startup-id "pactl set-card-profile 0 output:hdmi-stereo"
+
+# bind xrandr
+bindsym $mod+Shift+P exec --no-startup-id "xrandr --auto"
 
 exec --no-startup-id "$HOME/.config/i3/startup.sh"
 bindsym $mod+Shift+y exec --no-startup-id "$HOME/.config/i3/startup.sh"

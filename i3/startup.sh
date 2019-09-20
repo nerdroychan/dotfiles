@@ -6,6 +6,6 @@ killall -w fcitx copyq redshift-gtk pasystray flameshot
 
 fcitx &
 redshift-gtk -l 31:121 -t 6500:5000 &
-pasystray &
+pasystray -m 100 &
 copyq &
 flameshot &

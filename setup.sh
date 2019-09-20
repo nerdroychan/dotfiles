@@ -32,7 +32,7 @@ ln -sf "$DIR"/tmux/tmux.conf "$HOME"/.tmux.conf
 # xorg
 ln -sf "$DIR"/xinitrc "$HOME"/.xinitrc
 ln -sf "$DIR"/Xresources "$HOME"/.Xresources
-ln -sf "$DIR"/Xresources4k "$HOME"/.Xresources4k
+ln -sf "$DIR"/Xresources-qhd "$HOME"/.Xresources-qhd
 
 # xkbmap
 rm "$HOME"/.xkbmap
@@ -62,5 +62,3 @@ fi
 ln -sf "$DIR"/misc/display-toggle.sh "$HOME"/.display-toggle.sh
 ln -sf "$DIR"/misc/open-display.sh "$HOME"/.open-display.sh
 
-# audio toggle
-ln -sf "$DIR"/misc/pulseaudio-toggle.sh "$HOME"/.pulseaudio-toggle.sh
