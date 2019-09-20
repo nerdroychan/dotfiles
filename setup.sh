@@ -32,7 +32,7 @@ ln -sf "$DIR"/tmux/tmux.conf "$HOME"/.tmux.conf
 # xorg
 ln -sf "$DIR"/xinitrc "$HOME"/.xinitrc
 ln -sf "$DIR"/Xresources "$HOME"/.Xresources
-ln -sf "$DIR"/Xresources-qhd "$HOME"/.Xresources-qhd
+ln -sf "$DIR"/Xresources-uhd "$HOME"/.Xresources-uhd
 
 # xkbmap
 rm "$HOME"/.xkbmap
