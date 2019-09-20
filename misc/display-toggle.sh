@@ -1,6 +1,6 @@
 #/bin/sh
 
-EXTERNAL_OUTPUT="DP1"
+EXTERNAL_OUTPUT="DP2"
 INTERNAL_OUTPUT="eDP1"
 
 mode=$1"m"
