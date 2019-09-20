@@ -176,6 +176,7 @@ bar {
         position top
 }
 
+
 # hide border
 hide_edge_borders smart
 
@@ -210,3 +211,6 @@ bindsym $mod+Shift+P exec --no-startup-id "xrandr --auto"
 exec --no-startup-id "$HOME/.config/i3/startup.sh"
 bindsym $mod+Shift+y exec --no-startup-id "$HOME/.config/i3/startup.sh"
 bindsym $mod+Shift+w exec --no-startup-id "feh --bg-fill $HOME/.wallpaper.jpg"
+
+# firefox dialog fix
+for_window [class="^[fF]irefox" title="^Save As$"] floating enable, resize set 1600 1200, move position center
