@@ -57,6 +57,13 @@ if [ "$ans" != "${ans#[Yy]}" ]; then
     sudo cp "$DIR"/xorg/* /etc/X11/xorg.conf.d/
 fi
 
+# udev (arch)
+echo -n "Set udev? (y/n) "
+read ans
+if [ "$ans" != "${ans#[Yy]}" ]; then
+    sudo cp "$DIR"/udev/* /etc/udev/rules.d/
+fi
+
 # display toggle
 ln -sf "$DIR"/misc/display-toggle.sh "$HOME"/.display-toggle.sh
 ln -sf "$DIR"/misc/open-display.sh "$HOME"/.open-display.sh
