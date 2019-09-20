@@ -50,12 +50,11 @@ if [ "$ans" != "${ans#[Yy]}" ]; then
     sudo ln -sf /etc/fonts/conf.avail/64-language-selector-prefer.conf /etc/fonts/conf.d/64-language-selector-prefer.conf
 fi
 
-# libinput (arch)
-echo -n "Set libinput? (y/n) "
+# xorg (arch)
+echo -n "Set xorg? (y/n) "
 read ans
 if [ "$ans" != "${ans#[Yy]}" ]; then
-    sudo rm /etc/X11/xorg.conf.d/30-touchpad.conf
-    sudo cp "$DIR"/libinput/30-touchpad.conf /etc/X11/xorg.conf.d/
+    sudo cp "$DIR"/xorg/* /etc/X11/xorg.conf.d/
 fi
 
 # display toggle
