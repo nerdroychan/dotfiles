@@ -190,7 +190,7 @@ bindsym $mod+Shift+z exec --no-startup-id "i3lock -c 666666 -f && sleep 3 && sys
 bindsym $mod+i exec --no-startup-id "thunar"
 
 # bind chromium
-bindsym $mod+c exec --no-startup-id "firefox"
+bindsym $mod+c exec --no-startup-id "google-chrome-stable"
 
 # disable mouse hover focusing
 focus_follows_mouse no
@@ -203,7 +203,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 5 -steps 1"
 bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer set Master 5%+ -M"
 bindsym XF86AudioLowerVolume exec --no-startup-id "amixer set Master 5%- -M"
 bindsym XF86AudioMute exec --no-startup-id "pamixer -t"
-bindsym XF86AudioMicMute exec --no-startup-id "pactl set-card-profile 0 output:hdmi-stereo"
+bindsym XF86AudioMicMute exec --no-startup-id "pamixer -m"
 
 # bind xrandr
 bindsym $mod+Shift+P exec --no-startup-id "xrandr --auto"
@@ -211,6 +211,3 @@ bindsym $mod+Shift+P exec --no-startup-id "xrandr --auto"
 exec --no-startup-id "$HOME/.config/i3/startup.sh"
 bindsym $mod+Shift+y exec --no-startup-id "$HOME/.config/i3/startup.sh"
 bindsym $mod+Shift+w exec --no-startup-id "feh --bg-fill $HOME/.wallpaper.jpg"
-
-# firefox dialog fix
-for_window [class="^[fF]irefox" title="^Save As$"] floating enable, resize set 1600 1200, move position center
