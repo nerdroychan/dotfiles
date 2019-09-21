@@ -124,3 +124,6 @@ alias pt="$HOME/.pulseaudio-toggle.sh"
 
 alias fhd="xrdb -merge -I$HOME ~/.Xresources"
 alias uhd="xrdb -merge -I$HOME ~/.Xresources-uhd"
+
+# Delete orphans
+alias pacmanc="pacman -Rns $(pacman -Qtdq)"

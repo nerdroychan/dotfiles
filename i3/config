@@ -135,6 +135,7 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
+
 # reload the configuration file
 bindsym $mod+Shift+t reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -174,6 +175,8 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status --config $HOME/.config/i3/i3status.conf
         position top
+        tray_padding 4
+        separator_symbol "/"
 }
 
 
@@ -186,8 +189,8 @@ bindsym $mod+z exec --no-startup-id "i3lock -c 666666 -f"
 # bind suspend
 bindsym $mod+Shift+z exec --no-startup-id "i3lock -c 666666 -f && sleep 3 && systemctl suspend"
 
-# bind thunar
-bindsym $mod+i exec --no-startup-id "thunar"
+# bind caja
+bindsym $mod+i exec --no-startup-id "caja"
 
 # bind firefox
 bindsym $mod+c exec --no-startup-id "firefox"
