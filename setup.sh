@@ -68,3 +68,5 @@ fi
 ln -sf "$DIR"/misc/display-toggle.sh "$HOME"/.display-toggle.sh
 ln -sf "$DIR"/misc/open-display.sh "$HOME"/.open-display.sh
 
+# lock
+ln -sf "$DIR"/misc/lock.sh "$HOME"/.lock.sh
