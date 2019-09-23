@@ -57,6 +57,13 @@ if [ "$ans" != "${ans#[Yy]}" ]; then
     sudo cp "$DIR"/xorg/* /etc/X11/xorg.conf.d/
 fi
 
+# modprobe (arch)
+echo -n "Set modprobe? (y/n) "
+read ans
+if [ "$ans" != "${ans#[Yy]}" ]; then
+    sudo cp "$DIR"/modprobe/* /etc/modprobe.d/
+fi
+
 # udev (arch)
 echo -n "Set udev? (y/n) "
 read ans
