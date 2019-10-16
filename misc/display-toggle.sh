@@ -1,20 +1,23 @@
 #/bin/sh
 
-EXTERNAL_OUTPUT="DP2"
+EXTERNAL_OUTPUT="DP1"
+EXTERNAL_OUTPUT2="DP2"
 INTERNAL_OUTPUT="eDP1"
 
 mode=$1"m"
 
+xrandr --output $INTERNAL_OUTPUT --auto \
+       --output $EXTERNAL_OUTPUT --auto \
+       --output $EXTERNAL_OUTPUT2 --auto
+
 if [ $mode = "em" ]; then
-    xrandr --output $EXTERNAL_OUTPUT --auto --output $INTERNAL_OUTPUT --auto
-    xrandr --output $EXTERNAL_OUTPUT --auto --output $INTERNAL_OUTPUT --off
+    xrandr --output $INTERNAL_OUTPUT --off \
+           --output $EXTERNAL_OUTPUT --auto \
+           --output $EXTERNAL_OUTPUT2 --auto
 elif [ $mode = "im" ]; then
-    xrandr --output $EXTERNAL_OUTPUT --auto --output $INTERNAL_OUTPUT --auto
-    xrandr --output $INTERNAL_OUTPUT --auto --output $EXTERNAL_OUTPUT --off
-elif [ $mode = "bm" ]; then
-    xrandr --output $EXTERNAL_OUTPUT --auto --output $INTERNAL_OUTPUT --auto
-    xrandr --output $EXTERNAL_OUTPUT --auto \
-           --output $INTERNAL_OUTPUT --auto --right-of $EXTERNAL_OUTPUT
+    xrandr --output $INTERNAL_OUTPUT --auto \
+           --output $EXTERNAL_OUTPUT --off \
+           --output $EXTERNAL_OUTPUT2 --off
 else
-    xrandr --output $EXTERNAL_OUTPUT --auto --output $INTERNAL_OUTPUT --auto
+    xrandr
 fi
