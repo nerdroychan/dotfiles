@@ -14,4 +14,7 @@ xset s off -dpms
 # mute sound
 pamixer -m
 
+# turn on num lock
+numlockx
+
 exec i3 
