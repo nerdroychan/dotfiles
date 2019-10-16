@@ -71,6 +71,13 @@ if [ "$ans" != "${ans#[Yy]}" ]; then
     sudo cp "$DIR"/udev/* /etc/udev/rules.d/
 fi
 
+# systemd (arch)
+echo -n "Set systemd? (y/n) "
+read ans
+if [ "$ans" != "${ans#[Yy]}" ]; then
+    sudo cp "$DIR"/systemd/* /etc/systemd/system/
+fi
+
 # display toggle
 ln -sf "$DIR"/misc/display-toggle.sh "$HOME"/.display-toggle.sh
 ln -sf "$DIR"/misc/open-display.sh "$HOME"/.open-display.sh

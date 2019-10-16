@@ -8,4 +8,6 @@ export XMODIFIERS=@im=fcitx
 export LIBVA_DRIVER_NAME=iHD
 export VDPAU_DRIVER=va_gl
 
+xset s off -dpms
+
 exec i3 
