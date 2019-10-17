@@ -16,11 +16,6 @@ mkdir -p "$HOME"/.config/i3
 rm "$HOME"/.config/i3/*
 ln -sf "$DIR"/i3/* "$HOME"/.config/i3/
 
-# kitty
-mkdir -p "$HOME"/.config/kitty
-rm "$HOME"/.config/kitty/*
-ln -sf "$DIR"/kitty/*.conf "$HOME"/.config/kitty/
-
 # alacritty
 mkdir -p "$HOME"/.config/alacritty
 rm "$HOME"/.config/alacritty/*
