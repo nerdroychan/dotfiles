@@ -177,6 +177,9 @@ bar {
         position top
         tray_padding 4
         separator_symbol "/"
+        colors {
+            statusline "#DDDDDD"
+        }
 }
 
 # floating size
