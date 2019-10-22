@@ -209,8 +209,8 @@ bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 5 -steps 1"
 bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 5 -steps 1"
 
 # set volume
-bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer set Master 5%+ -M"
-bindsym XF86AudioLowerVolume exec --no-startup-id "amixer set Master 5%- -M"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer set Master 2%+ -M"
+bindsym XF86AudioLowerVolume exec --no-startup-id "amixer set Master 2%- -M"
 bindsym XF86AudioMute exec --no-startup-id "pamixer -t"
 bindsym XF86AudioMicMute exec --no-startup-id "pamixer -m"
 
