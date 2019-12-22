@@ -24,6 +24,7 @@ set autochdir
 set noerrorbells
 " set visualbell
 set background=dark
+set hidden
 
 " vim-plug
 
