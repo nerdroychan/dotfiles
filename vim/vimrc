@@ -73,8 +73,10 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
-" Left and right can switch buffers
+" Arrow keys can switch buffers
+nnoremap <up> :bp<CR>
 nnoremap <left> :bp<CR>
+nnoremap <down> :bn<CR>
 nnoremap <right> :bn<CR>
 
 " Move by displayed lines
@@ -89,3 +91,6 @@ nnoremap <CR> :noh<CR><CR>
 
 " Unlock delete
 :set backspace=indent,eol,start
+
+" Ctags
+set tags=tags;/
