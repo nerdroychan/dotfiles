@@ -73,6 +73,14 @@ if [ "$ans" != "${ans#[Yy]}" ]; then
     sudo cp "$DIR"/systemd/* /etc/systemd/system/
 fi
 
+# pacman (arch)
+echo -n "Set pacman? (y/n) "
+read ans
+if [ "$ans" != "${ans#[Yy]}" ]; then
+    sudo cp "$DIR"/pacman.conf /etc/pacman.conf
+fi
+
+
 # display toggle
 ln -sf "$DIR"/misc/display-toggle.sh "$HOME"/.display-toggle.sh
 ln -sf "$DIR"/misc/open-display.sh "$HOME"/.open-display.sh
