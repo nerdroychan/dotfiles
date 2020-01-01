@@ -28,7 +28,7 @@ ln -sf "$DIR"/tmux/tmux.conf "$HOME"/.tmux.conf
 ln -sf "$DIR"/xinitrc "$HOME"/.xinitrc
 ln -sf "$DIR"/Xresources "$HOME"/.Xresources
 ln -sf "$DIR"/Xresources-uhd "$HOME"/.Xresources-uhd
-
+ln -sf "$DIR"/Xresources-wxga "$HOME"/.Xresources-wxga
 # xkbmap
 rm "$HOME"/.xkbmap
 ln -sf "$DIR"/xkbmap "$HOME"/.xkbmap
