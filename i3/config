@@ -184,7 +184,10 @@ bar {
 
 # floating size
 floating_minimum_size 400 x 300
-floating_maximum_size 2400 x 1800
+floating_maximum_size 800 x 600
+
+# disable floating
+for_window [class=".*"] floating disable
 
 # hide border
 hide_edge_borders smart
@@ -205,8 +208,8 @@ bindsym $mod+c exec --no-startup-id "firefox"
 focus_follows_mouse no
 
 # set screen brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 5 -steps 1"
-bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 5 -steps 1"
+bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 10"
+bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 10"
 
 # set volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer set Master 2%+ -M"
