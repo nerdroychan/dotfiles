@@ -91,3 +91,9 @@ ln -sf "$DIR"/misc/lock.sh "$HOME"/.lock.sh
 
 # mpv
 ln -sf "$DIR"/mpv/* "$HOME"/.config/mpv/
+
+# firejail
+mkdir -p "$HOME"/.config/firejail
+rm "$HOME"/.config/firejail/*
+ln -sf "$DIR"/firejail/* "$HOME"/.config/firejail/
+
