@@ -1,5 +1,6 @@
-Xft.dpi: 144
+#include ".Xresources-urxvt"
 
+Xft.dpi: 144
 Xft.autohint: 0
 Xft.lcdfilter: lcddefault
 Xft.hintstyle: hintslight
