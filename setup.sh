@@ -23,7 +23,6 @@ ln -sf "$DIR"/tmux/tmux.conf "$HOME"/.tmux.conf
 ln -sf "$DIR"/xinitrc "$HOME"/.xinitrc
 ln -sf "$DIR"/Xresources/Xresources "$HOME"/.Xresources
 ln -sf "$DIR"/Xresources/Xresources-uhd "$HOME"/.Xresources-uhd
-ln -sf "$DIR"/Xresources/Xresources-urxvt "$HOME"/.Xresources-urxvt
 # xkbmap
 rm "$HOME"/.xkbmap
 ln -sf "$DIR"/xkbmap "$HOME"/.xkbmap
@@ -91,4 +90,9 @@ ln -sf "$DIR"/mpv/* "$HOME"/.config/mpv/
 mkdir -p "$HOME"/.config/firejail
 rm "$HOME"/.config/firejail/*
 ln -sf "$DIR"/firejail/* "$HOME"/.config/firejail/
+
+# kitty
+mkdir -p "$HOME"/.config/kitty
+rm "$HOME"/.config/kitty/*
+ln -sf "$DIR"/kitty/* "$HOME"/.config/kitty/
 
