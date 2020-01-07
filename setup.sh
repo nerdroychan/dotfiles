@@ -16,19 +16,14 @@ mkdir -p "$HOME"/.config/i3
 rm "$HOME"/.config/i3/*
 ln -sf "$DIR"/i3/* "$HOME"/.config/i3/
 
-# alacritty
-mkdir -p "$HOME"/.config/alacritty
-rm "$HOME"/.config/alacritty/*
-ln -sf "$DIR"/alacritty/*.yml "$HOME"/.config/alacritty/
-
 # tmux
 ln -sf "$DIR"/tmux/tmux.conf "$HOME"/.tmux.conf
 
 # xorg
 ln -sf "$DIR"/xinitrc "$HOME"/.xinitrc
-ln -sf "$DIR"/Xresources "$HOME"/.Xresources
-ln -sf "$DIR"/Xresources-uhd "$HOME"/.Xresources-uhd
-ln -sf "$DIR"/Xresources-wxga "$HOME"/.Xresources-wxga
+ln -sf "$DIR"/Xresources/Xresources "$HOME"/.Xresources
+ln -sf "$DIR"/Xresources/Xresources-uhd "$HOME"/.Xresources-uhd
+ln -sf "$DIR"/Xresources/Xresources-urxvt "$HOME"/.Xresources-urxvt
 # xkbmap
 rm "$HOME"/.xkbmap
 ln -sf "$DIR"/xkbmap "$HOME"/.xkbmap
