@@ -101,6 +101,8 @@ source $ZSH/oh-my-zsh.sh
 # disable ^S
 stty -ixon
 
+export TERM=xterm
+
 alias proxy="env http_proxy=http://127.0.0.1:6000"
 alias psudo="sudo env http_proxy=http://127.0.0.1:6000"
 
