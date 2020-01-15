@@ -91,8 +91,7 @@ mkdir -p "$HOME"/.config/firejail
 rm "$HOME"/.config/firejail/*
 ln -sf "$DIR"/firejail/* "$HOME"/.config/firejail/
 
-# kitty
-mkdir -p "$HOME"/.config/kitty
-rm "$HOME"/.config/kitty/*
-ln -sf "$DIR"/kitty/* "$HOME"/.config/kitty/
-
+# alacritty
+mkdir -p "$HOME"/.config/alacritty
+rm "$HOME"/.config/alacritty/*
+ln -sf "$DIR"/alacritty/*.yml "$HOME"/.config/alacritty/
