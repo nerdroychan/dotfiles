@@ -17,4 +17,4 @@ pamixer -m
 # turn on num lock
 numlockx
 
-exec i3 
+exec i3
