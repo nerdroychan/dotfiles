@@ -42,11 +42,8 @@ Plug 'ajh17/VimCompletesMe'
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 Plug 'jiangmiao/auto-pairs'
-Plug 'bling/vim-bufferline'
+"Plug 'ap/vim-buftabline'
 call plug#end()
-
-" Do not show buffers on command row
-let g:bufferline_echo = 0
 
 colorscheme gruvbox
 
@@ -94,3 +91,10 @@ nnoremap <CR> :noh<CR><CR>
 
 " Ctags
 set tags=tags;/
+
+" Buffer line
+nnoremap <C-N> :bnext<CR>
+nnoremap <C-P> :bprev<CR>
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
