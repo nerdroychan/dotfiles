@@ -87,10 +87,10 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -185,9 +185,6 @@ bar {
 # floating size
 floating_minimum_size 400 x 300
 floating_maximum_size 800 x 600
-
-# disable floating
-for_window [class=".*"] floating disable
 
 # hide border
 hide_edge_borders smart
