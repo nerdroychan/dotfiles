@@ -19,10 +19,10 @@ ln -sf "$DIR"/i3/* "$HOME"/.config/i3/
 # tmux
 ln -sf "$DIR"/tmux/tmux.conf "$HOME"/.tmux.conf
 
-# xorg
+# xinit and xresources
 ln -sf "$DIR"/xinitrc "$HOME"/.xinitrc
-ln -sf "$DIR"/Xresources/Xresources "$HOME"/.Xresources
-ln -sf "$DIR"/Xresources/Xresources-uhd "$HOME"/.Xresources-uhd
+ln -sf "$DIR"/Xresources "$HOME"/.Xresources
+
 # xkbmap
 rm "$HOME"/.xkbmap
 ln -sf "$DIR"/xkbmap "$HOME"/.xkbmap

@@ -122,6 +122,5 @@ fi
 alias dt="$HOME/.display-toggle.sh"
 alias pt="$HOME/.pulseaudio-toggle.sh"
 
-alias fhd="xrdb -merge -I$HOME ~/.Xresources"
-alias uhd="xrdb -merge -I$HOME ~/.Xresources-uhd"
-alias wxga="xrdb -merge -I$HOME ~/.Xresources-wxga"
+alias fhd="echo Xft.dpi: 144 | xrdb -merge"
+alias uhd="echo Xft.dpi: 192 | xrdb -merge"
