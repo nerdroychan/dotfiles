@@ -84,6 +84,7 @@ ln -sf "$DIR"/misc/pulseaudio-toggle.sh "$HOME"/.pulseaudio-toggle.sh
 ln -sf "$DIR"/misc/lock.sh "$HOME"/.lock.sh
 
 # mpv
+mkdir -p "$HOME"/.config/mpv
 ln -sf "$DIR"/mpv/* "$HOME"/.config/mpv/
 
 # firejail
