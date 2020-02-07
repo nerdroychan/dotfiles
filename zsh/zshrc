@@ -124,3 +124,6 @@ alias pt="$HOME/.pulseaudio-toggle.sh"
 
 alias fhd="echo Xft.dpi: 144 | xrdb -merge"
 alias uhd="echo Xft.dpi: 192 | xrdb -merge"
+
+alias remake="make -B"
+alias hexdump="hexdump -C"
