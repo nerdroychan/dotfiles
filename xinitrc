@@ -11,6 +11,9 @@ export VDPAU_DRIVER=radeonsi
 # disable DPMS and Xscreensaver
 xset s off -dpms
 
+# set mouse speed (maybe)
+xset m 1 1
+
 # mute sound
 pamixer -m
 
