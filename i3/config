@@ -197,10 +197,6 @@ bar {
     }
 }
 
-# floating size
-floating_minimum_size 400 x 300
-floating_maximum_size 800 x 600
-
 # hide border
 hide_edge_borders smart
 
