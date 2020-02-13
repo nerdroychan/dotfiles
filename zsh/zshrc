@@ -127,3 +127,5 @@ alias uhd="echo Xft.dpi: 192 | xrdb -merge"
 
 alias remake="make -B"
 alias hexdump="hexdump -C"
+
+alias ls="ls -lh --color=auto"
