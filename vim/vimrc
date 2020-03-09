@@ -103,3 +103,6 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 nmap <c-s> :w<CR>
 vmap <c-s> <Esc><c-s>gv
 imap <c-s> <Esc><c-s>
+
+" Folding
+set foldmethod=marker
