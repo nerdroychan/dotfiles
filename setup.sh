@@ -29,6 +29,7 @@ ln -sf "$DIR"/xkbmap "$HOME"/.xkbmap
 
 # zsh
 ln -sf "$DIR"/zsh/zshrc "$HOME"/.zshrc
+ln -sf "$DIR"/zsh/*.zsh-theme "$HOME"/.oh-my-zsh/custom/themes/
 
 # fontconfig (arch)
 echo -n "Set fontconfigs? (y/n) "
