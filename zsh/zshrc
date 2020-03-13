@@ -8,7 +8,7 @@
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="bira-modified"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -101,10 +101,8 @@ source $ZSH/oh-my-zsh.sh
 # disable ^S
 stty -ixon
 
-alias proxy="env http_proxy=http://127.0.0.1:6000"
-alias psudo="sudo env http_proxy=http://127.0.0.1:6000"
-
 alias c="clear"
+alias r="reset"
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -114,18 +112,13 @@ alias tls="tmux ls"
 
 alias aria2c="aria2c --dir=${HOME}/Downloads"
 
-# macOS specific
-if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
-    export PATH="/usr/local/sbin:$PATH"
-fi
-
 alias dt="$HOME/.display-toggle.sh"
 alias pt="$HOME/.pulseaudio-toggle.sh"
 
 alias fhd="echo Xft.dpi: 144 | xrdb -merge"
 alias uhd="echo Xft.dpi: 192 | xrdb -merge"
 
+alias ls="ls -lh --color=auto"
+
 alias remake="make -B"
 alias hexdump="hexdump -C"
-
-alias ls="ls -lh --color=auto"
