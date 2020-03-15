@@ -101,6 +101,8 @@ source $ZSH/oh-my-zsh.sh
 # disable ^S
 stty -ixon
 
+alias cdw="cd ~/Workspace && cd"
+
 alias c="clear"
 alias r="reset"
 
