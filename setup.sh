@@ -97,3 +97,6 @@ ln -sf "$DIR"/firejail/* "$HOME"/.config/firejail/
 mkdir -p "$HOME"/.config/alacritty
 rm "$HOME"/.config/alacritty/*
 ln -sf "$DIR"/alacritty/*.yml "$HOME"/.config/alacritty/
+
+# pulse
+ln -sf "$DIR"/pulse/default.pa "$HOME"/.config/pulse/default.pa
