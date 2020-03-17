@@ -49,6 +49,7 @@ colorscheme gruvbox
 
 map <F2> :NERDTreeToggle<CR>
 map <F3> :TagbarToggle<CR> 
+set pastetoggle=<F4>
 
 " higlight column right after max textwidth
 set colorcolumn=+1
@@ -106,3 +107,7 @@ imap <c-s> <Esc><c-s>
 
 " Folding
 set foldmethod=marker
+
+" C types
+syn keyword cType s8 s16 s32 s64 s128
+syn keyword cType u8 u16 u32 u64 u128
