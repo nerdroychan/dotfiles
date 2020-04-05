@@ -8,6 +8,9 @@ export XMODIFIERS=@im=fcitx
 export LIBVA_DRIVER_NAME=iHD
 export VDPAU_DRIVER=va_gl
 
+# disable DRI3
+export LIBGL_DRI3_DISABLE=1
+
 # disable DPMS and Xscreensaver
 xset s off -dpms
 
