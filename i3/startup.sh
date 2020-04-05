@@ -10,7 +10,6 @@ pasystray -m 100 &
 copyq &
 nm-applet &
 
-unshare -n -U flameshot &
 firejail dropbox &
 firejail flameshot &
 
