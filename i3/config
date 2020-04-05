@@ -205,8 +205,9 @@ bindsym $mod+z exec --no-startup-id "$HOME/.lock.sh"
 # bind suspend
 bindsym $mod+Shift+z exec --no-startup-id "$HOME/.lock.sh && sleep 3 && systemctl suspend"
 
-# bind caja
-bindsym $mod+i exec --no-startup-id "caja"
+# bind ranger and pcmanfm
+bindsym $mod+i exec --no-startup-id "alacritty -e ranger"
+bindsym $mod+o exec --no-startup-id "pcmanfm"
 
 # bind firefox
 bindsym $mod+c exec --no-startup-id "firefox"
