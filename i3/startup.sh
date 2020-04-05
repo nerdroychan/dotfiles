@@ -13,4 +13,4 @@ nm-applet &
 firejail dropbox &
 firejail flameshot &
 
-picom &
+picom -CG &
