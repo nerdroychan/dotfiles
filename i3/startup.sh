@@ -2,7 +2,7 @@
 
 feh --bg-fill $HOME/.wallpaper.jpg
 
-killall -w fcitx copyq redshift-gtk pasystray flameshot dropbox nm-applet picom
+killall -w fcitx copyq redshift-gtk pasystray flameshot dropbox nm-applet
 
 fcitx &
 redshift-gtk -t 6500:5000 &
@@ -11,6 +11,5 @@ copyq &
 nm-applet &
 
 unshare -n -U flameshot &
-dropbox &
-
-picom &
+firejail dropbox &
+firejail flameshot &
