@@ -11,6 +11,6 @@ copyq &
 nm-applet &
 
 unshare -n -U flameshot &
-firejail dropbox &
+dropbox &
 
 picom &

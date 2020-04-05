@@ -72,7 +72,9 @@ fi
 echo -n "Set pacman? (y/n) "
 read ans
 if [ "$ans" != "${ans#[Yy]}" ]; then
-    sudo cp "$DIR"/pacman.conf /etc/pacman.conf
+    sudo cp "$DIR"/pacman/pacman.conf /etc/pacman.conf
+    sudo mkdir -p /etc/pacman.d/hooks
+    sudo cp "$DIR"/pacman/hooks/* /etc/pacman.d/hooks/
 fi
 
 
@@ -100,3 +102,6 @@ ln -sf "$DIR"/alacritty/*.yml "$HOME"/.config/alacritty/
 
 # pulse
 ln -sf "$DIR"/pulse/default.pa "$HOME"/.config/pulse/default.pa
+
+# picom
+ln -sf "$DIR"/picom/picom.conf "$HOME"/.config/picom.conf
