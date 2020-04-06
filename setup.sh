@@ -102,3 +102,7 @@ ln -sf "$DIR"/pulse/default.pa "$HOME"/.config/pulse/default.pa
 
 # picom
 ln -sf "$DIR"/picom/picom.conf "$HOME"/.config/picom.conf
+
+# polybar
+mkdir -p "$HOME"/.config/polybar
+ln -sf "$DIR"/polybar/* "$HOME"/.config/polybar/
