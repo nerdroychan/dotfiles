@@ -108,3 +108,7 @@ ln -sf $DIR/picom/picom.conf $HOME/.config/picom.conf
 # polybar
 mkdir -p $HOME/.config/polybar
 ln -sf $DIR/polybar/* $HOME/.config/polybar/
+
+# rofi
+mkdir -p $HOME/.config/rofi
+ln -sf $DIR/rofi/* $HOME/.config/rofi/
