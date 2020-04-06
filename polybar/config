@@ -21,8 +21,8 @@ background = #cc000000
 background-alt = #cc222222
 foreground = #dddddd
 foreground-alt = #a0a0a0
+foreground-alert = #bd2c40
 primary = #006b6b
-secondary = #e60053
 alert = #bd2c40
 
 [bar/default]
@@ -167,9 +167,12 @@ label =  %title%
 type = internal/temperature
 interval = 1
 thermal-zone = 6
-warn-temperature = 85
+warn-temperature = 80
 format = <label>
+format-warn = <label-warn>
 label =  %temperature-c%
+label-warn =  %temperature-c%
+label-warn-foreground = ${colors.foreground-alert}
 
 [module/pulseaudio]
 type = internal/pulseaudio
