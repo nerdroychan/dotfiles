@@ -1,4 +1,5 @@
-[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+xrdb -merge $HOME/.Xresources
+xrdb -merge $HOME/.config/polybar/default.xresources
 
 export GTK_IM_MODULE=fcitx5
 export QT_IM_MODULE=fcitx5
