@@ -121,7 +121,9 @@ alias pt="$HOME/.pulseaudio-toggle.sh"
 alias fhd="$HOME/.switch-fhd.sh"
 alias uhd="$HOME/.switch-uhd.sh"
 
-alias ls="ls -lh --color=auto"
+alias ls="exa"
+alias ll="exa -l"
+alias la="exa -la"
 
 alias remake="make -B"
 alias hexdump="hexdump -C"
