@@ -112,7 +112,7 @@ margin-bottom = 5
 
 [module/battery]
 type = internal/battery
-full-at = 94.9
+full-at = 89.9
 battery = BAT0
 adapter = AC
 poll-interval = 10
@@ -154,8 +154,8 @@ interface = wlp0s20f3
 interval = 5.0
 format-connected = <label-connected>
 format-disconnected = <label-disconnected>
-label-connected = %{A6:nm-connection-editor &:} %essid%%{A}
-label-disconnected = %{A6:nm-connection-editor &:} N/A%{A}
+label-connected = %{A3:nm-connection-editor &:} %essid%%{A}
+label-disconnected = %{A3:nm-connection-editor &:} N/A%{A}
 label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/title]
@@ -177,12 +177,9 @@ use-ui-max = false
 interval = 5.0
 format-volume = <label-volume>
 format-muted = <label-muted>
-label-volume =  %{A6:pavucontrol &:}%percentage%%%{A}
-label-muted =  Muted
+label-volume =  %{A3:pavucontrol &:}%percentage%%%{A}
+label-muted =  %{A3:pavucontrol &:}Muted%{A}
 label-muted-foreground = ${colors.foreground-alt}
-
-; Right and Middle click (unreleased)
-click-right = pavucontrol &
 
 [module/date]
 type = internal/date
