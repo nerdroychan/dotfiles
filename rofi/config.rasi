@@ -1,5 +1,5 @@
 configuration {
-	font: "mono 16";
+	font: "mono 12";
 	terminal: "rofi-sensible-terminal";
     theme: "theme";
     show-icons: false;
