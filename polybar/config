@@ -112,15 +112,15 @@ margin-bottom = 5
 
 [module/battery]
 type = internal/battery
-full-at = 99
+full-at = 94.9
 battery = BAT0
 adapter = AC
 poll-interval = 10
 format-charging = <ramp-capacity> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 format-full = <ramp-capacity> <label-full>
-label-charging = Charging %percentage%%
-label-discharging = Discharging %percentage%%
+label-charging = CHR %percentage%%
+label-discharging = %percentage%%
 label-full = FULL
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -132,7 +132,7 @@ ramp-capacity-4 = 
 type = internal/cpu
 interval = 2.0
 format = <label>
-label = 龍 CPU %percentage%%
+label = 龍 %percentage%%
 
 [module/fs-home]
 type = internal/fs
@@ -146,7 +146,7 @@ label-mounted =  %free%
 type = internal/memory
 interval = 3.0
 format = <label>
-label =  FREE %gb_free%
+label =  %gb_free%
 
 [module/wifi]
 type = internal/network
