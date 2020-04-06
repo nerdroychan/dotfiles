@@ -177,8 +177,8 @@ use-ui-max = false
 interval = 5.0
 format-volume = <label-volume>
 format-muted = <label-muted>
-label-volume =  %{A3:pavucontrol &:}%percentage%%%{A}
-label-muted =  %{A3:pavucontrol &:}Muted%{A}
+label-volume =  %{A3:pavucontrol &:} %percentage%%%{A}
+label-muted = %{A3:pavucontrol &:} Muted%{A}
 label-muted-foreground = ${colors.foreground-alt}
 
 [module/date]
