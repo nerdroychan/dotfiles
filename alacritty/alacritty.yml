@@ -1,14 +1,14 @@
 font:
   normal:
-    family: Source Code Pro 
+    family: Source Code Pro
     style: Regular
   bold:
-    family: monospace
+    family: Source Code Pro
     style: Bold
   italic:
-    family: monospace
+    family: Source Code Pro
     style: Italic
-  size: 11 
+  size: 11
 
 colors:
   # Default colors
