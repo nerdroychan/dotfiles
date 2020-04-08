@@ -101,7 +101,7 @@ source $ZSH/oh-my-zsh.sh
 # disable ^S
 stty -ixon
 
-alias cdw="cd ~/Workspace && cd"
+alias cdw="cd ~/Workspace"
 alias lsw="ls ~/Workspace"
 
 alias c="clear"
