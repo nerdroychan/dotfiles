@@ -55,7 +55,7 @@ font-3 = Noto Sans Mono CJK TC:size=9;4
 font-4 = Noto Sans Mono CJK JP:size=9;4
 
 modules-left = i3 title
-modules-right= cpu temperature memory wifi pulseaudio battery date
+modules-right= cpu temperature fan memory wifi pulseaudio battery date
 
 tray-position = right
 tray-padding = 4
@@ -161,6 +161,13 @@ interval = 1
 exec = echo $((`cat /sys/devices/platform/thinkpad_hwmon/hwmon/hwmon*/temp1_input` / 1000))
 format = <label>
 label = 﨏 %output% ℃
+
+[module/fan]
+type = custom/script
+interval = 1
+exec = echo $((`cat /sys/devices/platform/thinkpad_hwmon/hwmon/hwmon*/fan1_input`))
+format = <label>
+label =  %output%
 
 [module/pulseaudio]
 type = internal/pulseaudio
