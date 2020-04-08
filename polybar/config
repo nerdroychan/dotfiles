@@ -55,7 +55,7 @@ font-3 = Noto Sans Mono CJK TC:size=9;4
 font-4 = Noto Sans Mono CJK JP:size=9;4
 
 modules-left = i3 title
-modules-right= cpu temperature memory wifi pulseaudio battery weather date
+modules-right= cpu temperature memory wifi pulseaudio battery date
 
 tray-position = right
 tray-padding = 4
@@ -156,15 +156,11 @@ format = <label>
 label =  %title%
 
 [module/temperature]
-type = internal/temperature
+type = custom/script
 interval = 1
-thermal-zone = 6
-warn-temperature = 80
+exec = echo $((`cat /sys/devices/platform/coretemp.0/hwmon/hwmon*/temp1_input` / 1000))
 format = <label>
-format-warn = <label-warn>
-label = 﨏 %temperature-c%
-label-warn = 﨏 %temperature-c%
-label-warn-foreground = ${colors.foreground-alert}
+label = 﨏 %output% ℃
 
 [module/pulseaudio]
 type = internal/pulseaudio
