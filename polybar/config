@@ -158,7 +158,7 @@ label =  %title%
 [module/temperature]
 type = custom/script
 interval = 1
-exec = echo $((`cat /sys/devices/platform/coretemp.0/hwmon/hwmon*/temp1_input` / 1000))
+exec = echo $((`cat /sys/devices/platform/thinkpad_hwmon/hwmon/hwmon*/temp1_input` / 1000))
 format = <label>
 label = 﨏 %output% ℃
 
