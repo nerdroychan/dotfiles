@@ -6,11 +6,8 @@ export QT_IM_MODULE=fcitx5
 export XMODIFIERS=@im=fcitx5
 
 # intel-media-driver and vaapi/vdpau
-export LIBVA_DRIVER_NAME=iHD
-export VDPAU_DRIVER=va_gl
-
-# disable DRI3
-export LIBGL_DRI3_DISABLE=1
+export LIBVA_DRIVER_NAME=radeonsi
+export VDPAU_DRIVER=radeonsi
 
 # disable DPMS and Xscreensaver
 xset s off -dpms
