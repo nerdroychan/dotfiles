@@ -142,7 +142,7 @@ label =  %gb_free%
 
 [module/wifi]
 type = internal/network
-interface = wlp0s20f3
+interface = wlp1s0
 interval = 5.0
 format-connected = <label-connected>
 format-disconnected = <label-disconnected>
