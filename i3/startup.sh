@@ -2,11 +2,11 @@
 
 feh --bg-fill $HOME/.wallpaper.jpg &
 
-killall -w copyq redshift-gtk flameshot fcitx5 #picom
+killall -w copyq redshift-gtk flameshot fcitx #picom
 
 redshift-gtk -t 6500:5000 &
 copyq &
-fcitx5 &
+fcitx &
 
 flameshot &
 # picom -CG &
