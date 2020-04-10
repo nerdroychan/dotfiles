@@ -1,11 +1,10 @@
 xrdb -merge $HOME/.Xresources
 xrdb -merge $HOME/.config/polybar/default.xresources
 
-export GTK_IM_MODULE=fcitx5
-export QT_IM_MODULE=fcitx5
-export XMODIFIERS=@im=fcitx5
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
 
-# intel-media-driver and vaapi/vdpau
 export LIBVA_DRIVER_NAME=radeonsi
 export VDPAU_DRIVER=radeonsi
 

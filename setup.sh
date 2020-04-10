@@ -8,12 +8,12 @@ ln -sf $DIR/gitignore_global $HOME/.gitignore_global
 git config --global core.excludesfile $HOME/.gitignore_global
 
 # vim
-rm $HOME/.vim
+rm $HOME/.vim &>/dev/null
 ln -sf $DIR/vim $HOME/.vim
 
 # i3
 mkdir -p $HOME/.config/i3
-rm $HOME/.config/i3/*
+rm $HOME/.config/i3/* &>/dev/null
 ln -sf $DIR/i3/* $HOME/.config/i3/
 
 # tmux
@@ -24,7 +24,7 @@ ln -sf $DIR/xinitrc $HOME/.xinitrc
 ln -sf $DIR/Xresources $HOME/.Xresources
 
 # xkbmap
-rm $HOME/.xkbmap
+rm $HOME/.xkbmap &>/dev/null
 ln -sf $DIR/xkbmap $HOME/.xkbmap
 
 # zsh
@@ -32,13 +32,9 @@ ln -sf $DIR/zsh/zshrc $HOME/.zshrc
 ln -sf $DIR/zsh/*.zsh-theme $HOME/.oh-my-zsh/custom/themes/
 
 # fontconfig (arch)
-echo -n "Set fontconfigs? (y/n) "
-read ans
-if [ "$ans" != "${ans#[Yy]}" ]; then
-    sudo rm /etc/fonts/conf.avail/64-language-selector-prefer.conf &>/dev/null
-    sudo cp $DIR/fontconfig/64-language-selector-prefer.conf /etc/fonts/conf.avail/
-    sudo ln -sf /etc/fonts/conf.avail/64-language-selector-prefer.conf /etc/fonts/conf.d/64-language-selector-prefer.conf
-fi
+mkdir -p $HOME/.config/fontconfig &>/dev/null
+rm $HOME/.config/fontconfig/* &>/dev/null
+ln -sf $DIR/fontconfig/* $HOME/.config/fontconfig/
 
 # xorg (arch)
 echo -n "Set xorg? (y/n) "
@@ -87,28 +83,32 @@ ln -sf $DIR/misc/lock.sh $HOME/.lock.sh
 
 # mpv
 mkdir -p $HOME/.config/mpv
+rm $HOME/.config/mpv/* &>/dev/null
 ln -sf $DIR/mpv/* $HOME/.config/mpv/
 
 # firejail
 mkdir -p $HOME/.config/firejail
-rm $HOME/.config/firejail/*
+rm $HOME/.config/firejail/* &>/dev/null
 ln -sf $DIR/firejail/* $HOME/.config/firejail/
 
 # alacritty
 mkdir -p $HOME/.config/alacritty
-rm $HOME/.config/alacritty/*
+rm $HOME/.config/alacritty/* &>/dev/null
 ln -sf $DIR/alacritty/*.yml $HOME/.config/alacritty/
 
 # pulse
+mkdir -p $HOME/.config/pulse
 ln -sf $DIR/pulse/default.pa $HOME/.config/pulse/default.pa
 
 # picom
-# ln -sf $DIR/picom/picom.conf $HOME/.config/picom.conf
+ln -sf $DIR/picom/picom.conf $HOME/.config/picom.conf
 
 # polybar
 mkdir -p $HOME/.config/polybar
+rm $HOME/.config/polybar/* &>/dev/null
 ln -sf $DIR/polybar/* $HOME/.config/polybar/
 
 # rofi
 mkdir -p $HOME/.config/rofi
+rm $HOME/.config/rofi/* &>/dev/null
 ln -sf $DIR/rofi/* $HOME/.config/rofi/
