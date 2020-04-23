@@ -25,6 +25,7 @@ set noerrorbells
 " set visualbell
 set background=dark
 set hidden
+set winheight=999
 
 " vim-plug
 
