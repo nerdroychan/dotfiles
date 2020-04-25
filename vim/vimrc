@@ -26,6 +26,7 @@ set noerrorbells
 set background=dark
 set hidden
 set winheight=999
+command Bd bp\|bd \#
 
 " vim-plug
 
@@ -49,7 +50,7 @@ call plug#end()
 colorscheme gruvbox
 
 map <F2> :NERDTreeToggle<CR>
-map <F3> :TagbarToggle<CR> 
+map <F3> :TagbarToggle<CR>
 set pastetoggle=<F4>
 
 " higlight column right after max textwidth
