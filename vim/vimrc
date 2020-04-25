@@ -26,7 +26,7 @@ set noerrorbells
 set background=dark
 set hidden
 set winheight=999
-command Bd bp\|bd \#
+command! Bd bp|bd #
 
 " vim-plug
 
