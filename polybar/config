@@ -55,7 +55,7 @@ font-3 = Noto Sans Mono CJK TC:size=9;4
 font-4 = Noto Sans Mono CJK JP:size=9;4
 
 modules-left = i3 title
-modules-right= cpu memory wifi pulseaudio weather date
+modules-right= cpu temperature memory wifi pulseaudio weather date
 
 tray-position = right
 tray-padding = 4
