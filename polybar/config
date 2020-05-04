@@ -55,7 +55,7 @@ font-3 = Noto Sans Mono CJK TC:size=9;4
 font-4 = Noto Sans Mono CJK JP:size=9;4
 
 modules-left = i3 title
-modules-right= cpu temperature memory wifi pulseaudio weather date
+modules-right= cpu temperature memory wifi pulseaudio date
 
 tray-position = right
 tray-padding = 4
@@ -177,12 +177,5 @@ interval = 1.0
 date = %a %d
 time = %H:%M
 label =  %date%, %time%
-
-[module/weather]
-type = custom/script
-exec = timeout 10 curl -s wttr.in/Chicago\?format\="%C+%t"\&m
-interval = 3600
-format = <label>
-label =  %output%
 
 ; vim:ft=dosini
