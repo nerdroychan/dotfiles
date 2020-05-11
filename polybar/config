@@ -17,7 +17,7 @@
 ;==========================================================
 
 [colors]
-background = #dd111111
+background = #dd060606
 background-alt = #dd333333
 foreground = #dddddd
 foreground-alt = #a0a0a0
@@ -164,7 +164,7 @@ label = 﨏 %output% ℃
 [module/pulseaudio]
 type = internal/pulseaudio
 use-ui-max = false
-interval = 2
+interval = 5
 format-volume = <label-volume>
 format-muted = <label-muted>
 label-volume =  %{A3:pavucontrol &:}墳 %percentage%%%{A}
