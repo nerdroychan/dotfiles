@@ -127,3 +127,5 @@ alias la="exa -la"
 
 alias remake="make -B"
 alias hexdump="hexdump -C"
+
+alias utags='ctags -R . /usr/include'
