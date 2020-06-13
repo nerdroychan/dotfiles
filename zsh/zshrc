@@ -128,4 +128,5 @@ alias la="exa -la"
 alias remake="make -B"
 alias hexdump="hexdump -C"
 
-alias utags='ctags -R . /usr/include'
+alias utags="ctags -R . /usr/include"
+alias sperf="perf record -q --call-graph lbr --switch-output -- "
