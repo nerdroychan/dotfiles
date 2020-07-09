@@ -55,7 +55,7 @@ font-3 = Noto Sans Mono CJK TC:size=9;4
 font-4 = Noto Sans Mono CJK JP:size=9;4
 
 modules-left = i3 title
-modules-right= cpu temperature memory wifi pulseaudio battery date
+modules-right= cpu temperature memory wifi vpn pulseaudio battery date
 
 tray-position = right
 tray-padding = 4
@@ -177,5 +177,12 @@ interval = 1.0
 date = %a %d
 time = %H:%M
 label =  %date%, %time%
+
+[module/vpn]
+type = custom/script
+interval = 2
+exec = ip -4 addr | grep -oP 'mullvad-.+(?=\:)' || echo %{F#a0a0a0}N/A%{F-}
+foatmat = <label>
+label = 旅 %output%
 
 ; vim:ft=dosini
