@@ -112,3 +112,6 @@ ln -sf $DIR/polybar/* $HOME/.config/polybar/
 mkdir -p $HOME/.config/rofi
 rm $HOME/.config/rofi/* &>/dev/null
 ln -sf $DIR/rofi/* $HOME/.config/rofi/
+
+# abcde
+ln -sf $DIR/abcde/abcde.conf $HOME/.abcde.conf
