@@ -23,10 +23,6 @@ ln -sf $DIR/tmux/tmux.conf $HOME/.tmux.conf
 ln -sf $DIR/xinitrc $HOME/.xinitrc
 ln -sf $DIR/Xresources $HOME/.Xresources
 
-# xkbmap
-rm $HOME/.xkbmap &>/dev/null
-ln -sf $DIR/xkbmap $HOME/.xkbmap
-
 # zsh
 ln -sf $DIR/zsh/zshrc $HOME/.zshrc
 ln -sf $DIR/zsh/*.zsh-theme $HOME/.oh-my-zsh/custom/themes/
