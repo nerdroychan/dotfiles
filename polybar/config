@@ -19,8 +19,8 @@
 [colors]
 background = #dd060606
 background-alt = #dd333333
-foreground = #dddddd
-foreground-alt = #a0a0a0
+foreground = #d0d0d0
+foreground-alt = #6f6f6f
 foreground-alert = #bd2c40
 primary = #006b6b
 alert = #bd2c40
@@ -181,7 +181,7 @@ label =  %date%, %time%
 [module/vpn]
 type = custom/script
 interval = 2
-exec = ip -4 addr | grep -oP 'mullvad-.+(?=\:)' || echo %{F#a0a0a0}N/A%{F-}
+exec = ip -4 addr | grep -oP 'mullvad-.+(?=\:)' || echo %{F#6f6f6f}N/A%{F-}
 foatmat = <label>
 label = 旅 %output%
 
