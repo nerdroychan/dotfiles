@@ -19,7 +19,7 @@
 [colors]
 background = #dd060606
 background-alt = #dd333333
-foreground = #d0d0d0
+foreground = #d6d6d6
 foreground-alt = #6f6f6f
 foreground-alert = #bd2c40
 primary = #006b6b
