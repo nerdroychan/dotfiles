@@ -16,6 +16,7 @@ set formatoptions=c
 set ruler
 set number relativenumber
 set mouse=a
+
 filetype plugin indent on
 syntax on
 set t_Co=256
@@ -23,7 +24,6 @@ set t_Co=256
 set autochdir
 set noerrorbells
 " set visualbell
-set background=dark
 set hidden
 set winheight=999
 command! Bd bp|bd #
@@ -44,10 +44,14 @@ Plug 'ajh17/VimCompletesMe'
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 Plug 'jiangmiao/auto-pairs'
-"Plug 'ap/vim-buftabline'
+" Plug 'ap/vim-buftabline'
 call plug#end()
 
+" gruvbox
+let g:gruvbox_italic=1
 colorscheme gruvbox
+set background=dark
+
 
 map <F2> :NERDTreeToggle<CR>
 map <F3> :TagbarToggle<CR>
@@ -58,7 +62,7 @@ set colorcolumn=+1
 
 " Disable vertical line at max string length in NERDTree
 autocmd FileType * setlocal colorcolumn=+1
-autocmd FileType nerdtree setlocal colorcolumn=""
+autocmd FileType nerdtree setlocal colorcolumn=''
 
 " Convenient buffer mgmt
 set wildchar=<Tab> wildmenu wildmode=full
