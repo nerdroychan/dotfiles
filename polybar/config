@@ -152,7 +152,7 @@ label-disconnected-foreground = ${colors.foreground-alt}
 [module/title]
 type = internal/xwindow
 format = <label>
-label =  %title%
+label =  %title:0:64: ...%
 
 [module/temperature]
 type = custom/script
