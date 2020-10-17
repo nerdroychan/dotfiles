@@ -55,7 +55,7 @@ font-3 = Noto Sans Mono CJK TC:size=9;4
 font-4 = Noto Sans Mono CJK JP:size=9;4
 
 border-bottom-size = 1
-border-bottom-color = #dd333333
+border-bottom-color = #4a4a4a
 
 modules-left = i3 title
 modules-right= cpu temperature memory wifi vpn pulseaudio battery date
