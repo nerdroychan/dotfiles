@@ -49,6 +49,7 @@ i3-gaps
 i3blocks
 i3lock-color
 i3status
+icedtea-web
 inkscape
 intel-media-driver
 intel-ucode
@@ -76,6 +77,7 @@ mpv
 neofetch
 network-manager-applet
 networkmanager
+nextcloud-client
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
