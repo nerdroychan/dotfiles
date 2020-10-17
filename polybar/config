@@ -54,6 +54,9 @@ font-2 = Noto Sans Mono CJK SC:size=9;4
 font-3 = Noto Sans Mono CJK TC:size=9;4
 font-4 = Noto Sans Mono CJK JP:size=9;4
 
+border-bottom-size = 1
+border-bottom-color = #dd333333
+
 modules-left = i3 title
 modules-right= cpu temperature memory wifi vpn pulseaudio battery date
 
@@ -152,7 +155,7 @@ label-disconnected-foreground = ${colors.foreground-alt}
 [module/title]
 type = internal/xwindow
 format = <label>
-label =  %title:0:64: ...%
+label =  %title:0:64:...%
 
 [module/temperature]
 type = custom/script
