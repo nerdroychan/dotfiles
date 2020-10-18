@@ -6,6 +6,7 @@ asunder
 autoconf
 automake
 base
+bat
 biber
 bind
 binutils
@@ -96,6 +97,7 @@ picard
 picom
 pkgconf
 polybar
+prettyping
 pulseaudio
 python-gobject
 python-lxml
@@ -126,6 +128,7 @@ texlive-science
 tig
 time
 tk
+tldr
 tlp
 tmux
 traceroute

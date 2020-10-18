@@ -125,9 +125,11 @@ alias ls="exa"
 alias ll="exa -l"
 alias la="exa -la"
 
+alias cat="bat"
+alias ping="prettyping --nolegend"
+
 # utils
 alias remake="make -B"
-alias hexdump="hexdump -C"
 alias utags="ctags -R . /usr/include"
 alias sperf="perf record -q --call-graph lbr --switch-output -- "
 alias vcheck="valgrind --leak-check=full --track-origins=yes --keep-stacktraces=alloc-and-free --fair-sched=yes -- "
