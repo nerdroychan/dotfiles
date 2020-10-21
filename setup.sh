@@ -27,6 +27,9 @@ ln -sf $DIR/Xresources $HOME/.Xresources
 ln -sf $DIR/zsh/zshrc $HOME/.zshrc
 ln -sf $DIR/zsh/*.zsh-theme $HOME/.oh-my-zsh/custom/themes/
 
+# bash
+ln -sf $DIR/bash/bashrc $HOME/.bashrc
+
 # fontconfig (arch)
 mkdir -p $HOME/.config/fontconfig &>/dev/null
 rm $HOME/.config/fontconfig/* &>/dev/null

@@ -1,0 +1,42 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+PS1="╭─\[$(tput bold)\]\[\033[33m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[32m\]\h\[$(tput sgr0)\]:\[$(tput sgr0)\]\[\033[38;5;7m\]\w\[$(tput sgr0)\] > \[$(tput sgr0)\]\[\033[35m\]\$?\[$(tput sgr0)\]\n╰─\[$(tput bold)\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
+
+HISTCONTROL=ignoreboth:erasedups
+
+# disable ^S
+stty -ixon
+
+alias cdw="cd ~/Workspace"
+alias c="clear"
+alias r="reset"
+alias ..="cd .."
+alias ...="cd ../.."
+alias t="tmux a || tmux"
+alias tls="tmux ls"
+alias aria2c="aria2c --dir=${HOME}/Downloads"
+alias dt="$HOME/.display-toggle.sh"
+alias pt="$HOME/.pulseaudio-toggle.sh"
+alias fhd="$HOME/.switch-fhd.sh"
+alias uhd="$HOME/.switch-uhd.sh"
+alias ls="exa"
+alias ll="exa -l"
+alias la="exa -la"
+alias cat="bat"
+alias ping="prettyping --nolegend"
+alias remake="make -B"
+alias utags="ctags -R . /usr/include"
+alias sperf="perf record -q --call-graph lbr --switch-output -- "
+alias vcheck="valgrind --leak-check=full --track-origins=yes --keep-stacktraces=alloc-and-free --fair-sched=yes -- "
+
+# cpan
+PATH="/home/chen/.perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/chen/.perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/chen/.perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/chen/.perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/chen/.perl5"; export PERL_MM_OPT;
