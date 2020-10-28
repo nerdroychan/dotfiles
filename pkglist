@@ -32,6 +32,7 @@ firefox
 firejail
 flameshot
 flex
+fwupd
 gawk
 gcc
 gdb
@@ -125,6 +126,7 @@ texlive-pictures
 texlive-pstricks
 texlive-publishers
 texlive-science
+throttled
 tig
 time
 tk
