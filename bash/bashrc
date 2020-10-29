@@ -5,6 +5,9 @@
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
 
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
