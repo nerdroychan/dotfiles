@@ -23,10 +23,6 @@ ln -sf $DIR/tmux/tmux.conf $HOME/.tmux.conf
 ln -sf $DIR/xinitrc $HOME/.xinitrc
 ln -sf $DIR/Xresources $HOME/.Xresources
 
-# zsh
-ln -sf $DIR/zsh/zshrc $HOME/.zshrc
-ln -sf $DIR/zsh/*.zsh-theme $HOME/.oh-my-zsh/custom/themes/
-
 # bash
 ln -sf $DIR/bash/bashrc $HOME/.bashrc
 
@@ -111,6 +107,3 @@ ln -sf $DIR/polybar/* $HOME/.config/polybar/
 mkdir -p $HOME/.config/rofi
 rm $HOME/.config/rofi/* &>/dev/null
 ln -sf $DIR/rofi/* $HOME/.config/rofi/
-
-# abcde
-ln -sf $DIR/abcde/abcde.conf $HOME/.abcde.conf

@@ -1,4 +1,3 @@
-abcde
 acpi_call
 alacritty
 alsa-utils
@@ -113,6 +112,7 @@ sed
 smartmontools
 strace
 sudo
+telegram-desktop
 texinfo
 texlive-bibtexextra
 texlive-core
@@ -136,6 +136,7 @@ tmux
 traceroute
 ttf-nerd-fonts-symbols
 unzip
+uptimed
 valgrind
 vdpauinfo
 vi
