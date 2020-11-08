@@ -57,6 +57,7 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
+hi Normal guibg=NONE ctermbg=NONE
 
 map <F2> :NERDTreeToggle<CR>
 map <F3> :TagbarToggle<CR>
