@@ -45,6 +45,7 @@ guvcview
 gv
 gvfs
 gzip
+hexyl
 htop
 i3-gaps
 i3blocks
@@ -93,6 +94,7 @@ patch
 pavucontrol
 pcmanfm
 perf
+physlock
 picard
 picom
 pkgconf
@@ -112,7 +114,6 @@ sed
 smartmontools
 strace
 sudo
-telegram-desktop
 texinfo
 texlive-bibtexextra
 texlive-core
@@ -127,6 +128,7 @@ texlive-pstricks
 texlive-publishers
 texlive-science
 throttled
+thunderbird
 tig
 time
 tk
