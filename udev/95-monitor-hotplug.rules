@@ -1,1 +1,1 @@
-KERNEL=="card0", SUBSYSTEM=="drm", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/chen/.Xauthority", RUN+="/usr/bin/sleep 1 && /usr/bin/timeout 3s /usr/bin/xrandr --auto"
+KERNEL=="card0", SUBSYSTEM=="drm", RUN+="/usr/bin/bash /home/chen/.open-display.sh"
