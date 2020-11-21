@@ -8,8 +8,5 @@ export XAUTHORITY="/home/chen/.Xauthority"
 sleep 1
 xrandr >/dev/null 2>/dev/null
 xrandr --auto
-sleep 2
-xrandr >/dev/null 2>/dev/null
-xrandr --auto
 
 exit 0
