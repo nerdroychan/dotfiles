@@ -1,5 +1,5 @@
 #!/bin/sh
 
-i3lock -c 333333 --indicator -k \
-       --datecolor=ffffffff --timecolor=ffffffff \
-       --timestr="%H:%M" --datestr="%b %d, %Y"
+env XSECURELOCK_PASSWORD_PROMPT=time_hex \
+    XSECURELOCK_BLANK_DPMS_STATE=on \
+    xsecurelock

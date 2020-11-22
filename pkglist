@@ -6,6 +6,7 @@ autoconf
 automake
 base
 bat
+bc
 biber
 bind
 binutils
@@ -49,7 +50,6 @@ hexyl
 htop
 i3-gaps
 i3blocks
-i3lock-color
 i3status
 icedtea-web
 inkscape
@@ -76,6 +76,7 @@ make
 man-pages
 mesa
 mpv
+mtr
 neofetch
 network-manager-applet
 networkmanager
@@ -199,6 +200,7 @@ xorg-xwd
 xorg-xwininfo
 xorg-xwud
 xournalpp
+xsecurelock
 youtube-dl
 zip
 zoom
