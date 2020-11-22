@@ -8,6 +8,10 @@ bind "set show-all-if-ambiguous on"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+export HISTFILESIZE=1000000
+export HISTSIZE=1000000
+export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
