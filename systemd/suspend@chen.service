@@ -4,9 +4,8 @@ Before=sleep.target
 
 [Service]
 User=%I
-Type=forking
 Environment=DISPLAY=:0
-ExecStart=/home/chen/.lock.sh
+ExecStart=/home/%I/.lock.sh
 ExecStartPost=/usr/bin/sleep 3
 
 [Install]
