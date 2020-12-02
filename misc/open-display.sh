@@ -6,5 +6,7 @@ export DISPLAY=":0"
 export XAUTHORITY="/home/chen/.Xauthority"
 
 sleep 1
-xrandr >/dev/null 2>/dev/null
-xrandr --auto
+timeout 3s xrandr >/dev/null 2>/dev/null
+timeout 3s xrandr --auto
+
+exit 0
