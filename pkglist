@@ -18,6 +18,7 @@ cmus
 cowsay
 crda
 ctags
+dhclient
 dstat
 efibootmgr
 ethtool
@@ -37,6 +38,7 @@ gawk
 gcc
 gdb
 gettext
+gimp
 git
 glyr
 grep
@@ -128,7 +130,6 @@ texlive-pictures
 texlive-pstricks
 texlive-publishers
 texlive-science
-throttled
 thunderbird
 tig
 time
