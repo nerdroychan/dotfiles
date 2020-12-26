@@ -90,6 +90,9 @@ bindsym $mod+e layout toggle split
 # toggle tiling / floating
 bindsym $mod+f floating toggle
 
+# disable floating by default
+for_window [class=".*"] floating disable
+
 # change focus between tiling / floating windows
 bindsym $mod+Shift+f focus mode_toggle
 
