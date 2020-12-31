@@ -79,6 +79,7 @@ man-pages
 mesa
 mpv
 mtr
+mutt
 neofetch
 network-manager-applet
 networkmanager
@@ -112,9 +113,11 @@ ranger
 redshift
 rofi
 rsync
+ruby
 s-tui
 sed
 smartmontools
+sof-firmware
 strace
 sudo
 texinfo
@@ -130,6 +133,7 @@ texlive-pictures
 texlive-pstricks
 texlive-publishers
 texlive-science
+throttled
 thunderbird
 tig
 time
@@ -166,7 +170,6 @@ xorg-server-devel
 xorg-server-xephyr
 xorg-server-xnest
 xorg-server-xvfb
-xorg-server-xwayland
 xorg-sessreg
 xorg-setxkbmap
 xorg-smproxy
@@ -197,6 +200,7 @@ xorg-xrefresh
 xorg-xset
 xorg-xsetroot
 xorg-xvinfo
+xorg-xwayland
 xorg-xwd
 xorg-xwininfo
 xorg-xwud
