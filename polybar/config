@@ -58,7 +58,7 @@ border-bottom-size = 1
 border-bottom-color = #4a4a4a
 
 modules-left = i3 title
-modules-right= cpu temperature memory wifi vpn pulseaudio battery date
+modules-right= cpu memory wifi vpn pulseaudio date
 
 tray-position = right
 tray-padding = 4
@@ -144,7 +144,7 @@ label =  %gb_free%
 
 [module/wifi]
 type = internal/network
-interface = wlp2s0
+interface = wlp7s0
 interval = 5.0
 format-connected = <label-connected>
 format-disconnected = <label-disconnected>

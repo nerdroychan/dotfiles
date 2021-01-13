@@ -1,6 +1,7 @@
 acpi_call
 alacritty
 alsa-utils
+amd-ucode
 asunder
 autoconf
 automake
@@ -55,8 +56,6 @@ i3blocks
 i3status
 icedtea-web
 inkscape
-intel-media-driver
-intel-ucode
 irqbalance
 jemalloc
 leafpad
@@ -88,6 +87,7 @@ noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
 numlockx
+nvidia
 obs-studio
 openresolv
 openssh
@@ -120,6 +120,7 @@ smartmontools
 sof-firmware
 strace
 sudo
+telegram-desktop
 texinfo
 texlive-bibtexextra
 texlive-core
@@ -150,7 +151,7 @@ vdpauinfo
 vi
 vim
 vlc
-vulkan-intel
+weechat
 which
 whois
 wireguard-tools
