@@ -53,12 +53,14 @@ hexyl
 htop
 i3-gaps
 i3blocks
+i3lock
 i3status
 icedtea-web
 inkscape
 irqbalance
 jemalloc
 leafpad
+libaacs
 libdiscid
 libreoffice-still
 libtool
@@ -88,6 +90,7 @@ noto-fonts-cjk
 noto-fonts-emoji
 numlockx
 nvidia
+nvidia-settings
 obs-studio
 openresolv
 openssh
@@ -120,7 +123,6 @@ smartmontools
 sof-firmware
 strace
 sudo
-telegram-desktop
 texinfo
 texlive-bibtexextra
 texlive-core
@@ -155,6 +157,7 @@ weechat
 which
 whois
 wireguard-tools
+xdg-user-dirs
 xf86-video-vesa
 xfsprogs
 xorg-bdftopcf
