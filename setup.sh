@@ -77,7 +77,6 @@ ln -sf $DIR/misc/switch-uhd.sh $HOME/.switch-uhd.sh
 
 # lock
 ln -sf $DIR/misc/lock.sh $HOME/.lock.sh
-ln -sf $DIR/misc/lock.jpg $HOME/.lock.jpg
 
 # mpv
 mkdir -p $HOME/.config/mpv
