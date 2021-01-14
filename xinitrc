@@ -5,8 +5,8 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
-export LIBVA_DRIVER_NAME=vdpau
-export VDPAU_DRIVER=nvidia
+export LIBVA_DRIVER_NAME=radeonsi
+export VDPAU_DRIVER=va_gl
 
 # disable DPMS and Xscreensaver
 xset s off -dpms
@@ -19,8 +19,5 @@ pamixer -m
 
 # turn on num lock
 numlockx
-
-# ok.. something nvidia
-nvidia-settings -a "[gpu:0]/GpuPowerMizerMode=1"
 
 exec i3
