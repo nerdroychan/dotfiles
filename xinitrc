@@ -20,4 +20,7 @@ pamixer -m
 # turn on num lock
 numlockx
 
+# ok.. something nvidia
+nvidia-settings -a "[gpu:0]/GpuPowerMizerMode=1"
+
 exec i3
