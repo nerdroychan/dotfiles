@@ -57,6 +57,7 @@ echo -n "Set systemd? (y/n) "
 read ans
 if [ "$ans" != "${ans#[Yy]}" ]; then
     sudo cp $DIR/systemd/* /etc/systemd/system/
+    sudo systemctl enable suspend@chen
 fi
 
 # pacman (arch)
