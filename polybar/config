@@ -194,7 +194,7 @@ label =  %date%, %time%
 [module/vpn]
 type = custom/script
 interval = 2
-exec = ip -4 addr | grep -oP 'mullvad-.+(?=\:)' || echo %{F#8f8f8f}N/A%{F-}
+exec = ip -4 addr | grep -oP 'bytehub' || echo %{F#8f8f8f}N/A%{F-}
 foatmat = <label>
 label = 旅 %output%
 
