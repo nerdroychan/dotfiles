@@ -147,20 +147,14 @@ type = internal/network
 interface = wlp7s0
 interval = 5.0
 format-connected = <label-connected>
-format-disconnected = <label-disconnected>
 label-connected = %{A3:nm-connection-editor &:}說 %essid%%{A}
-label-disconnected = %{A3:nm-connection-editor &:}ﲁ N/A%{A}
-label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/ethernet]
 type = internal/network
 interface = enp9s0
 interval = 5.0
 format-connected = <label-connected>
-format-disconnected = <label-disconnected>
 label-connected = %{A3:nm-connection-editor &:} %ifname%%{A}
-label-disconnected = %{A3:nm-connection-editor &:} N/A%{A}
-label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/title]
 type = internal/xwindow
