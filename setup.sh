@@ -65,6 +65,8 @@ echo -n "Set pacman? (y/n) "
 read ans
 if [ "$ans" != "${ans#[Yy]}" ]; then
     sudo cp $DIR/pacman/pacman.conf /etc/pacman.conf
+    sudo mkdir -p /etc/pacman/hooks
+    sudo cp $DIR/pacman/hooks/*.hook /etc/pacman/hooks/
 fi
 
 # scripts
