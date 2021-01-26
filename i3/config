@@ -34,6 +34,7 @@ font pango:Noto Sans Mono 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+floating_maximum_size 1920 x 1980
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
@@ -91,7 +92,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+f floating toggle
 
 # disable floating by default
-for_window [class=".*"] floating disable
+# for_window [class=".*"] floating disable
 
 # change focus between tiling / floating windows
 bindsym $mod+Shift+f focus mode_toggle
