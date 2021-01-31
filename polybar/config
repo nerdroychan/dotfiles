@@ -88,7 +88,6 @@ enable-scroll = false
 pin-workspaces = true
 
 label-mode-padding = 1
-label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
