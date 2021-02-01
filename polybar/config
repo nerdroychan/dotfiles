@@ -58,7 +58,7 @@ border-bottom-size = 1
 border-bottom-color = #4a4a4a
 
 modules-left = i3 title
-modules-right= cpu ethernet wifi vpn pulseaudio date
+modules-right= cpu memory ethernet wifi vpn pulseaudio date
 
 tray-position = right
 tray-padding = 4
