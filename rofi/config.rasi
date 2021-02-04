@@ -1,10 +1,11 @@
 configuration {
 	font: "mono 12";
-	terminal: "rofi-sensible-terminal";
+	terminal: "alacritty";
     theme: "theme";
     show-icons: false;
 	disable-history: true;
     modi: "window,drun";
+	run-command: "firejail {cmd}";
 /*	width: 50;*/
 /*	lines: 15;*/
 /*	columns: 1;*/
@@ -16,7 +17,6 @@ configuration {
 /*	fixed-num-lines: true;*/
 /*	ssh-client: "ssh";*/
 /*	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
-/*	run-command: "{cmd}";*/
 /*	run-list-command: "";*/
 /*	run-shell-command: "{terminal} -e {cmd}";*/
 /*	window-command: "wmctrl -i -R {window}";*/
