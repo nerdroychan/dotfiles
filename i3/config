@@ -154,10 +154,9 @@ workspace 8 output $output1
 workspace 9 output $output1
 workspace 10 output $output2
 
-
-exec_always --no-startup-id xrandr --auto
-exec_always --no-startup-id xrandr --output $output1 --primary --auto
-exec_always --no-startup-id xrandr --output $output2 --right-of $output1
+exec_always --no-startup-id \
+    xrandr --output $output1 --primary --mode 3840x2160 --pos 0x660 --rotate normal \
+           --output $output2 --mode 3840x2160 --pos 3840x0 --rotate left
 
 # reload the configuration file
 bindsym $mod+Shift+t reload
