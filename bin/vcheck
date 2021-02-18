@@ -1,0 +1,3 @@
+#!/bin/bash
+
+valgrind --leak-check=full --track-origins=yes --keep-stacktraces=alloc-and-free --fair-sched=yes -- $@
