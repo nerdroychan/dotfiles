@@ -41,4 +41,6 @@ alias ping="prettyping --nolegend"
 alias remake="make -B"
 alias utags="ctags -R . /usr/include"
 
+export PATH=$HOME/dotfiles/bin:$PATH
+
 export VAGRANT_HOME=$HOME/VM/vagrant.d
