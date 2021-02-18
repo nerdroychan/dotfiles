@@ -1,3 +1,7 @@
 #!/bin/bash
 
+if [[ $# -eq 0  ]] ; then
+    exit 0
+fi
+
 valgrind --leak-check=full --track-origins=yes --keep-stacktraces=alloc-and-free --fair-sched=yes -- $@
