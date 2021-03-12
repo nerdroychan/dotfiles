@@ -202,7 +202,7 @@ client.background       #FFFFFF
 
 # hide border
 hide_edge_borders smart
-default_border pixel 1
+default_border pixel 2
 default_floating_border pixel 2
 
 # bind i3lock
