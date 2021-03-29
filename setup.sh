@@ -95,6 +95,10 @@ mkdir -p $HOME/.config/alacritty
 rm $HOME/.config/alacritty/* &>/dev/null
 ln -sf $DIR/alacritty/*.yml $HOME/.config/alacritty/
 
+# pulse
+mkdir -p $HOME/.config/pulse
+ln -sf $DIR/pulse/default.pa $HOME/.config/pulse/default.pa
+
 # picom
 ln -sf $DIR/picom/picom.conf $HOME/.config/picom.conf
 
