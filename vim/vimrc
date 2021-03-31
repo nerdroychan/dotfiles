@@ -17,6 +17,7 @@ set ruler
 set number relativenumber
 set mouse=a
 
+" global undo
 set undofile
 set undodir=~/.vim/undo/
 

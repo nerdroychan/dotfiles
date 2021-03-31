@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 DIR=$(cd `dirname $0` && pwd)
 echo "Current directory:" $DIR
@@ -10,6 +10,7 @@ git config --global core.excludesfile $HOME/.gitignore_global
 # vim
 rm $HOME/.vim &>/dev/null
 ln -sf $DIR/vim $HOME/.vim
+mkdir $HOME/.vim/undo &>/dev/null
 
 # i3
 mkdir -p $HOME/.config/i3
