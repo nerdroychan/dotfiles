@@ -17,6 +17,9 @@ set ruler
 set number relativenumber
 set mouse=a
 
+set undofile
+set undodir=~/.vim/undo/
+
 filetype plugin indent on
 syntax on
 set t_Co=256
