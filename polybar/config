@@ -158,7 +158,7 @@ label-connected = %{A3:nm-connection-editor &:} %ifname%%{A}
 [module/title]
 type = internal/xwindow
 format = <label>
-label =  %title%
+label =  %title:0:80:...%
 
 [module/temperature]
 type = custom/script
