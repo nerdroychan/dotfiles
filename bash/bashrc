@@ -19,7 +19,7 @@ export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PS1="[\[$(tput bold)\]\[\033[33m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[32m\]\h\[$(tput sgr0)\]:\[$(tput sgr0)\]\[\033[38;5;7m\]\w\[$(tput sgr0)\]]\[$(tput sgr0)\] \t\[\033[34m\]\$(git_branch)\[$(tput sgr0)\] > \[$(tput sgr0)\]\[\033[35m\]\$?\[$(tput sgr0)\]\n\[$(tput bold)\]\\$~>\[$(tput sgr0)\] \[$(tput sgr0)\]"
+PS1="[\[$(tput bold)\]\[\033[33m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[32m\]\h\[$(tput sgr0)\]:\[$(tput sgr0)\]\[\033[38;5;7m\]\w\[$(tput sgr0)\]]\[$(tput sgr0)\] \t\[\033[34m\]\$(git_branch)\[$(tput sgr0)\] > \[$(tput sgr0)\]\[\033[35m\][\j]\[$(tput sgr0)\]\n\[$(tput bold)\]\\$~>\[$(tput sgr0)\] \[$(tput sgr0)\]"
 
 HISTCONTROL=ignoreboth:erasedups
 
