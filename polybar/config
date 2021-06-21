@@ -58,7 +58,7 @@ border-bottom-size = 1
 border-bottom-color = #4a4a4a
 
 modules-left = i3 title
-modules-right= cpu memory ecc ethernet wifi vpn pulseaudio date
+modules-right= cpu memory ecc network vpn pulseaudio date
 
 tray-position = ${env:TRAY}
 tray-padding = 4
@@ -141,16 +141,9 @@ interval = 3.0
 format = <label>
 label =  %gb_free%
 
-[module/wifi]
+[module/network]
 type = internal/network
-interface = wlp7s0
-interval = 5.0
-format-connected = <label-connected>
-label-connected = %{A3:nm-connection-editor &:}說 %essid%%{A}
-
-[module/ethernet]
-type = internal/network
-interface = enp9s0
+interface = ${env:DEFAULT_NETWORK_INTERFACE}
 interval = 5.0
 format-connected = <label-connected>
 label-connected = %{A3:nm-connection-editor &:} %ifname%%{A}
@@ -180,7 +173,7 @@ label-muted-foreground = ${colors.foreground-alt}
 [module/date]
 type = internal/date
 interval = 1.0
-date = %a %d
+date = (%a) %d
 time = %H:%M
 label =  %date%, %time%
 
@@ -196,6 +189,6 @@ type = custom/script
 interval = 10
 exec = cat /sys/devices/system/edac/mc/mc0/*count | awk '{e+=$1} END {print e}'
 foatmat = <label>
-label = ﭦ %output%
+label = ﭦ ECC %output%
 
 ; vim:ft=dosini
