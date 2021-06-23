@@ -25,7 +25,7 @@ autocmd VimEnter * silent !mkdir -p /tmp/.vim/undo
 filetype plugin indent on
 syntax on
 set t_Co=256
-" set cursorline
+set cursorline
 set autochdir
 set noerrorbells
 " set visualbell
