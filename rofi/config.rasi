@@ -1,11 +1,12 @@
 configuration {
-	font: "mono 12";
-	terminal: "alacritty";
+    font: "mono 12";
+    terminal: "alacritty";
     theme: "theme";
     show-icons: false;
-	disable-history: true;
+    disable-history: true;
     modi: "window,drun";
-	run-command: "{cmd}";
+    run-command: "{cmd}";
+    dpi: 1;
 /*	width: 50;*/
 /*	lines: 15;*/
 /*	columns: 1;*/
@@ -46,7 +47,6 @@ configuration {
 /*	hide-scrollbar: false;*/
 /*	fullscreen: false;*/
 /*	fake-transparency: false;*/
-/*	dpi: -1;*/
 /*	threads: 0;*/
 /*	scrollbar-width: 8;*/
 /*	scroll-method: 0;*/
