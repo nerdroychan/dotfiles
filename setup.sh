@@ -26,33 +26,33 @@ ln -sf $DIR/Xresources $HOME/.Xresources
 # bash
 ln -sf $DIR/bash/bashrc $HOME/.bashrc
 
-# fontconfig (arch)
+# fontconfig
 mkdir -p $HOME/.config/fontconfig &>/dev/null
 rm $HOME/.config/fontconfig/* &>/dev/null
 ln -sf $DIR/fontconfig/* $HOME/.config/fontconfig/
 
-# xorg (arch)
+# xorg
 echo -n "Set xorg? (y/n) "
 read ans
 if [ "$ans" != "${ans#[Yy]}" ]; then
     sudo cp $DIR/xorg/* /etc/X11/xorg.conf.d/
 fi
 
-# modprobe (arch)
+# modprobe
 echo -n "Set modprobe? (y/n) "
 read ans
 if [ "$ans" != "${ans#[Yy]}" ]; then
     sudo cp $DIR/modprobe/* /etc/modprobe.d/
 fi
 
-# udev (arch)
+# udev
 echo -n "Set udev? (y/n) "
 read ans
 if [ "$ans" != "${ans#[Yy]}" ]; then
     sudo cp $DIR/udev/* /etc/udev/rules.d/
 fi
 
-# systemd (arch)
+# systemd
 echo -n "Set systemd? (y/n) "
 read ans
 if [ "$ans" != "${ans#[Yy]}" ]; then
@@ -60,7 +60,7 @@ if [ "$ans" != "${ans#[Yy]}" ]; then
     sudo systemctl enable suspend@chen
 fi
 
-# pacman (arch)
+# pacman
 echo -n "Set pacman? (y/n) "
 read ans
 if [ "$ans" != "${ans#[Yy]}" ]; then
