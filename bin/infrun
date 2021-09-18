@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [[ $# -eq 0  ]] ; then
+    exit 0
+fi
+
+while true;
+do
+    $@
+    ret=$?
+    if [ $ret -ne 0 ]
+    then
+        echo exit code $ret
+    break
+    fi
+done
