@@ -1,0 +1,3 @@
+#!/bin/bash
+
+perf report -i -o /tmp/perf.data

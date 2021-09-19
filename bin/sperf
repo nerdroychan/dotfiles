@@ -4,4 +4,4 @@ if [[ $# -eq 0  ]] ; then
     exit 0
 fi
 
-perf record -q --switch-output -- $@
+perf record -g --call-graph=dwarf -o /tmp/perf.data -- $@
