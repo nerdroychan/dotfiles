@@ -70,11 +70,7 @@ if [ "$ans" != "${ans#[Yy]}" ]; then
 fi
 
 # scripts
-ln -sf $DIR/misc/display-toggle.sh $HOME/.display-toggle.sh
 ln -sf $DIR/misc/open-display.sh $HOME/.open-display.sh
-ln -sf $DIR/misc/pulseaudio-toggle.sh $HOME/.pulseaudio-toggle.sh
-ln -sf $DIR/misc/switch-fhd.sh $HOME/.switch-fhd.sh
-ln -sf $DIR/misc/switch-uhd.sh $HOME/.switch-uhd.sh
 
 # lock
 ln -sf $DIR/misc/lock.sh $HOME/.lock.sh
