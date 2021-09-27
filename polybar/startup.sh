@@ -10,6 +10,8 @@ export DEFAULT_NETWORK_INTERFACE=$(ip route | grep '^default' | awk '{print $5}'
 echo $PRIMARY
 echo $OTHERS
 
+MONITORS="$(PRIMARY)" $OTHERS
+
 if type "xrandr"; then
     env MONITOR=$PRIMARY TRAY=right polybar --reload default &> /tmp/polybar-$MONITOR.log &
     for m in $OTHERS; do
