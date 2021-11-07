@@ -25,6 +25,7 @@ ln -sf $DIR/Xresources $HOME/.Xresources
 
 # bash
 ln -sf $DIR/bash/bash_profile $HOME/.bash_profile
+ln -sf $DIR/bash/bashrc $HOME/.bashrc
 
 # fontconfig
 mkdir -p $HOME/.config/fontconfig &>/dev/null

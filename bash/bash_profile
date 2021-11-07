@@ -2,44 +2,8 @@
 # ~/.bash_profile
 #
 
-git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-
-bind "set completion-ignore-case on"
-bind "set show-all-if-ambiguous on"
-
-export VISUAL=vim
-export EDITOR="$VISUAL"
-
-export HISTFILESIZE=1000000
-export HISTSIZE=1000000
-export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
-
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
-
-PS1="[\[$(tput bold)\]\[\033[33m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[32m\]\h\[$(tput sgr0)\]:\[$(tput sgr0)\]\[\033[38;5;7m\]\w\[$(tput sgr0)\]]\[$(tput sgr0)\] \t\[\033[34m\]\$(git_branch)\[$(tput sgr0)\] > \[$(tput sgr0)\]\[\033[35m\][\j]\[$(tput sgr0)\]\n\[$(tput bold)\]\\$~>\[$(tput sgr0)\] \[$(tput sgr0)\]"
-
-HISTCONTROL=ignoreboth:erasedups
-
-# disable ^S
-stty -ixon
-
-alias cdw="cd ~/Workspace"
-alias c="clear"
-alias r="reset"
-alias ..="cd .."
-alias ...="cd ../.."
-alias t="tmux a || tmux"
-alias tls="tmux ls"
-alias ls="exa"
-alias ll="exa -l"
-alias la="exa -la"
-alias ping="prettyping --nolegend"
-alias remake="make -B"
-alias utags="ctags -R . /usr/include"
+if [ -f $HOME/.bashrc ]; then
+    source $HOME/.bashrc
+fi
 
 export PATH=$HOME/dotfiles/bin:$PATH
-
-export VAGRANT_HOME=$HOME/VM/vagrant.d
