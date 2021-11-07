@@ -24,7 +24,7 @@ ln -sf $DIR/xinitrc $HOME/.xinitrc
 ln -sf $DIR/Xresources $HOME/.Xresources
 
 # bash
-ln -sf $DIR/bash/bashrc $HOME/.bashrc
+ln -sf $DIR/bash/bash_profile $HOME/.bash_profile
 
 # fontconfig
 mkdir -p $HOME/.config/fontconfig &>/dev/null

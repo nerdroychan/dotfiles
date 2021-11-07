@@ -1,5 +1,5 @@
 #
-# ~/.bashrc
+# ~/.bash_profile
 #
 
 git_branch() {
