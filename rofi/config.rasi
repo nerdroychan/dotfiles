@@ -1,7 +1,6 @@
 configuration {
     font: "mono 12";
     terminal: "alacritty";
-    theme: "theme";
     show-icons: false;
     disable-history: true;
     modi: "window,drun";
@@ -143,3 +142,6 @@ configuration {
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 }
+
+
+@theme "theme"
