@@ -58,7 +58,7 @@ border-bottom-size = 1
 border-bottom-color = #4a4a4a
 
 modules-left = i3 title
-modules-right= cpu memory network vpn pulseaudio battery date
+modules-right= cpu network vpn pulseaudio battery date
 
 tray-position = ${env:TRAY}
 tray-padding = 4
@@ -175,7 +175,7 @@ type = internal/date
 interval = 1.0
 date = (%a) %d
 time = %H:%M
-label =  %date%, %time%
+label =  %time%
 
 [module/vpn]
 type = custom/script
