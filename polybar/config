@@ -173,9 +173,9 @@ label-muted-foreground = ${colors.foreground-alt}
 [module/date]
 type = internal/date
 interval = 1.0
-date = (%a) %d
+date = (%a %d)
 time = %H:%M
-label =  %time%
+label =  %date% %time%
 
 [module/vpn]
 type = custom/script

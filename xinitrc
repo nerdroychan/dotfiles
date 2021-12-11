@@ -20,4 +20,7 @@ pamixer -m
 # turn on num lock
 numlockx
 
+# set internal only
+xrandr --output eDP-1 --primary --auto
+
 exec i3
