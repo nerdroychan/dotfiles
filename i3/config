@@ -235,6 +235,7 @@ bindsym XF86AudioMute exec --no-startup-id "pamixer -t"
 bindsym XF86AudioMicMute exec --no-startup-id "pamixer -m"
 
 # bind xrandr
+bindsym $mod+P exec --no-startup-id "arandr"
 bindsym $mod+Shift+P exec --no-startup-id "xrandr --auto"
 
 exec --no-startup-id "$HOME/.config/i3/startup.sh"
