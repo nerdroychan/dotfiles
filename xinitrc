@@ -5,8 +5,8 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
-export LIBVA_DRIVER_NAME=iHD
-export VDPAU_DRIVER=va_gl
+export LIBVA_DRIVER_NAME=radeonsi
+export VDPAU_DRIVER=radeonsi
 
 # disable DPMS and Xscreensaver
 xset s off -dpms
@@ -19,8 +19,5 @@ pamixer -m
 
 # turn on num lock
 numlockx
-
-# set internal only
-xrandr --output eDP-1 --primary --auto
 
 exec i3
