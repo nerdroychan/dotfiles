@@ -58,7 +58,7 @@ border-bottom-size = 1
 border-bottom-color = #4a4a4a
 
 modules-left = i3 title
-modules-right= cpu network vpn pulseaudio battery date
+modules-right= cpu memory ecc network vpn pulseaudio battery date
 
 tray-position = ${env:TRAY}
 tray-padding = 4
