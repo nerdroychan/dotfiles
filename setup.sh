@@ -3,108 +3,117 @@
 DIR=$(cd `dirname $0` && pwd)
 echo "Current directory:" $DIR
 
-# global .gitignore
-ln -sf $DIR/gitignore_global $HOME/.gitignore_global
-git config --global core.excludesfile $HOME/.gitignore_global
+source config
 
-# vim
-rm $HOME/.vim &>/dev/null
-ln -sf $DIR/vim $HOME/.vim
+function __git {
+    ln -sf $DIR/gitignore_global $HOME/.gitignore_global
+    git config --global core.excludesfile $HOME/.gitignore_global
+}
 
-# i3
-mkdir -p $HOME/.config/i3
-rm $HOME/.config/i3/* &>/dev/null
-ln -sf $DIR/i3/* $HOME/.config/i3/
+function __vim {
+    rm $HOME/.vim &>/dev/null
+    ln -sf $DIR/vim $HOME/.vim
+}
 
-# tmux
-ln -sf $DIR/tmux/tmux.conf $HOME/.tmux.conf
+function __i3 {
+    mkdir -p $HOME/.config/i3
+    rm $HOME/.config/i3/* &>/dev/null
+    ln -sf $DIR/i3/* $HOME/.config/i3/
+}
 
-# xinit and xresources
-ln -sf $DIR/xinitrc $HOME/.xinitrc
-ln -sf $DIR/Xresources $HOME/.Xresources
+function __tmux {
+    ln -sf $DIR/tmux/tmux.conf $HOME/.tmux.conf
+}
 
-# bash
-ln -sf $DIR/bash/bash_profile $HOME/.bash_profile
-ln -sf $DIR/bash/bashrc $HOME/.bashrc
-
-# fontconfig
-mkdir -p $HOME/.config/fontconfig &>/dev/null
-rm $HOME/.config/fontconfig/* &>/dev/null
-ln -sf $DIR/fontconfig/* $HOME/.config/fontconfig/
-
-# xorg
-echo -n "Set xorg? (y/n) "
-read ans
-if [ "$ans" != "${ans#[Yy]}" ]; then
+function __xorg {
+    ln -sf $DIR/xinitrc $HOME/.xinitrc
+    ln -sf $DIR/Xresources $HOME/.Xresources
     sudo cp $DIR/xorg/* /etc/X11/xorg.conf.d/
-fi
+}
 
-# modprobe
-echo -n "Set modprobe? (y/n) "
-read ans
-if [ "$ans" != "${ans#[Yy]}" ]; then
+function __bash {
+    ln -sf $DIR/bash/bash_profile $HOME/.bash_profile
+    ln -sf $DIR/bash/bashrc $HOME/.bashrc
+}
+
+function __fontconfig {
+    mkdir -p $HOME/.config/fontconfig &>/dev/null
+    rm $HOME/.config/fontconfig/* &>/dev/null
+    ln -sf $DIR/fontconfig/* $HOME/.config/fontconfig/
+}
+
+function __modprobe {
     sudo cp $DIR/modprobe/* /etc/modprobe.d/
-fi
+}
 
-# udev
-echo -n "Set udev? (y/n) "
-read ans
-if [ "$ans" != "${ans#[Yy]}" ]; then
+function __udev {
     sudo cp $DIR/udev/* /etc/udev/rules.d/
-fi
+}
 
-# systemd
-echo -n "Set systemd? (y/n) "
-read ans
-if [ "$ans" != "${ans#[Yy]}" ]; then
+function __systemd {
     sudo cp $DIR/systemd/* /etc/systemd/system/
     sudo systemctl enable suspend@chen
-fi
+}
 
-# pacman
-echo -n "Set pacman? (y/n) "
-read ans
-if [ "$ans" != "${ans#[Yy]}" ]; then
+function __pacman {
     sudo cp $DIR/pacman/pacman.conf /etc/pacman.conf
     sudo mkdir -p /etc/pacman/hooks
-    sudo cp $DIR/pacman/hooks/*.hook /etc/pacman/hooks/
-fi
+    #sudo cp $DIR/pacman/hooks/*.hook /etc/pacman/hooks/
+}
 
-# scripts
-ln -sf $DIR/misc/open-display.sh $HOME/.open-display.sh
+function __xsecurelock {
+    ln -sf $DIR/misc/lock.sh $HOME/.lock.sh
+    ln -sf $DIR/misc/lock.jpg $HOME/.lock.jpg
+}
 
-# lock
-ln -sf $DIR/misc/lock.sh $HOME/.lock.sh
-ln -sf $DIR/misc/lock.jpg $HOME/.lock.jpg
+function __mpv {
+    mkdir -p $HOME/.config/mpv
+    rm $HOME/.config/mpv/* &>/dev/null
+    ln -sf $DIR/mpv/* $HOME/.config/mpv/
+}
 
-# mpv
-mkdir -p $HOME/.config/mpv
-rm $HOME/.config/mpv/* &>/dev/null
-ln -sf $DIR/mpv/* $HOME/.config/mpv/
+function __firejail {
+    mkdir -p $HOME/.config/firejail
+    rm $HOME/.config/firejail/* &>/dev/null
+    ln -sf $DIR/firejail/* $HOME/.config/firejail/
+}
 
-# firejail
-mkdir -p $HOME/.config/firejail
-rm $HOME/.config/firejail/* &>/dev/null
-ln -sf $DIR/firejail/* $HOME/.config/firejail/
+function __alacritty {
+    mkdir -p $HOME/.config/alacritty
+    rm $HOME/.config/alacritty/* &>/dev/null
+    ln -sf $DIR/alacritty/*.yml $HOME/.config/alacritty/
+}
 
-# alacritty
-mkdir -p $HOME/.config/alacritty
-rm $HOME/.config/alacritty/* &>/dev/null
-ln -sf $DIR/alacritty/*.yml $HOME/.config/alacritty/
+function __pulseaudio {
+    mkdir -p $HOME/.config/pulse
+    ln -sf $DIR/pulse/default.pa $HOME/.config/pulse/default.pa
+}
 
-# pulse
-mkdir -p $HOME/.config/pulse
-ln -sf $DIR/pulse/default.pa $HOME/.config/pulse/default.pa
+function __picom {
+    ln -sf $DIR/picom/picom.conf $HOME/.config/picom.conf
+}
 
-# picom
-ln -sf $DIR/picom/picom.conf $HOME/.config/picom.conf
+function __polybar {
+    mkdir -p $HOME/.config/polybar
+    rm $HOME/.config/polybar/* &>/dev/null
+    ln -sf $DIR/polybar/* $HOME/.config/polybar/
+}
 
-# polybar
-mkdir -p $HOME/.config/polybar
-rm $HOME/.config/polybar/* &>/dev/null
-ln -sf $DIR/polybar/* $HOME/.config/polybar/
+function __rofi {
+    mkdir -p $HOME/.config/rofi
+    rm $HOME/.config/rofi/* &>/dev/null
+    ln -sf $DIR/rofi/* $HOME/.config/rofi/
+}
 
-# rofi
-mkdir -p $HOME/.config/rofi
-rm $HOME/.config/rofi/* &>/dev/null
-ln -sf $DIR/rofi/* $HOME/.config/rofi/
+for f in $(compgen -A function); do
+    if [ "${f::2}" != "__" ]; then
+        return
+    fi
+    F=${f^^}
+    if [ ${!F} == "y" ]; then
+        echo "setup: "$f
+        $f
+    else
+        echo "skip:  "$f
+    fi
+done
