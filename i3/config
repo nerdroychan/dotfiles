@@ -234,13 +234,16 @@ bindsym XF86AudioLowerVolume exec --no-startup-id "amixer set Master 2%- -M"
 bindsym XF86AudioMute exec --no-startup-id "pamixer -t"
 bindsym XF86AudioMicMute exec --no-startup-id "pamixer -m"
 
+# wallpaper
+exec_always --no-startup-id "feh --bg-fill $HOME/.wallpaper.jpg"
+
 # bind xrandr
 bindsym $mod+P exec --no-startup-id "arandr"
 bindsym $mod+Shift+P exec --no-startup-id "xrandr --auto"
 
+# bg tasks
 exec --no-startup-id "$HOME/.config/i3/startup.sh"
 bindsym $mod+Shift+y exec --no-startup-id "$HOME/.config/i3/startup.sh"
-bindsym $mod+Shift+w exec --no-startup-id "feh --bg-fill $HOME/.wallpaper.jpg"
 
 # polybar
-exec_always --no-startup-id $HOME/.config/polybar/startup.sh
+exec_always --no-startup-id "$HOME/.config/polybar/startup.sh"
