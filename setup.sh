@@ -105,6 +105,10 @@ function __rofi {
     ln -sf $DIR/rofi/* $HOME/.config/rofi/
 }
 
+function __misc {
+    ln -sf $DIR/misc/open-display.sh $HOME/.open-display.sh
+}
+
 for f in $(compgen -A function); do
     if [ "${f::2}" != "__" ]; then
         return
