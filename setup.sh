@@ -111,7 +111,8 @@ function __misc {
 
 for f in $(compgen -A function); do
     if [ "${f::2}" != "__" ]; then
-        return
+        echo "skip invalid env:" $f
+        continue
     fi
     F=${f^^}
     if [ ${!F} == "y" ]; then
