@@ -1,12 +1,14 @@
-#!/bin/sh
+#!/bin/bash
 
-DESTINATION=/run/media/chen/backup
-HOME=/home/chen
-FILE=$DESTINATION/$(date "+%F-%T").tar.gz
+DESTINATION=$1
+echo destination: $DESTINATION
+read -p "continue? [y/N] " r
 
-tar --exclude=$HOME/.cache \
-    --exclude=$HOME/AUR \
-    --exclude-caches \
-    --ignore-failed-read \
-    --xattrs -czpvf \
-    $FILE $HOME /etc
+if [ "$r" == "y" ] && [ ! -z $DESTINATION ]; then
+    sudo rsync -aAXHv \
+          --delete \
+          --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} \
+          / $DESTINATION
+else
+    exit 0
+fi
