@@ -113,16 +113,16 @@ label-urgent-padding = 1
 
 [module/battery]
 type = internal/battery
-full-at = 99
+full-at = 90
 battery = BAT0
 adapter = AC
 poll-interval = 10
-format-charging = <label-charging>
+format-charging = <ramp-capacity> ﮣ <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
-format-full = <label-full>
-label-charging = ﮣ %percentage_raw%%
-label-full = ﮣ %percentage_raw%%
-label-discharging = %percentage_raw%%
+format-full = <ramp-capacity> <label-full>
+label-charging = C/%percentage_raw%%
+label-full = F/%percentage_raw%%
+label-discharging = D/%percentage_raw%%
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
