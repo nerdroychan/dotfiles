@@ -113,7 +113,7 @@ label-urgent-padding = 1
 
 [module/battery]
 type = internal/battery
-full-at = 90
+full-at = 99
 battery = BAT0
 adapter = AC
 poll-interval = 10
