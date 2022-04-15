@@ -58,7 +58,7 @@ border-bottom-size = 1
 border-bottom-color = #4a4a4a
 
 modules-left = i3 title
-modules-right= cpu memory network vpn pulseaudio battery date
+modules-right= cpu memory network vpn inotifywait pulseaudio battery date
 
 tray-position = ${env:TRAY}
 tray-padding = 4
@@ -179,10 +179,17 @@ label =  %date% %time%
 
 [module/vpn]
 type = custom/script
-interval = 2
+interval = 10
 exec = ip -4 addr | grep -oP 'bytehub' || echo %{F#8f8f8f}N/A%{F-}
 foatmat = <label>
 label = 旅 %output%
+
+[module/inotifywait]
+type = custom/script
+interval = 10
+exec = pgrep 'inotifywait' &> /dev/null; if [ $? -eq 0 ]; then echo inotify; else echo %{F#8f8f8f}N/A%{F-}; fi
+foatmat = <label>
+label = ﮈ %output%
 
 [module/ecc]
 type = custom/script
