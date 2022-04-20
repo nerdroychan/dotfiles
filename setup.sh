@@ -109,6 +109,10 @@ function __misc {
     ln -sf $DIR/misc/open-display.sh $HOME/.open-display.sh
 }
 
+function __gtk {
+    ln -sf $DIR/gtk/gtkrc-2.0 $HOME/.gtkrc-2.0
+}
+
 for f in $(compgen -A function); do
     if [ "${f::2}" != "__" ]; then
         echo "skip invalid env:" $f

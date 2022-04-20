@@ -18,3 +18,4 @@ __VIM=y
 __XORG=y
 __XSECURELOCK=y
 __MISC=y
+__GTK=y
