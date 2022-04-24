@@ -37,7 +37,7 @@ floating_modifier $mod
 floating_maximum_size 1920 x 1980
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
+bindsym $mod+Return exec --no-startup-id alacritty
 
 # kill focused window
 bindsym $mod+q kill
