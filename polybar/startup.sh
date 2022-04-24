@@ -13,8 +13,8 @@ echo $OTHERS
 MONITORS="$(PRIMARY)" $OTHERS
 
 if type "xrandr"; then
-    env MONITOR=$PRIMARY TRAY=right polybar --reload default &> /tmp/polybar-$MONITOR.log &
+    env MONITOR=$PRIMARY TRAY=right polybar --reload default &> /tmp/polybar-$USER-$MONITOR.log &
     for m in $OTHERS; do
-        env MONITOR=$m polybar --reload default &> /tmp/polybar-$MONITOR.log &
+        env MONITOR=$m polybar --reload default &> /tmp/polybar-$USER-$MONITOR.log &
     done
 fi
