@@ -28,7 +28,10 @@ function __tmux {
 function __xorg {
     ln -sf $DIR/xinitrc $HOME/.xinitrc
     ln -sf $DIR/Xresources $HOME/.Xresources
-    sudo cp $DIR/xorg/* /etc/X11/xorg.conf.d/
+
+    if [ ${!__HAS_SUDO} == "y" ]; then
+        sudo cp $DIR/xorg/* /etc/X11/xorg.conf.d/
+    fi
 }
 
 function __bash {
@@ -43,22 +46,29 @@ function __fontconfig {
 }
 
 function __modprobe {
-    sudo cp $DIR/modprobe/* /etc/modprobe.d/
+    if [ ${!__HAS_SUDO} == "y" ]; then
+        sudo cp $DIR/modprobe/* /etc/modprobe.d/
+    fi
 }
 
 function __udev {
-    sudo cp $DIR/udev/* /etc/udev/rules.d/
+    if [ ${!__HAS_SUDO} == "y" ]; then
+        sudo cp $DIR/udev/* /etc/udev/rules.d/
+    fi
 }
 
 function __systemd {
-    sudo cp $DIR/systemd/* /etc/systemd/system/
-    sudo systemctl enable suspend@chen
+    if [ ${!__HAS_SUDO} == "y" ]; then
+        sudo cp $DIR/systemd/* /etc/systemd/system/
+        sudo systemctl enable suspend@chen
+    fi
 }
 
 function __pacman {
-    sudo cp $DIR/pacman/pacman.conf /etc/pacman.conf
-    sudo mkdir -p /etc/pacman/hooks
-    #sudo cp $DIR/pacman/hooks/*.hook /etc/pacman/hooks/
+    if [ ${!__HAS_SUDO} == "y" ]; then
+        sudo cp $DIR/pacman/pacman.conf /etc/pacman.conf
+        sudo mkdir -p /etc/pacman/hooks
+    fi
 }
 
 function __xsecurelock {

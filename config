@@ -1,3 +1,7 @@
+# Has sudo or not?
+__HAS_SUDO=y
+
+# Select configs
 __ALACRITTY=y
 __BASH=y
 __FIREJAIL=y
