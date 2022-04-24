@@ -1,6 +1,6 @@
 #!/bin/sh
 
-killall -q polybar
+killall -q -w -u $USER polybar
 
 PRIMARY=$(xrandr --query | grep " connected" | grep "primary" | cut -d" " -f1)
 OTHERS=$(xrandr --query | grep " connected" | grep -v "primary" | cut -d" " -f1)

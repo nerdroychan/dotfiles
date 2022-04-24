@@ -1,6 +1,6 @@
 #!/bin/sh
 
-killall -w redshift-gtk flameshot fcitx5 picom
+killall -q -w -u $USER redshift-gtk flameshot fcitx5 picom
 
 redshift-gtk -t 6500:5000 -l 41.88:-87.62 &
 fcitx5 &
@@ -12,7 +12,7 @@ picom -CGb &
 function monitor_xdg_dirs {
     LOGFILE=/tmp/inotifywait.log
 
-    killall -w inotifywait
+    killall -w -u inotifywait
 
     if ! [ -x "$(command -v inotifywatch)" ]; then
         i3-nagbar -m 'Please install inotify-tools' -t warning &> /dev/null
