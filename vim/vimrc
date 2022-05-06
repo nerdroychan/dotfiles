@@ -19,8 +19,8 @@ set mouse=a
 
 " global undo
 set undofile
-set undodir=/tmp/.vim/undo/
-autocmd VimEnter * silent !mkdir -p /tmp/.vim/undo
+set undodir=/tmp/$USER.vim/undo
+autocmd VimEnter * silent !mkdir -p /tmp/$USER.vim/undo
 
 filetype plugin indent on
 syntax on
