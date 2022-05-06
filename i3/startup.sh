@@ -10,7 +10,7 @@ picom -CGb &
 
 # The access to xdg user directories should be rare..
 function monitor_xdg_dirs {
-    LOGFILE=/tmp/inotifywait.log
+    LOGFILE=/tmp/inotifywait-$USER.log
 
     killall -w -u inotifywait
 
