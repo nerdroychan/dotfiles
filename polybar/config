@@ -42,8 +42,8 @@ foreground = ${colors.foreground}
 line-size = 2
 line-color = ${colors.primary}
 
-padding-left = 0
-padding-right = 0
+padding-left = 1
+padding-right = 1
 
 module-margin-left = 1
 module-margin-right = 1
@@ -57,8 +57,9 @@ font-4 = Noto Sans Mono CJK JP:size=9;4
 border-bottom-size = 1
 border-bottom-color = #4a4a4a
 
-modules-left = i3 title
-modules-right= cpu memory network vpn inotifywait pulseaudio battery date
+modules-left = title
+modules-center = i3
+modules-right = cpu memory network vpn inotifywait pulseaudio battery date
 
 tray-position = ${env:TRAY}
 tray-padding = 4
@@ -151,7 +152,10 @@ label-connected = %{A3:nm-connection-editor &:} %ifname%%{A}
 [module/title]
 type = internal/xwindow
 format = <label>
-label =  %title:0:80:...%
+label =  %title%
+label-maxlen = 80
+label-empty =  Empty
+label-empty-foreground = ${colors.foreground-alt}
 
 [module/temperature]
 type = custom/script
