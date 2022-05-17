@@ -136,3 +136,6 @@ syn keyword cType u8 u16 u32 u64 u128
 
 " Spaces at EOL
 match Search '\s\+$'
+
+" Garbage collection (not really)
+autocmd VimEnter * redraw!
