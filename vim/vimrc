@@ -68,7 +68,8 @@ map <F2> :NERDTreeToggle<CR>
 map <F3> :TagbarToggle<CR>
 set pastetoggle=<F4>
 
-autocmd FileType * setlocal colorcolumn=+1
+autocmd FileType * setlocal colorcolumn=80,120
+
 " Disable vertical line at max string length in NERDTree
 autocmd FileType nerdtree setlocal colorcolumn=65536
 
