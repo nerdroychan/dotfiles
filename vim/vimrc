@@ -42,7 +42,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'rust-lang/rust.vim'
 Plug 'majutsushi/tagbar'
 Plug 'ajh17/VimCompletesMe'
@@ -64,14 +63,11 @@ if exists('+termguicolors')
 endif
 hi Normal guibg=NONE ctermbg=NONE
 
-map <F2> :NERDTreeToggle<CR>
+map <F2> :10Lexplore<CR>
 map <F3> :TagbarToggle<CR>
 set pastetoggle=<F4>
 
 autocmd FileType * setlocal colorcolumn=80,120
-
-" Disable vertical line at max string length in NERDTree
-autocmd FileType nerdtree setlocal colorcolumn=65536
 
 " Convenient buffer mgmt
 set wildchar=<Tab> wildmenu wildmode=full
@@ -140,6 +136,12 @@ syn keyword cType u8 u16 u32 u64 u128
 
 " Spaces at EOL
 match Search '\s\+$'
+
+" Netrw
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+autocmd WinEnter * if winnr('$') == 1 &&
+    \ getbufvar(winbufnr(1), "&filetype") == "netrw" | qa | endif
 
 " Garbage collection (not really)
 autocmd VimEnter * redraw!
