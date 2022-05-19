@@ -49,6 +49,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-syntastic/syntastic'
+Plug 'fatih/vim-go'
 call plug#end()
 
 " gruvbox theme
@@ -66,6 +67,8 @@ hi Normal guibg=NONE ctermbg=NONE
 map <F2> :10Lexplore<CR>
 map <F3> :TagbarToggle<CR>
 set pastetoggle=<F4>
+
+map <F5> :%bd\|e#\|bd#<CR>
 
 autocmd FileType * setlocal colorcolumn=80,120
 
