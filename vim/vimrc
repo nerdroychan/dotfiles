@@ -127,6 +127,9 @@ let g:syntastic_cpp_compiler = "g++"
 let g:syntastic_c_config_file = ".syntastic_c_config"
 let g:syntastic_cpp_config_file = ".syntastic_cpp_config"
 
+" Hiding syntastic buffer
+autocmd FileType qf set nobuflisted
+
 " Folding
 set foldmethod=marker
 
@@ -140,6 +143,7 @@ match Search '\s\+$'
 " Netrw
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
+let g:netrw_keepdir = 0
 autocmd WinEnter * if winnr('$') == 1 &&
     \ getbufvar(winbufnr(1), "&filetype") == "netrw" | qa | endif
 
