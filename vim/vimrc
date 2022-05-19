@@ -85,12 +85,6 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
-" Arrow keys can switch buffers
-nnoremap <up> :bp<CR>
-nnoremap <left> :bp<CR>
-nnoremap <down> :bn<CR>
-nnoremap <right> :bn<CR>
-
 " Move by displayed lines
 nnoremap j gj
 nnoremap k gk
@@ -99,7 +93,7 @@ nnoremap k gk
 nnoremap ` :b <C-Z>
 
 " Unset highlight after search
-nnoremap <CR> :noh<CR><CR>
+nnoremap <silent> <CR> :noh<CR><CR>
 
 " Unlock delete
 :set backspace=indent,eol,start
@@ -108,8 +102,8 @@ nnoremap <CR> :noh<CR><CR>
 set tags=tags;/
 
 " Buffer line
-nnoremap <C-N> :bnext<CR>
-nnoremap <C-P> :bprev<CR>
+nnoremap <silent> <C-N> :bnext<CR>
+nnoremap <silent> <C-P> :bprev<CR>
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
