@@ -24,7 +24,7 @@ export PS1="[\[$(tput bold)\]\[\033[33m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\0
 
 HISTCONTROL=ignoreboth:erasedups
 
-# disable ^S
+# Disable ^S
 stty -ixon
 
 alias cdw="cd ~/Workspace"
@@ -42,3 +42,7 @@ alias remake="make -B"
 alias utags="ctags -R . /usr/include"
 
 export VAGRANT_HOME=$HOME/VM/vagrant.d
+
+# Golang
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOPATH/bin
