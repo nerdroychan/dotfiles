@@ -88,9 +88,8 @@ inoremap <right> <nop>
 " Move by displayed lines
 nnoremap j gj
 nnoremap k gk
-
-" Buf switch made easy
-nnoremap ` :b <C-Z>
+nnoremap J 10gj
+nnoremap K 10gk
 
 " Unset highlight after search
 nnoremap <silent> <CR> :noh<CR><CR>
