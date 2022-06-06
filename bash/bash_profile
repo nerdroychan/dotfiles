@@ -6,4 +6,25 @@ if [ -f $HOME/.bashrc ]; then
     source $HOME/.bashrc
 fi
 
-export PATH=$HOME/dotfiles/bin:$PATH
+# editors
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
+# bash-specific
+export HISTFILESIZE=1000000
+export HISTSIZE=1000000
+export HISTCONTROL=ignoreboth:erasedups
+export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
+# vagrant
+export VAGRANT_HOME=$HOME/VM/vagrant.d
+
+# shitty macos (type f to show respect)
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# golang
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOPATH/bin
+
+# dotfiles executables
+export PATH=$HOME/.dotfiles/bin:$PATH
