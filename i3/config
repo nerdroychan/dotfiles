@@ -224,6 +224,9 @@ bindsym $mod+c exec --no-startup-id "firefox"
 bindsym $mod+Shift+c exec --no-startup-id "firefox -private-window"
 bindsym ctrl+$mod+Shift+c exec --no-startup-id "chromium"
 
+# bind thunderbird
+bindsym $mod+m exec --no-startup-id "thunderbird"
+
 # disable mouse hover focusing
 focus_follows_mouse no
 
