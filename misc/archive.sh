@@ -9,7 +9,7 @@ if [ "$r" == "y" ] && [ ! -z $DESTINATION ]; then
     tar --exclude=$HOME/.cache \
         --exclude-caches \
         --ignore-failed-read \
-        --xattrs -czpvf \
+        --xattrs -czpvfh \
         $FILE $HOME /etc
 else
     exit 0
