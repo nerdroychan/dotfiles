@@ -122,7 +122,6 @@ let g:syntastic_c_compiler_options = "-std=gnu11"
 let g:syntastic_cpp_compiler = "g++"
 let g:syntastic_c_config_file = ".syntastic_c_config"
 let g:syntastic_cpp_config_file = ".syntastic_cpp_config"
-let g:syntastic_go_checkers = ['go']
 
 " Hiding syntastic buffer
 autocmd FileType qf set nobuflisted
