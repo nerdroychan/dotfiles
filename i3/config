@@ -145,8 +145,6 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 bindsym $mod+Shift+t reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym ctrl+$mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -224,9 +222,6 @@ bindsym $mod+c exec --no-startup-id "firefox"
 bindsym $mod+Shift+c exec --no-startup-id "firefox -private-window"
 bindsym ctrl+$mod+Shift+c exec --no-startup-id "chromium"
 
-# bind thunderbird
-bindsym $mod+m exec --no-startup-id "thunderbird"
-
 # disable mouse hover focusing
 focus_follows_mouse no
 
@@ -240,7 +235,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id "amixer set Master 2%- -M"
 bindsym XF86AudioMute exec --no-startup-id "pamixer -t"
 bindsym XF86AudioMicMute exec --no-startup-id "pamixer -m"
 
-# wallpaper
+# wallpaper (one-shot, no bg process)
 exec_always --no-startup-id "feh --bg-fill $HOME/.wallpaper.jpg"
 
 # bind xrandr
@@ -248,8 +243,11 @@ bindsym $mod+P exec --no-startup-id "arandr"
 bindsym $mod+Shift+P exec --no-startup-id "xrandr --auto"
 
 # bg tasks
-exec --no-startup-id "$HOME/.config/i3/startup.sh"
-bindsym $mod+Shift+y exec --no-startup-id "$HOME/.config/i3/startup.sh"
+exec --no-startup-id "$HOME/.config/i3/kill.sh && $HOME/.config/i3/startup.sh"
+bindsym $mod+Shift+y exec --no-startup-id "$HOME/.config/i3/kill.sh && $HOME/.config/i3/startup.sh"
 
 # polybar
-exec_always --no-startup-id "$HOME/.config/polybar/startup.sh"
+exec_always --no-startup-id "$HOME/.config/polybar/kill.sh && $HOME/.config/polybar/startup.sh"
+
+# exit i3 (logs you out of your X session)
+bindsym ctrl+$mod+Shift+q exec "$HOME/.config/polybar/kill.sh && $HOME/.config/i3/kill.sh && i3-msg exit"

@@ -1,7 +1,5 @@
 #!/bin/sh
 
-killall -q -w -u $USER redshift-gtk flameshot fcitx5 picom
-
 redshift-gtk -t 6500:5000 -l 41.88:-87.62 &
 fcitx5 &
 
@@ -32,6 +30,8 @@ function monitor_xdg_dirs {
                 $HOME/Pictures \
                 $HOME/Public \
                 $HOME/Templates \
-                $HOME/Videos &
+                $HOME/Videos
 }
-monitor_xdg_dirs
+monitor_xdg_dirs &
+
+exit 0
