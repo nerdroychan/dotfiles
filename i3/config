@@ -76,10 +76,10 @@ bindsym $mod+Shift+Up    move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+g split h
+# bindsym $mod+g split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+# bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+space fullscreen toggle
@@ -173,11 +173,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-client.focused          #008080 #006B6B #FFFFFF #2E9EF4   #006B6B
-client.focused_inactive #333333 #5F676A #FFFFFF #484E50   #5F676A
-client.unfocused        #333333 #222222 #888888 #292D2E   #222222
-client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
-client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+client.focused          #008080 #006B6B #FFFFFF #00B8B8 #006B6B
+client.focused_inactive #333333 #5F676A #FFFFFF #484E50 #5F676A
+client.unfocused        #333333 #222222 #888888 #292D2E #222222
+client.urgent           #2F343A #900000 #FFFFFF #900000 #900000
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000 #0C0C0C
 client.background       #FFFFFF
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -203,6 +203,7 @@ client.background       #FFFFFF
 hide_edge_borders smart
 default_border pixel 2
 default_floating_border pixel 2
+for_window [all] border pixel 2
 
 # enable sticky
 for_window [class=".*"] sticky enable

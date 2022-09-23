@@ -39,7 +39,7 @@ fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 2
+line-size = 5
 line-color = ${colors.primary}
 
 padding-left = 0
@@ -54,7 +54,7 @@ font-2 = Noto Sans Mono CJK SC:size=9;4
 font-3 = Noto Sans Mono CJK TC:size=9;4
 font-4 = Noto Sans Mono CJK JP:size=9;4
 
-border-bottom-size = 1
+border-bottom-size = 2
 border-bottom-color = #4a4a4a
 
 modules-left = i3 title
