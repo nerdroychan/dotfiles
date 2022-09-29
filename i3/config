@@ -93,7 +93,7 @@ bindsym $mod+space fullscreen toggle
 bindsym $mod+f floating toggle
 
 # disable floating by default
-for_window [class=".*"] floating disable
+# for_window [class=".*"] floating disable
 
 # change focus between tiling / floating windows
 bindsym $mod+Shift+f focus mode_toggle
