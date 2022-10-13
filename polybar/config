@@ -22,7 +22,7 @@ background-alt = #dd333333
 foreground = #d6d6d6
 foreground-alt = #8f8f8f
 foreground-alert = #bd2c40
-primary = #006b6b
+primary = #006f6f
 alert = #bd2c40
 
 [bar/default]
@@ -43,30 +43,29 @@ line-size = 5
 line-color = ${colors.primary}
 
 padding-left = 0
-padding-right = 0
+padding-right = 1
 
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Symbols Nerd Font:style=2048-em:size=10;4
-font-1 = Noto Sans Mono:size=10:weight=Regular;4
-font-2 = Noto Sans Mono CJK SC:size=10:weight=Regular;4
-font-3 = Noto Sans Mono CJK TC:size=10:weight=Regular;4
-font-4 = Noto Sans Mono CJK JP:size=10:weight=Regular;4
+font-0 = Symbols Nerd Font:style=2048-em:size=9;3
+font-1 = Noto Sans Mono:size=9:weight=Regular;3
 
-border-bottom-size = 2
-border-bottom-color = #4a4a4a
+border-top-size = 1
+border-top-color = #4a4a4a
 
-modules-left = i3 title
-modules-center =
-modules-right = cpu memory network vpn inotifywait pulseaudio battery date
+modules-left = i3
+modules-center = date pulseaudio
+modules-right = cpu memory ecc vpn inotifywait
 
-tray-position = ${env:TRAY}
+tray-position = ${env:TRAY:}
 tray-padding = 4
-tray-maxsize = 25
+tray-maxsize = 24
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+bottom = true
 
 [settings]
 screenchange-reload = true
@@ -95,6 +94,7 @@ label-mode-background = ${colors.primary}
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
 label-focused-padding = 1
+label-focused-underline = ${colors.primary}
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
@@ -184,21 +184,21 @@ label =  %date% %time%
 type = custom/script
 interval = 10
 exec = ip -4 addr | grep -oP 'bytehub' || echo %{F#8f8f8f}N/A%{F-}
-foatmat = <label>
+format = <label>
 label = 旅 %output%
 
 [module/inotifywait]
 type = custom/script
 interval = 10
 exec = pgrep 'inotifywait' -U $USER &> /dev/null; if [ $? -eq 0 ]; then echo inotify; else echo %{F#8f8f8f}N/A%{F-}; fi
-foatmat = <label>
+format = <label>
 label = ﮈ %output%
 
 [module/ecc]
 type = custom/script
 interval = 10
 exec = cat /sys/devices/system/edac/mc/mc0/*count | awk '{e+=$1} END {print e}'
-foatmat = <label>
+format = <label>
 label = ﭦ ECC %output%
 
 ; vim:ft=dosini

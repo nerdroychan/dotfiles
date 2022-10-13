@@ -11,9 +11,17 @@ echo "Others: "$OTHERS
 MONITORS=("$PRIMARY" "$OTHERS")
 
 if type "xrandr"; then
-    env MONITOR=$PRIMARY TRAY=right polybar --reload default &> /tmp/polybar-$USER-$MONITOR.log &
+    if [ ! -z "$PRIMARY" ]
+    then
+        env MONITOR=$PRIMARY TRAY=right polybar --reload default &> /tmp/polybar-$USER-$MONITOR.log &
+    fi
     for m in $OTHERS; do
-        env MONITOR=$m polybar --reload default &> /tmp/polybar-$USER-$MONITOR.log &
+        if [ -z "$PRIMARY" ]
+        then
+            env MONITOR=$m TRAY=right polybar --reload default &> /tmp/polybar-$USER-$MONITOR.log &
+        else
+            env MONITOR=$m polybar --reload default &> /tmp/polybar-$USER-$MONITOR.log &
+        fi
     done
 fi
 
