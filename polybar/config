@@ -56,7 +56,7 @@ border-top-color = #4a4a4a
 
 modules-left = i3
 modules-center = date pulseaudio
-modules-right = cpu memory ecc vpn inotifywait
+modules-right = cpu memory ecc network vpn inotifywait
 
 tray-position = ${env:TRAY:}
 tray-padding = 4
