@@ -17,8 +17,8 @@
 ;==========================================================
 
 [colors]
-background = #dd060606
-background-alt = #dd333333
+background = #f0101010
+background-alt = #dd505050
 foreground = #d6d6d6
 foreground-alt = #8f8f8f
 foreground-alert = #bd2c40
@@ -48,8 +48,8 @@ padding-right = 1
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Symbols Nerd Font:style=2048-em:size=9;3
-font-1 = Noto Sans Mono:size=9:weight=Regular;3
+font-0 = Symbols Nerd Font:style=2048-em:size=9;4
+font-1 = Noto Sans Mono:size=9:weight=Regular;4
 
 border-top-size = 1
 border-top-color = #4a4a4a
@@ -93,8 +93,8 @@ label-mode-background = ${colors.primary}
 ; focused = Active workspace on focused monitor
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
+label-focused-foreground = #ffffff
 label-focused-padding = 1
-label-focused-underline = ${colors.primary}
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
