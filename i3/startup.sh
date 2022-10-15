@@ -1,10 +1,13 @@
 #!/bin/sh
 
-redshift-gtk -t 6500:5000 -l 41.88:-87.62 &
+# with tray icons
 fcitx5 &
-
 flameshot &
+
+# headless, assuming they won't crash..
+redshift -t 6500:5000 -l 41.88:-87.62 &
 picom -CGb &
+parcellite -n &
 
 # The access to xdg user directories should be rare..
 function monitor_xdg_dirs {
