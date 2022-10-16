@@ -55,7 +55,7 @@ border-top-size = 1
 border-top-color = #4a4a4a
 
 modules-left = i3
-modules-center = date pulseaudio
+modules-center = date pulseaudio playerctl
 modules-right = cpu memory ecc network vpn inotifywait
 
 tray-position = ${env:TRAY:}
@@ -200,5 +200,11 @@ interval = 10
 exec = cat /sys/devices/system/edac/mc/mc0/*count | awk '{e+=$1} END {print e}'
 format = <label>
 label = ﭦ ECC %output%
+
+[module/playerctl]
+type = custom/text
+content = ﳟ
+click-left = playerctl --player=mpv,%any play-pause
+click-middle = playerctl --all-players pause
 
 ; vim:ft=dosini
