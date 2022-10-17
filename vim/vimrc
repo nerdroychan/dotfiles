@@ -50,6 +50,7 @@ Plug 'morhetz/gruvbox'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-syntastic/syntastic'
 Plug 'fatih/vim-go'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " gruvbox theme
