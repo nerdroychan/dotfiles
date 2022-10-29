@@ -7,7 +7,7 @@ read -p "continue? [y/N] " r
 if [ "$r" == "y" ] && [ ! -z $DESTINATION ]; then
     sudo rsync -aAXHvk \
           --delete \
-          --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} \
+          --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found","/var/run/*"} \
           / $DESTINATION
 else
     exit 0
