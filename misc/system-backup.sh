@@ -5,10 +5,10 @@ echo destination: $DESTINATION
 read -p "continue? [y/N] " r
 
 if [ "$r" == "y" ] && [ ! -z $DESTINATION ]; then
-    sudo rsync -aAXHvk \
+    sudo rsync -aAXHvkP \
           --delete \
           --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found","/var/run/*"} \
-          / $DESTINATION
+          / $DESTINATION/
 else
     exit 0
 fi
