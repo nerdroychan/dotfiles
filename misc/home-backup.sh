@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# only backup the following (these data cannot be easily reconstructed):
-#   Desktop
-#   Documents
-#   Workspace
-
 DESTINATION=$1
 echo destination: $DESTINATION
 read -p "continue? [y/N] " r
@@ -12,9 +7,7 @@ read -p "continue? [y/N] " r
 if [ "$r" == "y" ] && [ ! -z $DESTINATION ]; then
     rsync -aAXHvkP \
           --delete \
-          $HOME/Desktop \
-          $HOME/Documents \
-          $HOME/Workspace \
+          $HOME/* \
           $DESTINATION/
 else
     exit 0
