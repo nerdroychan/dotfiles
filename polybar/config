@@ -55,7 +55,7 @@ border-top-size = 1
 border-top-color = #4a4a4a
 
 modules-left = i3
-modules-center = date pulseaudio playerctl
+modules-center = xkeyboard date pulseaudio playerctl
 modules-right = cpu memory ecc network vpn inotifywait
 
 tray-position = ${env:TRAY:}
@@ -207,4 +207,12 @@ content = ﳟ
 click-left = playerctl --player=mpv,%any play-pause
 click-middle = playerctl --all-players pause
 
+[module/xkeyboard]
+type = internal/xkeyboard
+
+blacklist-0 = num lock
+blacklist-1 = scroll lock
+
+format = <label-indicator>
+label-indicator-on-capslock = CAPS
 ; vim:ft=dosini
