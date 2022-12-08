@@ -7,7 +7,13 @@ read -p "continue? [y/N] " r
 if [ "$r" == "y" ] && [ ! -z $DESTINATION ]; then
     rsync -aAXHvkP \
           --delete \
-          $HOME/* \
+          $HOME/Archives \
+          $HOME/Desktop \
+          $HOME/Documents \
+          $HOME/Music \
+          $HOME/Pictures \
+          $HOME/Videos \
+          $HOME/Workspace \
           $DESTINATION/
 else
     exit 0
