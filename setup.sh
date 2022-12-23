@@ -122,8 +122,8 @@ for f in $(compgen -A function); do
         echo "skip invalid env:" $f
         continue
     fi
-    F=${f^^}
-    if [ ${!F} == "y" ]; then
+    F=`echo "$f" | tr '[:lower:]' '[:upper:]'`
+    if [ "${!F}" == "y" ]; then
         echo "setup: "$f
         $f
     else
