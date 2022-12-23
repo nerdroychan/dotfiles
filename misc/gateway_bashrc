@@ -12,7 +12,7 @@ PS1='[\u@\h \W]\$ '
 trap '' 2
 
 # must jump to another user
-read -p 'login: ' username
+read -p 'Login: ' username
 su - $username
 
 exit
