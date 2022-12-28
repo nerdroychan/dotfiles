@@ -2,15 +2,15 @@
 # ~/.bashrc
 #
 
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
 git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
-
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
 
 if [ "$SSH_TTY" ]; then
     PS1_SSH="(remote) "

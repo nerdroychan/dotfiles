@@ -6,27 +6,32 @@ if [ -f $HOME/.bashrc ]; then
     source $HOME/.bashrc
 fi
 
-# editors
+# Editors
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-# bash-specific
+# Bash-specific
 export HISTFILESIZE=1000000
 export HISTSIZE=1000000
 export HISTCONTROL=ignoreboth:erasedups
 export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
-# vagrant
+# Vagrant
 export VAGRANT_HOME=$HOME/VM/vagrant.d
 
-# golang
+# Golang
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
 
-# dotfiles executables
+# Dotfiles executables
 export PATH=$HOME/.dotfiles/bin:$PATH
 
-# shitty macos (type f to show respect)
+# Start ssh-agent only for login shell under Linux
+if [[ "$OSTYPE" == "linux"* ]]; then
+    eval $(ssh-agent)
+fi
+
+# macOS-specific (type f to show respect)
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export BASH_SILENCE_DEPRECATION_WARNING=1
     eval "$(/opt/homebrew/bin/brew shellenv)"
