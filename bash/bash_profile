@@ -26,11 +26,6 @@ export PATH=$PATH:$GOPATH/bin
 # Dotfiles executables
 export PATH=$HOME/.dotfiles/bin:$PATH
 
-# Start ssh-agent only for login shell under Linux
-if [[ "$OSTYPE" == "linux"* ]]; then
-    eval $(ssh-agent)
-fi
-
 # macOS-specific (type f to show respect)
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export BASH_SILENCE_DEPRECATION_WARNING=1
