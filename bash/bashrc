@@ -21,16 +21,20 @@ export PS1="[\[$(tput bold)\]\[\033[33m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\0
 # Disable ^S
 stty -ixon
 
-alias cdw="cd ~/Workspace"
 alias c="clear"
 alias r="reset"
+
 alias ..="cd .."
 alias ...="cd ../.."
-alias t="tmux a || tmux"
-alias tls="tmux ls"
-alias ls="exa"
-alias ll="exa -l"
-alias la="exa -la"
-alias ping="prettyping --nolegend"
+
+alias t="command -v tmux &> /dev/null && (tmux a || tmux)"
+
+alias ls="exa -lh"
+alias la="exa -lah"
+
 alias remake="make -B"
 alias utags="ctags -R . /usr/include"
+
+alias cdw="cd $HOME/Workspace"
+alias cdt="mkdir /tmp/$USER &> /dev/null; cd /tmp/$USER"
+alias rmt="[ -d /tmp/$USER ] && rm -rf /tmp/$USER"
