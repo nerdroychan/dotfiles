@@ -7,6 +7,5 @@ killall -q -w -u $USER \
     fcitx5 \
     picom \
     inotifywait \
-    parcellite
 
 exit 0
