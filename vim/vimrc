@@ -94,6 +94,9 @@ nnoremap k gk
 nnoremap J 10gj
 nnoremap K 10gk
 
+" Interact with system clipboard
+set clipboard=unnamedplus
+
 " Unset highlight after search
 nnoremap <silent> <CR> :noh<CR><CR>
 
