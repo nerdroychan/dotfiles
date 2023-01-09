@@ -117,6 +117,12 @@ function __gtk {
     ln -sf $DIR/gtk/gtkrc-2.0 $HOME/.gtkrc-2.0
 }
 
+function __gnupg {
+    mkdir -p $HOME/.gnupg
+    rm $HOME/.gnupg/*.conf &> /dev/null
+    ln -sf $DIR/gnupg/* $HOME/.gnupg/
+}
+
 for f in $(compgen -A function); do
     if [ "${f::2}" != "__" ]; then
         echo "skip invalid env:" $f

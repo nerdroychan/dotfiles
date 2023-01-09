@@ -19,3 +19,4 @@ __XORG=y
 __XSECURELOCK=y
 __MISC=y
 __GTK=y
+__GNUPG=y
