@@ -15,32 +15,42 @@ set textwidth=119
 set formatoptions=c
 set ruler
 set number relativenumber
+set nocompatible
 set mouse=a
-
-" global undo
-set undofile
-set undodir=/tmp/$USER.vim/undo
-autocmd VimEnter * silent !mkdir -p /tmp/$USER.vim/undo
-
+set laststatus=2
+set encoding=utf-8
 filetype plugin indent on
 syntax on
-set t_Co=256
+
+" vim-only fix for mouse scrolling in alacritty
+if !has('nvim')
+    set ttymouse=sgr
+endif
+
 " set cursorline
 set autochdir
 set noerrorbells
+
 " set visualbell
 set hidden
 set winheight=999
-command! Bd bp|bd #
+
+" global undo
+set undofile
+if has('nvim')
+    set undodir=/tmp/$USER.nvim/undo
+    autocmd VimEnter * silent !mkdir -p /tmp/$USER.nvim/undo
+else
+    set undodir=/tmp/$USER.vim/undo
+    autocmd VimEnter * silent !mkdir -p /tmp/$USER.vim/undo
+endif
 
 " vim-plug
-
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
-
 call plug#begin('~/.vim/plugged')
 Plug 'rust-lang/rust.vim'
 Plug 'majutsushi/tagbar'
@@ -61,24 +71,34 @@ set background=dark
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  if $TERM_PROGRAM != "Apple_Terminal"
+  if &t_Co >= 256
     set termguicolors
   endif
 endif
 hi Normal guibg=NONE ctermbg=NONE
 
+" directory tree
 map <F2> :10Lexplore<CR>
+
+" tagbar
 map <F3> :TagbarToggle<CR>
+
+" quick paste
 set pastetoggle=<F4>
 
+" close all the other tabs
 map <F5> :%bd\|e#\|bd#<CR>
 
+" 80 chars and 120 chars limit
 autocmd FileType * setlocal colorcolumn=80,120
 
 " Convenient buffer mgmt
 set wildchar=<Tab> wildmenu wildmode=full
 set wildcharm=<C-Z>
 nnoremap gb :ls<CR>:b<Space>
+
+" quick close of current tab
+command! Bd bp|bd #
 
 " No arrow keys
 nnoremap <up> <nop>
@@ -138,6 +158,8 @@ set foldmethod=marker
 " C types
 syn keyword cType s8 s16 s32 s64 s128
 syn keyword cType u8 u16 u32 u64 u128
+syn keyword cType au8 au16 au32 au64 au128
+syn keyword cType as8 as16 as32 as64 as128
 
 " Spaces at EOL
 match Search '\s\+$'
@@ -151,3 +173,4 @@ autocmd WinEnter * if winnr('$') == 1 &&
 
 " Garbage collection (not really)
 autocmd VimEnter * redraw!
+

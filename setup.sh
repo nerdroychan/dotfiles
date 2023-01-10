@@ -15,6 +15,11 @@ function __vim {
     ln -sf $DIR/vim $HOME/.vim
 }
 
+function __nvim {
+    rm $HOME/.config/nvim &>/dev/null
+    ln -sf $DIR/nvim $HOME/.config/nvim
+}
+
 function __i3 {
     mkdir -p $HOME/.config/i3
     rm $HOME/.config/i3/* &>/dev/null

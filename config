@@ -15,6 +15,7 @@ __SYSTEMD=y
 __TMUX=y
 __UDEV=y
 __VIM=y
+__NVIM=y
 __XORG=y
 __XSECURELOCK=y
 __MISC=y
