@@ -66,8 +66,8 @@ function __pacman {
 }
 
 function __xsecurelock {
-    ln -sf $DIR/misc/lock.sh $HOME/.lock.sh
-    ln -sf $DIR/misc/lock.jpg $HOME/.lock.jpg
+    ln -sf $DIR/xsecurelock/lock.sh $HOME/.lock.sh
+    ln -sf $DIR/xsecurelock/lock.jpg $HOME/.lock.jpg
 }
 
 function __mpv {
