@@ -31,10 +31,13 @@ alias t="command -v tmux &> /dev/null && (tmux a || tmux)"
 
 alias ls="exa -lh"
 alias la="exa -lah"
+alias lss="exa -lh -s size"
 
 alias remake="make -B"
 alias utags="ctags -R . /usr/include"
 
-alias cdw="cd $HOME/Workspace"
-alias cdt="mkdir /tmp/$USER &> /dev/null; cd /tmp/$USER"
-alias rmt="[ -d /tmp/$USER ] && rm -rf /tmp/$USER"
+alias cw="cd $HOME/Workspace"
+alias mt="mkdir /tmp/$USER.tmp &> /dev/null"
+alias lt="mt; export T=/tmp/$USER.tmp; echo $T"
+alias ct="mt; cd /tmp/$USER.tmp"
+alias rt="[ -d /tmp/$USER.tmp ] && rm -rf /tmp/$USER"
