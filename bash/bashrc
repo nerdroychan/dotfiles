@@ -38,6 +38,6 @@ alias utags="ctags -R . /usr/include"
 
 alias cw="cd $HOME/Workspace"
 alias mt="mkdir /tmp/$USER.tmp &> /dev/null"
-alias lt="mt; export T=/tmp/$USER.tmp; echo $T"
+alias lt="mt; echo /tmp/$USER.tmp; export T=/tmp/$USER.tmp"
 alias ct="mt; cd /tmp/$USER.tmp"
-alias rt="[ -d /tmp/$USER.tmp ] && rm -rf /tmp/$USER"
+alias rt="[ -d /tmp/$USER.tmp ] && rm -rf /tmp/$USER.tmp"
