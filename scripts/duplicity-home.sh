@@ -2,29 +2,26 @@
 
 ME=`basename "$0"`
 
-if [ $# -ne 2 ]; then
-    echo "Usage: $ME <keyid> <destination>"
+if [ $# -ne 3 ]; then
+    echo "Usage: $ME <enckey> <signkey> <destination>"
     exit 0;
 fi
 
-KEYID=$1
-DESTINATION=$2
+ENCKEY=$1
+SIGNKEY=$2
+DESTINATION=$3
 
-echo "keyid: $KEYID, destination: $DESTINATION"
+echo "enckey: $ENCKEY, signkey: $SIGNKEY, destination: $DESTINATION"
 read -p "continue? [y/N] " r
 
 if [ "$r" == "y" ] && [ ! -z $DESTINATION ]; then
-    # this avoids directly writing to the same disk
-    ARCHIVE_DIR=/tmp/$USER.duplicity
-    mkdir -p $ARCHIVE_DIR &> /dev/null
-
     duplicity --verbosity info \
               --num-retries 3 \
               --progress \
               --volsize 500 \
-              --archive-dir=$ARCHIVE_DIR \
               --use-agent \
-              --encrypt-sign-key $KEYID \
+              --encrypt-key $ENCKEY \
+              --sign-key $SIGNKEY \
               --exclude "$HOME/.*" \
               $HOME/ \
               $DESTINATION/
