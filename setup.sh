@@ -3,11 +3,11 @@
 DIR=$(cd `dirname $0` && pwd)
 echo "Current directory:" $DIR
 
-source config
-
 function __git {
-    ln -sf $DIR/gitignore_global $HOME/.gitignore_global
+    ln -sf $DIR/git/gitignore_global $HOME/.gitignore_global
     git config --global core.excludesfile $HOME/.gitignore_global
+    git config --global user.name "Chen Chen"
+    git config --global user.email "mail@roychan.org"
 }
 
 function __vim {
@@ -30,11 +30,11 @@ function __tmux {
     ln -sf $DIR/tmux/tmux.conf $HOME/.tmux.conf
 }
 
-function __xorg {
-    ln -sf $DIR/xinitrc $HOME/.xinitrc
-    ln -sf $DIR/Xresources $HOME/.Xresources
+function __x11 {
+    ln -sf $DIR/x11/xinitrc $HOME/.xinitrc
+    ln -sf $DIR/x11/Xresources $HOME/.Xresources
     sudo -l -U $USER &> /dev/null || return
-    sudo cp $DIR/xorg/* /etc/X11/xorg.conf.d/
+    sudo cp $DIR/x11/xorg.conf.d/*.conf /etc/X11/xorg.conf.d/
 }
 
 function __bash {
@@ -51,11 +51,6 @@ function __fontconfig {
 function __modprobe {
     sudo -l -U $USER &> /dev/null || return
     sudo cp $DIR/modprobe/* /etc/modprobe.d/
-}
-
-function __udev {
-    sudo -l -U $USER &> /dev/null || return
-    sudo cp $DIR/udev/* /etc/udev/rules.d/
 }
 
 function __systemd {
@@ -114,10 +109,6 @@ function __rofi {
     ln -sf $DIR/rofi/* $HOME/.config/rofi/
 }
 
-function __misc {
-    ln -sf $DIR/misc/open-display.sh $HOME/.open-display.sh
-}
-
 function __gtk {
     ln -sf $DIR/gtk/gtkrc-2.0 $HOME/.gtkrc-2.0
 }
@@ -127,6 +118,8 @@ function __gnupg {
     rm $HOME/.gnupg/*.conf &> /dev/null
     ln -sf $DIR/gnupg/* $HOME/.gnupg/
 }
+
+source config
 
 for f in $(compgen -A function); do
     if [ "${f::2}" != "__" ]; then
