@@ -33,6 +33,7 @@ function __tmux {
 function __x11 {
     ln -sf $DIR/x11/xinitrc $HOME/.xinitrc
     ln -sf $DIR/x11/Xresources $HOME/.Xresources
+    ln -sf $DIR/x11/user-dirs.dirs $HOME/.config/user-dirs.dirs
     sudo -l -U $USER &> /dev/null || return
     sudo cp $DIR/x11/xorg.conf.d/*.conf /etc/X11/xorg.conf.d/
 }
