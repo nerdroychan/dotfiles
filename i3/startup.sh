@@ -30,8 +30,6 @@ function monitor_xdg_dirs {
                 $HOME/Downloads \
                 $HOME/Music \
                 $HOME/Pictures \
-                $HOME/Public \
-                $HOME/Templates \
                 $HOME/Videos
 }
 monitor_xdg_dirs &

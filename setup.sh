@@ -3,6 +3,17 @@
 DIR=$(cd `dirname $0` && pwd)
 echo "Current directory:" $DIR
 
+SUDO="sudo -l -U $USER &> /dev/null || return"
+
+function simple_link {
+    name=$1
+    rm -rf $HOME/.config/$1 &> /dev/null
+    ln -s $DIR/$1 $HOME/.config/$1
+}
+
+# if the config resides in $HOME/.config, create a symlink for the whole dir
+# otherwise, only link necessary files to avoid extra files getting tracked
+
 function __git {
     ln -sf $DIR/git/gitignore_global $HOME/.gitignore_global
     git config --global core.excludesfile $HOME/.gitignore_global
@@ -11,19 +22,16 @@ function __git {
 }
 
 function __vim {
-    rm $HOME/.vim &>/dev/null
-    ln -sf $DIR/vim $HOME/.vim
+    mkdir -p $HOME/.vim &> /dev/null
+    ln -sf $DIR/vim/vimrc $HOME/.vim/vimrc
 }
 
 function __nvim {
-    rm $HOME/.config/nvim &>/dev/null
-    ln -sf $DIR/nvim $HOME/.config/nvim
+    simple_link nvim
 }
 
 function __i3 {
-    mkdir -p $HOME/.config/i3
-    rm $HOME/.config/i3/* &>/dev/null
-    ln -sf $DIR/i3/* $HOME/.config/i3/
+    simple_link i3
 }
 
 function __tmux {
@@ -34,7 +42,7 @@ function __x11 {
     ln -sf $DIR/x11/xinitrc $HOME/.xinitrc
     ln -sf $DIR/x11/Xresources $HOME/.Xresources
     ln -sf $DIR/x11/user-dirs.dirs $HOME/.config/user-dirs.dirs
-    sudo -l -U $USER &> /dev/null || return
+    eval $SUDO
     sudo cp $DIR/x11/xorg.conf.d/*.conf /etc/X11/xorg.conf.d/
 }
 
@@ -44,24 +52,22 @@ function __bash {
 }
 
 function __fontconfig {
-    mkdir -p $HOME/.config/fontconfig &>/dev/null
-    rm $HOME/.config/fontconfig/* &>/dev/null
-    ln -sf $DIR/fontconfig/* $HOME/.config/fontconfig/
+    simple_link fontconfig
 }
 
 function __modprobe {
-    sudo -l -U $USER &> /dev/null || return
+    eval $SUDO
     sudo cp $DIR/modprobe/* /etc/modprobe.d/
 }
 
 function __systemd {
-    sudo -l -U $USER &> /dev/null || return
+    eval $SUDO
     sudo cp $DIR/systemd/* /etc/systemd/system/
-    sudo systemctl enable suspend@chen
+    sudo systemctl enable suspend@$USER
 }
 
 function __pacman {
-    sudo -l -U $USER &> /dev/null || return
+    eval $SUDO
     sudo cp $DIR/pacman/pacman.conf /etc/pacman.conf
     sudo mkdir -p /etc/pacman/hooks
 }
@@ -72,42 +78,34 @@ function __xsecurelock {
 }
 
 function __mpv {
-    mkdir -p $HOME/.config/mpv
-    rm $HOME/.config/mpv/* &>/dev/null
-    ln -sf $DIR/mpv/* $HOME/.config/mpv/
+    simple_link mpv
 }
 
 function __firejail {
-    mkdir -p $HOME/.config/firejail
-    rm $HOME/.config/firejail/* &>/dev/null
-    ln -sf $DIR/firejail/* $HOME/.config/firejail/
+    simple_link firejail
 }
 
 function __alacritty {
-    mkdir -p $HOME/.config/alacritty
-    rm $HOME/.config/alacritty/* &>/dev/null
-    ln -sf $DIR/alacritty/*.yml $HOME/.config/alacritty/
+    simple_link alacritty
 }
 
 function __pulseaudio {
-    mkdir -p $HOME/.config/pulse
-    ln -sf $DIR/pulse/default.pa $HOME/.config/pulse/default.pa
+    # although pulseaudio config resides in .pulse, it will create files in it
+    # so just copy the files in it
+    mkdir -p $HOME/.config/pulse &> /dev/null
+    ln -sf $DIR/pulseaudio/* $HOME/.config/pulse/
 }
 
 function __picom {
-    ln -sf $DIR/picom/picom.conf $HOME/.config/picom.conf
+    simple_link picom
 }
 
 function __polybar {
-    mkdir -p $HOME/.config/polybar
-    rm $HOME/.config/polybar/* &>/dev/null
-    ln -sf $DIR/polybar/* $HOME/.config/polybar/
+    simple_link polybar
 }
 
 function __rofi {
-    mkdir -p $HOME/.config/rofi
-    rm $HOME/.config/rofi/* &>/dev/null
-    ln -sf $DIR/rofi/* $HOME/.config/rofi/
+    simple_link rofi
 }
 
 function __gtk {
@@ -115,16 +113,15 @@ function __gtk {
 }
 
 function __gnupg {
-    mkdir -p $HOME/.gnupg
+    mkdir -p $HOME/.gnupg &> /dev/null
     rm $HOME/.gnupg/*.conf &> /dev/null
-    ln -sf $DIR/gnupg/* $HOME/.gnupg/
+    ln -sf $DIR/gnupg/*.conf $HOME/.gnupg/
 }
 
 source config
 
 for f in $(compgen -A function); do
     if [ "${f::2}" != "__" ]; then
-        echo "skip invalid env:" $f
         continue
     fi
     F=`echo "$f" | tr '[:lower:]' '[:upper:]'`

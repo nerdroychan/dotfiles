@@ -13,14 +13,14 @@ MONITORS=("$PRIMARY" "$OTHERS")
 if type "xrandr"; then
     if [ ! -z "$PRIMARY" ]
     then
-        env MONITOR=$PRIMARY TRAY=right polybar --reload default &> /tmp/polybar-$USER-$MONITOR.log &
+        env MONITOR=$PRIMARY TRAY=right polybar --reload default &> /dev/null &
     fi
     for m in $OTHERS; do
         if [ -z "$PRIMARY" ]
         then
-            env MONITOR=$m TRAY=right polybar --reload default &> /tmp/polybar-$USER-$MONITOR.log &
+            env MONITOR=$m TRAY=right polybar --reload default &> /dev/null &
         else
-            env MONITOR=$m polybar --reload default &> /tmp/polybar-$USER-$MONITOR.log &
+            env MONITOR=$m polybar --reload default &> /dev/null &
         fi
     done
 fi

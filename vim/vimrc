@@ -38,11 +38,11 @@ set winheight=999
 " global undo
 set undofile
 if has('nvim')
-    set undodir=/tmp/$USER.nvim/undo
-    autocmd VimEnter * silent !mkdir -p /tmp/$USER.nvim/undo
+    set undodir=/tmp/nvim-undo-$USER
+    autocmd VimEnter * silent !mkdir -p /tmp/nvim-undo-$USER
 else
-    set undodir=/tmp/$USER.vim/undo
-    autocmd VimEnter * silent !mkdir -p /tmp/$USER.vim/undo
+    set undodir=/tmp/vim-undo-$USER
+    autocmd VimEnter * silent !mkdir -p /tmp/vim-undo-$USER
 endif
 
 " vim-plug
