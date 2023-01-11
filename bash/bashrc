@@ -45,3 +45,5 @@ alias rt="[ -d /tmp/$USER.tmp ] && rm -rf /tmp/$USER.tmp"
 alias vi="nvim"
 alias vim="nvim"
 alias vimdiff="nvim -d"
+
+alias pgtar="tar --use-compress-program='pigz -9' -c -f"
