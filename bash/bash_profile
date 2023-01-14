@@ -26,6 +26,12 @@ export PATH=$PATH:$GOPATH/bin
 # Dotfiles executables
 export PATH=$HOME/.dotfiles/bin:$PATH
 
+# macOS-specific (has to be before GPG because GPG executes its agent in PATH)
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    export BASH_SILENCE_DEPRECATION_WARNING=1
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # GnuPG
 unset SSH_AGENT_PID
 if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
@@ -33,9 +39,3 @@ if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
 fi
 export GPG_TTY=$(tty)
 gpg-connect-agent updatestartuptty /bye >/dev/null
-
-# macOS-specific (type f to show respect)
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    export BASH_SILENCE_DEPRECATION_WARNING=1
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
