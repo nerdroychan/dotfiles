@@ -3,6 +3,8 @@
 DIR=$(cd `dirname $0` && pwd)
 echo "Current directory:" $DIR
 
+mkdir -p $HOME/.config &> /dev/null
+
 SUDO="sudo -l -U $USER &> /dev/null || return"
 
 function simple_link {
@@ -114,6 +116,7 @@ function __gtk {
 
 function __gnupg {
     mkdir -p $HOME/.gnupg &> /dev/null
+    chmod 700 $HOME/.gnupg
     rm $HOME/.gnupg/*.conf &> /dev/null
     ln -sf $DIR/gnupg/*.conf $HOME/.gnupg/
 }
