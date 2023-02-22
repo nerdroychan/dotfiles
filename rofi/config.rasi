@@ -4,7 +4,7 @@ configuration {
     show-icons: false;
     disable-history: true;
     modi: "window,drun";
-    run-command: "firejail --rmenv=DBUS_SESSION_BUS_ADDRESS {cmd}";
+    run-command: "firejail {cmd}";
     dpi: 1;
 /*	width: 50;*/
 /*	lines: 15;*/
