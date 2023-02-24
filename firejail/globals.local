@@ -1,3 +1,5 @@
 include disable-xdg.inc
 
+dbus-system none
+dbus-user none
 rmenv DBUS_SESSION_BUS_ADDRESS
