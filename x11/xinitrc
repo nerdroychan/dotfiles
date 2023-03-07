@@ -17,6 +17,9 @@ xset m 1 1
 # mute sound
 pamixer -m
 
+# dbus
+dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
+
 # turn on num lock
 numlockx
 
