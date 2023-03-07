@@ -72,7 +72,7 @@ function __systemd {
 function __pacman {
     eval $SUDO
     sudo cp $DIR/pacman/pacman.conf /etc/pacman.conf
-    sudo mkdir -p /etc/pacman/hooks
+    sudo cp $DIR/pacman/gnupg/gpg.conf /etc/pacman.d/gnupg/gpg.conf
 }
 
 function __xsecurelock {
