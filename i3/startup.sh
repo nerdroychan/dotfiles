@@ -30,8 +30,9 @@ function monitor_xdg_dirs {
                               $HOME/Downloads \
                               $HOME/Music \
                               $HOME/Pictures \
-                              $HOME/Videos
+                              $HOME/Videos &
 }
-monitor_xdg_dirs &
+
+monitor_xdg_dirs
 
 exit 0
