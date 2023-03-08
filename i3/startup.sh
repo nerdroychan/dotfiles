@@ -1,11 +1,12 @@
 #!/bin/sh
 
 # with tray icons
-fcitx5 &
+unshare -c -n flameshot &
+unshare -c -n fcitx5 &
 
 # headless, assuming they won't crash..
-redshift -t 6500:5000 -l 41.88:-87.62 &
-picom -CGb &
+unshare -c -n redshift -t 6500:5000 -l 41.88:-87.62 &
+unshare -c -n picom -CGb &
 
 # The access to xdg user directories should be rare..
 function monitor_xdg_dirs {
@@ -18,18 +19,18 @@ function monitor_xdg_dirs {
     fi
 
     touch $LOGFILE
-    inotifywait -m -o $LOGFILE \
-                --timefmt '%c' \
-                --format '%T [%e]: %w %f' \
-                -e open,modify,delete \
-                -r \
-                $HOME/Archives \
-                $HOME/Desktop \
-                $HOME/Documents \
-                $HOME/Downloads \
-                $HOME/Music \
-                $HOME/Pictures \
-                $HOME/Videos
+    unshare -c -n inotifywait -m -o $LOGFILE \
+                              --timefmt '%c' \
+                              --format '%T [%e]: %w %f' \
+                              -e open,modify,delete \
+                              -r \
+                              $HOME/Archives \
+                              $HOME/Desktop \
+                              $HOME/Documents \
+                              $HOME/Downloads \
+                              $HOME/Music \
+                              $HOME/Pictures \
+                              $HOME/Videos
 }
 monitor_xdg_dirs &
 

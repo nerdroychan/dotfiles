@@ -109,28 +109,28 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
+set $ws1  "1"
+set $ws2  "2"
+set $ws3  "3"
+set $ws4  "4"
+set $ws5  "5"
+set $ws6  "6"
+set $ws7  "7"
+set $ws8  "8"
+set $ws9  "9"
 set $ws10 "10"
 
 # bind workspace to monitors
-workspace 1  output primary
-workspace 2  output primary
-workspace 3  output primary
-workspace 4  output primary
-workspace 5  output primary
-workspace 6  output primary
-workspace 7  output primary
-workspace 8  output primary
-workspace 9  output primary
-workspace 10 output nonprimary
+workspace $ws1  output primary
+workspace $ws2  output primary
+workspace $ws3  output primary
+workspace $ws4  output primary
+workspace $ws5  output primary
+workspace $ws6  output primary
+workspace $ws7  output primary
+workspace $ws8  output primary
+workspace $ws9  output primary
+workspace $ws10 output nonprimary
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
