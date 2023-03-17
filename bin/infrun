@@ -6,11 +6,11 @@ fi
 
 while true;
 do
-    $@
-    ret=$?
+    "${@}"
+    ret=${?}
     if [ $ret -ne 0 ]
     then
-        echo exit code $ret
-    break
+        echo "infrun: exit code $ret"
+        break
     fi
 done

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Real cores instead of CPU threads
+
+if [[ $# -eq 0 ]] ; then
+    exit 0
+fi
+
+CPUS=$(lscpu -p | grep -v '#' | awk -F ',' '{print $1 ":" $2}' | shuf | sort -R -u -t : -k 2,2 | awk -F ':' '{print $1}')
+SELECTED=$(echo -n "${CPUS}" | tr '\n' ',')
+
+taskset -c $SELECTED "$@"

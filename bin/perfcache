@@ -5,4 +5,4 @@ if [[ $# -eq 0  ]] ; then
 fi
 
 rm -f /tmp/perf.data
-perf record -g --call-graph=dwarf -e cache-misses -o /tmp/perf.data -- $@
+perf record -g --call-graph=dwarf -e cache-misses -o /tmp/perf.data -- "$@"
