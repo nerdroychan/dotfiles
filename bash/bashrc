@@ -29,6 +29,12 @@ fi
 export GPG_TTY=$(tty)
 gpg-connect-agent updatestartuptty /bye >/dev/null
 
+# fzf
+if [ -d '/usr/share/fzf' ]; then
+    source /usr/share/fzf/key-bindings.bash
+    source /usr/share/fzf/completion.bash
+fi
+
 alias c="clear"
 alias r="reset"
 
