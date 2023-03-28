@@ -1,8 +1,0 @@
-#!/bin/bash
-
-if [[ $# -eq 0  ]] ; then
-    exit 0
-fi
-
-rm -f /tmp/perf.data
-perf record -g --call-graph=dwarf -e cache-misses -o /tmp/perf.data -- "$@"
