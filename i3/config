@@ -24,9 +24,9 @@ font pango:monospace 10
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 
-for_window [all] title_window_icon on
-for_window [all] title_window_icon padding 5px
-for_window [all] title_format "<span weight='bold' text_transform='lowercase'>%class</span>"
+# for_window [all] title_window_icon on
+# for_window [all] title_window_icon padding 5px
+# for_window [all] title_format "<span weight='bold' text_transform='lowercase'>%class</span>"
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -189,7 +189,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # class                 border|backgr|text|indicator|child_border
-client.focused          #003F3F #003F3F #DDDDDD #006666 #003F3F
+client.focused          #008F8F #008F8F #DDDDDD #006666 #008F8F
 client.focused_inactive #333333 #5F676A #DDDDDD #484E50 #5F676A
 client.unfocused        #333333 #222222 #888888 #292D2E #222222
 client.urgent           #2F343A #900000 #DDDDDD #900000 #900000
@@ -217,9 +217,9 @@ client.background       #FFFFFF
 
 # hide border
 hide_edge_borders smart
-#default_border pixel 2
-#default_floating_border pixel 2
-#for_window [all] border pixel 2
+default_border pixel 2
+default_floating_border pixel 2
+for_window [all] border pixel 2
 
 # enable sticky
 for_window [class=".*"] sticky enable

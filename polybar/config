@@ -49,14 +49,13 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = Symbols Nerd Font:style=2048-em:size=9;4
-font-1 = Noto Sans Mono:size=9:weight=Regular;4
+font-1 = Noto Sans Mono:weight=Regular:size=9;4
 
-border-top-size = 1
-border-top-color = #4a4a4a
+border-bottom-size = 1
+border-bottom-color = #4a4a4a
 
-modules-left = i3
-modules-center = xkeyboard date pulseaudio playerctl
-modules-right = cpu memory ecc network vpn inotifywait
+modules-left = i3 title
+modules-right = xkeyboard playerctl cpu memory ecc network vpn inotifywait pulseaudio date
 
 tray-position = ${env:TRAY:}
 tray-padding = 4
@@ -65,7 +64,7 @@ tray-maxsize = 24
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-bottom = true
+bottom = false
 
 [settings]
 screenchange-reload = true
@@ -110,24 +109,6 @@ label-visible-padding = 1
 label-urgent =  %index%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
-
-[module/battery]
-type = internal/battery
-full-at = 90
-battery = BAT0
-adapter = AC
-poll-interval = 10
-format-charging = <ramp-capacity> ﮣ <label-charging>
-format-discharging = <ramp-capacity> <label-discharging>
-format-full = <ramp-capacity> <label-full>
-label-charging = C/%percentage_raw%%
-label-full = F/%percentage_raw%%
-label-discharging = D/%percentage_raw%%
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
 
 [module/cpu]
 type = internal/cpu
@@ -203,8 +184,10 @@ format = <label>
 label = ﭦ ECC %output%
 
 [module/playerctl]
-type = custom/text
-content = ﳟ
+type = custom/script
+interval = 1
+exec = if [ $(playerctl -l -s) ]; then echo 󰐎; else echo; fi
+content = %output%
 click-left = playerctl --player=mpv,%any play-pause
 click-middle = playerctl --all-players pause
 
