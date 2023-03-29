@@ -1,7 +1,11 @@
 #!/bin/bash
 
 DIR=$(cd `dirname $0` && pwd)
-echo "Current directory:" $DIR
+
+if [ "$DIR" != "$HOME/.dotfiles" ]; then
+    echo "The dotfiles directory must be $HOME/.dotfiles to run the setup script"
+    exit 1
+fi
 
 mkdir -p $HOME/.config &> /dev/null
 
