@@ -189,9 +189,9 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # class                 border|backgr|text|indicator|child_border
-client.focused          #008F8F #008F8F #DDDDDD #006666 #008F8F
+client.focused          #00AFAF #00AFAF #DDDDDD #006666 #00AFAF
 client.focused_inactive #333333 #5F676A #DDDDDD #484E50 #5F676A
-client.unfocused        #333333 #222222 #888888 #292D2E #222222
+client.unfocused        #004F4F #004F4F #888888 #292D2E #004F4F
 client.urgent           #2F343A #900000 #DDDDDD #900000 #900000
 client.placeholder      #000000 #0C0C0C #DDDDDD #000000 #0C0C0C
 client.background       #FFFFFF
@@ -216,10 +216,9 @@ client.background       #FFFFFF
 # }
 
 # hide border
-hide_edge_borders smart
-default_border pixel 2
-default_floating_border pixel 2
-for_window [all] border pixel 2
+smart_borders on
+default_border pixel 1
+default_floating_border pixel 1
 
 # enable sticky
 for_window [class=".*"] sticky enable
