@@ -191,7 +191,7 @@ label = ﭦ ECC %output%
 [module/playerctl]
 type = custom/script
 interval = 1
-exec = if [ $(playerctl -l -s) ]; then echo 󰐎; else echo; fi
+exec = if [ "$(playerctl -l -s)" ]; then echo 󰐎; else echo; fi
 content = %output%
 click-left = playerctl --player=mpv,%any play-pause
 click-middle = playerctl --all-players pause
