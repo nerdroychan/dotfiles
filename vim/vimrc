@@ -47,18 +47,15 @@ endif
 
 " vim-plug
 if empty(glob('$HOME/.vim/autoload/plug.vim'))
-  silent !curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    silent !curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 call plug#begin('$HOME/.vim/plugged')
-    Plug 'rust-lang/rust.vim'
     Plug 'majutsushi/tagbar'
     Plug 'vim-airline/vim-airline'
     Plug 'morhetz/gruvbox'
-    Plug 'jiangmiao/auto-pairs'
-    Plug 'vim-syntastic/syntastic'
-    Plug 'fatih/vim-go'
+    Plug 'LunarWatcher/auto-pairs'
     Plug 'airblade/vim-gitgutter'
     Plug 'prabirshrestha/vim-lsp'
     Plug 'mattn/vim-lsp-settings'
@@ -72,11 +69,11 @@ let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 set background=dark
 if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  if &t_Co >= 256
-    set termguicolors
-  endif
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    if &t_Co >= 256
+        set termguicolors
+    endif
 endif
 hi Normal guibg=NONE ctermbg=NONE
 
@@ -134,24 +131,6 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_symbols_ascii = 1
 
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_c_compiler = "gcc"
-let g:syntastic_c_compiler_options = "-std=gnu11"
-let g:syntastic_cpp_compiler = "g++"
-let g:syntastic_c_config_file = ".syntastic_c_config"
-let g:syntastic_cpp_config_file = ".syntastic_cpp_config"
-
-" Hiding syntastic buffer
-autocmd FileType qf set nobuflisted
-
 " Folding
 set foldmethod=marker
 
@@ -178,7 +157,7 @@ function! s:check_back_space() abort
     return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 inoremap <silent><expr> <TAB>
-  \ pumvisible() ? "\<C-n>" :
-  \ <SID>check_back_space() ? "\<TAB>" :
-  \ asyncomplete#force_refresh()
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ asyncomplete#force_refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
