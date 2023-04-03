@@ -3,8 +3,8 @@
 #
 
 # Editors
-export VISUAL=vim
-export EDITOR="$VISUAL"
+export VISUAL=nvim
+export EDITOR=$VISUAL
 
 # Bash-specific
 export HISTFILESIZE=1000000
@@ -20,12 +20,12 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$HOME/.dotfiles/bin:$PATH
 
 # macOS-specific (has to be before GPG because GPG executes its agent in PATH)
-if [[ "$OSTYPE" == "darwin"* ]]; then
+if [[ "$OSTYPE" == 'darwin'* ]]; then
     export BASH_SILENCE_DEPRECATION_WARNING=1
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 # Always eval bashrc at the end to make sure PATH is set correctly
-if [ -f $HOME/.bashrc ]; then
+if [[ -f $HOME/.bashrc ]]; then
     source $HOME/.bashrc
 fi

@@ -11,21 +11,21 @@ git-branch() {
 
 bind 'TAB:menu-complete'
 bind '"\e[Z": menu-complete-backward'
-bind "set completion-ignore-case on"
-bind "set show-all-if-ambiguous on"
-bind "set menu-complete-display-prefix on"
+bind 'set completion-ignore-case on'
+bind 'set show-all-if-ambiguous on'
+bind 'set menu-complete-display-prefix on'
 
-if [ "$SSH_TTY" ]; then
-    PS1_SSH="(ssh) "
+if [[ "$SSH_TTY" ]]; then
+    PS1_SSH='(ssh) '
 fi
 
 export PS1="[\[$(tput bold)\]\[\033[33m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[32m\]\h\[$(tput sgr0)\]:\[$(tput sgr0)\]\[\033[38;5;7m\]\w\[$(tput sgr0)\]]\[$(tput sgr0)\] \t\[\033[34m\]\$(git-branch)\[$(tput sgr0)\] > \[$(tput sgr0)\]\[\033[35m\][\j]\[$(tput sgr0)\]\n\[$(tput bold)\]\${PS1_SSH}\$~>\[$(tput sgr0)\] \[$(tput sgr0)\]"
 
-# Disable ^S
+# disable ^S
 stty -ixon
 
 # fzf
-if [ -d '/usr/share/fzf' ]; then
+if [[ -d /usr/share/fzf ]]; then
     source /usr/share/fzf/key-bindings.bash
     source /usr/share/fzf/completion.bash
 fi
@@ -34,32 +34,36 @@ fi
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
 
-# GnuPG
+# gpg
 unset SSH_AGENT_PID
-if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+if [[ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]]; then
+    export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 fi
 export GPG_TTY=$(tty)
 gpg-connect-agent updatestartuptty /bye >/dev/null
 
-# aliases at the end
-alias c="clear"
-alias r="reset"
-alias ..="cd .."
-alias ...="cd ../.."
-alias t="command -v tmux &> /dev/null && (tmux a || tmux)"
-alias ls="exa -lh"
-alias la="exa -lah"
-alias lss="exa -lh -s size"
-alias remake="make -B"
-alias utags="ctags -R . /usr/include"
-alias cw="cd $HOME/Workspace"
-alias mt="mkdir /tmp/$USER.tmp &> /dev/null"
-alias lt="mt; echo /tmp/$USER.tmp; export T=/tmp/$USER.tmp"
-alias ct="mt; cd /tmp/$USER.tmp"
-alias rt="[ -d /tmp/$USER.tmp ] && rm -rf /tmp/$USER.tmp"
-alias vi="nvim"
-alias vim="nvim"
-alias vimdiff="nvim -d"
-alias pgtar="tar --use-compress-program='pigz -9' -c -f"
-alias open="xdg-open"
+# ls-exa
+alias ls='exa -lh'
+alias la='exa -lah'
+alias lss='exa -lh -s size'
+
+# vi-vim-nvim
+alias vim='nvim'
+alias vi='vim'
+alias vimdiff='vim -d'
+
+# misc aliases
+alias c='clear'
+alias r='reset'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias cw='cd $HOME/Workspace'
+alias mt='mkdir /tmp/$USER.tmp &> /dev/null'
+alias lt='mt; echo /tmp/$USER.tmp; export T=/tmp/$USER.tmp'
+alias ct='mt; cd /tmp/$USER.tmp'
+alias rt='[[ -d /tmp/$USER.tmp ]] && rm -rf /tmp/$USER.tmp'
+alias open='xdg-open'
+alias t='(command -v tmux &> /dev/null) && ((tmux a &> /dev/null) || tmux)'
+alias remake='make -B'
+alias utags='ctags -R . /usr/include'
+alias pgtar='tar --use-compress-program='"'pigz -9'"' -c -f'
