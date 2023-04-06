@@ -30,6 +30,7 @@ function __git {
 function __vim {
     mkdir -p $HOME/.vim &> /dev/null
     ln -sf $DIR/vim/vimrc $HOME/.vim/vimrc
+    rm -rf $HOME/.vim/syntax
     ln -sf $DIR/vim/syntax $HOME/.vim/syntax
 }
 
