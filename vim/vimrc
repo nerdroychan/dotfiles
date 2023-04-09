@@ -84,7 +84,11 @@ map <F2> :10Lexplore<CR>
 map <F3> :TagbarToggle<CR>
 
 " quick paste
-set pastetoggle=<F4>
+if has('nvim')
+    map <F4> :set paste!<CR>
+else
+    set pastetoggle=<F4>
+endif
 
 " close all the other tabs
 map <F5> :%bd\|e#\|bd#<CR>
@@ -146,6 +150,26 @@ autocmd WinEnter * if winnr('$') == 1 &&
 
 " Garbage collection (not really)
 autocmd VimEnter * redraw!
+
+" LSP
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> gi <plug>(lsp-implementation)
+    nmap <buffer> gr <plug>(lsp-references)
+    nmap <buffer> gt <plug>(lsp-type-definition)
+    nmap <buffer> g[ <plug>(lsp-previous-diagnostic)
+    nmap <buffer> g] <plug>(lsp-next-diagnostic)
+    nmap <buffer> gk <plug>(lsp-hover)
+endfunction
+
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
 
 " Async complete
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
