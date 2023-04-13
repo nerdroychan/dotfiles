@@ -1,0 +1,31 @@
+# gdbinit
+add-auto-load-safe-path ./
+set max-value-size unlimited
+
+# load dashboard
+source ~/.gdb-dashboard
+# dashboard command
+alias -a -- db = dashboard
+alias -a -- dbe = dashboard expressions
+alias -a -- dbm = dashboard memory
+alias -a -- dba = dashboard assembly
+alias -a -- dbh = dashboard history
+alias -a -- dbr = dashboard registers
+alias -a -- dbs = dashboard stack
+alias -a -- dbt = dashboard threads
+
+# watch expression
+alias -a -- dbew = db expressions watch
+alias -a -- dbeu = db expressions unwatch
+alias -a -- dbex = db expressions clear
+alias -a -- dbmw = db memory watch
+alias -a -- dbmu = db memory unwatch
+alias -a -- dbmx = db memory clear
+
+db -layout !memory !history !registers !expressions !variables !stack !threads !assembly source
+db -style syntax_highlighting 'gruvbox-dark'
+db source -style height 30
+db stack -style locals True
+db stack -style limit 5
+db assembly -style height 30
+db assembly -style opcodes True

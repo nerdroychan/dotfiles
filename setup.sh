@@ -127,6 +127,14 @@ function __gnupg {
     ln -sf $DIR/gnupg/*.conf $HOME/.gnupg/
 }
 
+function __gdb {
+    rm -f $HOME/.gdb-dashboard
+    rm -f $HOME/.gdbinit
+    git submodule update gdb/gdb-dashboard
+    ln -sf $DIR/gdb/gdbinit $HOME/.gdbinit
+    ln -sf $DIR/gdb/gdb-dashboard/.gdbinit $HOME/.gdb-dashboard
+}
+
 source config
 
 for f in $(compgen -A function); do
