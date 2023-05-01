@@ -48,7 +48,7 @@ padding-right = 1
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Symbols Nerd Font:size=9;4
+font-0 = Symbols Nerd Font Mono:size=8;4
 font-1 = Noto Sans Mono:size=9;4
 font-2 = Noto Sans Mono CJK SC:size=9;4
 font-3 = Noto Sans Mono CJK TC:size=9;4
@@ -119,20 +119,20 @@ label-urgent-padding = 1
 type = internal/cpu
 interval = 2.0
 format = <label>
-label = 龍 %percentage%%
+label = 󰓅 %percentage%%
 
 [module/memory]
 type = internal/memory
 interval = 3.0
 format = <label>
-label =  %gb_free%
+label = 󰍛 %gb_free%
 
 [module/network]
 type = internal/network
 interface = ${env:DEFAULT_NETWORK_INTERFACE}
 interval = 5.0
 format-connected = <label-connected>
-label-connected = %{A3:nm-connection-editor &:} %ifname%%{A}
+label-connected = %{A3:nm-connection-editor &:}󰈀 %ifname%%{A}
 
 [module/title]
 type = internal/xwindow
@@ -142,21 +142,14 @@ label-maxlen = 80
 label-empty =  Empty
 label-empty-foreground = ${colors.foreground-alt}
 
-[module/temperature]
-type = custom/script
-interval = 2
-exec = echo $((`cat /sys/devices/platform/coretemp.0/hwmon/hwmon*/temp1_input` / 1000))
-format = <label>
-label = 﨏 %output% ℃
-
 [module/pulseaudio]
 type = internal/pulseaudio
 use-ui-max = false
 interval = 5
 format-volume = <label-volume>
 format-muted = <label-muted>
-label-volume =  %{A3:pavucontrol &:}墳 %percentage%%%{A}
-label-muted = %{A3:pavucontrol &:}婢 Muted%{A}
+label-volume =  %{A3:pavucontrol &:}󰕾 %percentage%%%{A}
+label-muted = %{A3:pavucontrol &:}󰖁 Muted%{A}
 label-muted-foreground = ${colors.foreground-alt}
 
 [module/date]
@@ -164,7 +157,7 @@ type = internal/date
 interval = 1.0
 date = (%a %d)
 time = %H:%M
-label =  %date% %time%
+label = 󰅐 %date% %time%
 
 [module/vpn]
 type = custom/script
@@ -172,21 +165,21 @@ interval = 10
 # always use wg0 as the name of gateway
 exec = ip -4 addr | grep -oP 'wg0' || echo %{F#8f8f8f}N/A%{F-}
 format = <label>
-label = 旅 %output%
+label = 󰒄 %output%
 
 [module/inotifywait]
 type = custom/script
 interval = 10
 exec = pgrep 'inotifywait' -U $USER &> /dev/null; if [ $? -eq 0 ]; then echo inotify; else echo %{F#8f8f8f}N/A%{F-}; fi
 format = <label>
-label = ﮈ %output%
+label = 󰮕 %output%
 
 [module/ecc]
 type = custom/script
 interval = 10
 exec = cat /sys/devices/system/edac/mc/mc0/*count | awk '{e+=$1} END {print e}'
 format = <label>
-label = ﭦ ECC %output%
+label = 󰍛 ECC %output%
 
 [module/playerctl]
 type = custom/script
