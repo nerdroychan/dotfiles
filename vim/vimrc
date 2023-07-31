@@ -55,7 +55,7 @@ call plug#begin('$HOME/.vim/plugged')
     Plug 'majutsushi/tagbar'
     Plug 'vim-airline/vim-airline'
     Plug 'morhetz/gruvbox'
-    Plug 'LunarWatcher/auto-pairs'
+    Plug 'cohama/lexima.vim'
     Plug 'airblade/vim-gitgutter'
     Plug 'prabirshrestha/vim-lsp'
     Plug 'mattn/vim-lsp-settings'
