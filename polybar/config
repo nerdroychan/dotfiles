@@ -60,7 +60,7 @@ border-bottom-size = 1
 border-bottom-color = #4a4a4a
 
 modules-left = i3 title
-modules-right = xkeyboard playerctl cpu memory ecc network vpn inotifywait pulseaudio date
+modules-right = xkeyboard playerctl cpu memory network vpn inotifywait pulseaudio date
 
 tray-position = ${env:TRAY:}
 tray-padding = 4
@@ -173,13 +173,6 @@ interval = 10
 exec = pgrep 'inotifywait' -U $USER &> /dev/null; if [ $? -eq 0 ]; then echo inotify; else echo %{F#8f8f8f}N/A%{F-}; fi
 format = <label>
 label = 󰮕 %output%
-
-[module/ecc]
-type = custom/script
-interval = 10
-exec = cat /sys/devices/system/edac/mc/mc0/*count | awk '{e+=$1} END {print e}'
-format = <label>
-label = 󰍛 ECC %output%
 
 [module/playerctl]
 type = custom/script
