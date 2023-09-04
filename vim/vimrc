@@ -61,6 +61,7 @@ call plug#begin('$HOME/.vim/plugged')
     Plug 'mattn/vim-lsp-settings'
     Plug 'prabirshrestha/asyncomplete.vim'
     Plug 'prabirshrestha/asyncomplete-lsp.vim'
+    Plug 'rust-lang/rust.vim'
 call plug#end()
 
 " gruvbox theme
@@ -150,6 +151,9 @@ autocmd WinEnter * if winnr('$') == 1 &&
 
 " Garbage collection (not really)
 autocmd VimEnter * redraw!
+
+" Rust
+let g:rustfmt_autosave = 1
 
 " LSP
 function! s:on_lsp_buffer_enabled() abort
