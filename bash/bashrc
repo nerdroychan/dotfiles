@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-git-branch() {
+function git-branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
@@ -42,13 +42,21 @@ fi
 export GPG_TTY=$(tty)
 gpg-connect-agent updatestartuptty /bye >/dev/null
 
-# ls-exa
-alias ls='exa -lh'
-alias la='exa -lah'
-alias lss='exa -lh -s size'
+alias ls='ls --color=auto -lh'
+alias la='ls --color=auto -lah'
+alias lss='ls --color=auto -lh -S'
+alias grep='grep --color'
 
 # vi-vim-nvim
-alias vim='nvim'
+function run_vim() {
+    command -v nvim &> /dev/null
+    if [[ "$?" -eq 0 ]]; then
+        nvim "$@"
+    else
+        vim "$@"
+    fi
+}
+alias vim='run_vim'
 alias vi='vim'
 alias vimdiff='vim -d'
 
