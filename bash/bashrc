@@ -42,9 +42,18 @@ fi
 export GPG_TTY=$(tty)
 gpg-connect-agent updatestartuptty /bye >/dev/null
 
-alias ls='ls --color=auto -lh'
-alias la='ls --color=auto -lah'
-alias lss='ls --color=auto -lh -S'
+# ls-exa
+function run_ls() {
+    command -v exa &> /dev/null
+    if [[ "$?" -eq 0 ]]; then
+        exa "$@"
+    else
+        ls "$@"
+    fi
+}
+
+alias ls='run_ls -lh'
+alias la='run_ls -lah'
 alias grep='grep --color'
 
 # vi-vim-nvim
