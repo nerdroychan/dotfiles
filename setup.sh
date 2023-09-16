@@ -97,13 +97,6 @@ function __alacritty {
     simple_link alacritty
 }
 
-function __pulseaudio {
-    # although pulseaudio config resides in .pulse, it will create files in it
-    # so just copy the files in it
-    mkdir -p $HOME/.config/pulse &> /dev/null
-    ln -sf $DIR/pulseaudio/* $HOME/.config/pulse/
-}
-
 function __picom {
     simple_link picom
 }

@@ -9,7 +9,6 @@ __MPV=y
 __PACMAN=y
 __PICOM=y
 __POLYBAR=y
-__PULSEAUDIO=y
 __ROFI=y
 __SYSTEMD=y
 __TMUX=y
