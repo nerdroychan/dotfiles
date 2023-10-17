@@ -14,17 +14,15 @@ read -p "continue? [y/N] " r
 if [ "$r" == "y" ] && [ ! -z $DESTINATION ]; then
     sudo rsync -aAXHvP \
          --delete \
-         --exclude={ \
-             "/dev/*", \
-             "/proc/*", \
-             "/sys/*", \
-             "/tmp/*", \
-             "/run/*", \
-             "/mnt/*", \
-             "/media/*", \
-             "/var/run/*" \
-             "/var/cache/*" \
-         } \
+         --exclude=/dev/* \
+         --exclude=/proc/* \
+         --exclude=/sys/* \
+         --exclude=/tmp/* \
+         --exclude=/run/* \
+         --exclude=/mnt/* \
+         --exclude=/media/* \
+         --exclude=/var/run/* \
+         --exclude=/var/cache/* \
          / $DESTINATION/
 else
     exit 0
