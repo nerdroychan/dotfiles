@@ -25,6 +25,8 @@ function __git {
     git config --global core.excludesfile $HOME/.gitignore_global
     git config --global user.name "Chen Chen"
     git config --global user.email "mail@roychan.org"
+    git config --global user.signkey "E6F1F8B1C9E2624D"
+    git config --global commit.gpgsign "true"
 }
 
 function __vim {
