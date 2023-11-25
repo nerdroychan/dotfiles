@@ -4,4 +4,4 @@ env XSECURELOCK_PASSWORD_PROMPT=time_hex \
     XSECURELOCK_BLANK_TIMEOUT=-1 \
     XSECURELOCK_NO_COMPOSITE=1 \
     XSECURELOCK_BACKGROUND_COLOR='#3f3f3f' \
-    xsecurelock
+    xsecurelock &
