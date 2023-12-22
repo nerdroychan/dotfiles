@@ -66,8 +66,6 @@ function run_vim() {
     fi
 }
 
-alias sb='unshare -c -n --kill-child --pid --fork'
-
 alias vim='run_vim'
 alias vi='vim'
 alias vimdiff='vim -d'

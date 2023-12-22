@@ -1,7 +1,10 @@
 #!/bin/bash
 
+# Recursively removing trailing spaces on each line
+
 if [[ $# -eq 0 ]] ; then
-    exit 0
+    echo "Usage: $(basename $0) <path>"
+    exit 1
 fi
 
 find $@ -not \( -name .svn -prune -o -name .git -prune \) -type f -print0 | perl -0ne 'print if -T' | xargs -0 sed -Ei 's/[[:blank:]]+$//'

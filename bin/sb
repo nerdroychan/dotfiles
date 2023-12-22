@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Sandboxing the given program in a new namespace without network connection
+
+if [[ $# -eq 0 ]] ; then
+    echo "Usage: $(basename $0) <program>"
+    exit 1
+fi
+
+unshare -c -n --kill-child --pid --fork --mount-proc "${@}"

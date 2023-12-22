@@ -3,7 +3,8 @@
 # Real cores instead of CPU threads
 
 if [[ $# -eq 0 ]] ; then
-    exit 0
+    echo "Usage: $(basename $0) <program>"
+    exit 1
 fi
 
 CPUS=$(lscpu -p | grep -v '#' | awk -F ',' '{print $1 ":" $2}' | shuf | sort -R -u -t : -k 2,2 | awk -F ':' '{print $1}')

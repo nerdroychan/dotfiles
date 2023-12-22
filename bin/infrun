@@ -1,7 +1,10 @@
 #!/bin/bash
 
+# Run program forever until a non-zero return
+
 if [[ $# -eq 0 ]] ; then
-    exit 0
+    echo "Usage: $(basename $0) <program>"
+    exit 1
 fi
 
 while true;

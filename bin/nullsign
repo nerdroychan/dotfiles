@@ -1,5 +1,5 @@
 #!/bin/bash
-#
+
 # sign the /dev/null to trigger a local pinentry window
 
 gpg --output /dev/null --sign /dev/null
