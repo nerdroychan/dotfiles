@@ -6,6 +6,5 @@ killall -q -w -u $USER \
     fcitx5 \
     flameshot \
     picom \
-    inotifywait \
 
 exit 0
