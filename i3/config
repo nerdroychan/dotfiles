@@ -253,7 +253,7 @@ bindsym XF86AudioMute exec --no-startup-id "pamixer -t &"
 bindsym XF86AudioMicMute exec --no-startup-id "pamixer -m &"
 
 # wallpaper (one-shot, no bg process)
-exec_always --no-startup-id "feh --bg-fill $HOME/.wallpaper.jpg"
+exec_always --no-startup-id "feh --bg-fill --no-xinerama $HOME/.wallpaper.jpg"
 
 # bind xrandr
 bindsym $mod+P exec --no-startup-id "arandr &"
