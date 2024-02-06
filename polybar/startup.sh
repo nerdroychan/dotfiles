@@ -3,7 +3,7 @@
 PRIMARY=$(xrandr --query | grep " connected" | grep "primary" | cut -d" " -f1)
 OTHERS=$(xrandr --query | grep " connected" | grep -v "primary" | cut -d" " -f1)
 
-export DEFAULT_NETWORK_INTERFACE=$(ip route | grep '^default' | awk '{print $5}' | head -n1)
+# export DEFAULT_NETWORK_INTERFACE=$(ip route | grep '^default' | awk '{print $5}' | head -n1)
 
 echo "Primary: "$PRIMARY
 echo "Others: "$OTHERS

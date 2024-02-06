@@ -60,7 +60,7 @@ border-bottom-size = 1
 border-bottom-color = #4a4a4a
 
 modules-left = i3 title
-modules-right = xkeyboard playerctl cpu memory network vpn pulseaudio date
+modules-right = xkeyboard playerctl cpu memory vpn pulseaudio date
 
 tray-position = ${env:TRAY:}
 tray-padding = 4
@@ -127,12 +127,12 @@ interval = 3.0
 format = <label>
 label = 󰍛 %gb_free%
 
-[module/network]
-type = internal/network
-interface = ${env:DEFAULT_NETWORK_INTERFACE}
-interval = 5.0
-format-connected = <label-connected>
-label-connected = %{A3:nm-connection-editor &:}󰈀 %ifname%%{A}
+; [module/network]
+; type = internal/network
+; interface = ${env:DEFAULT_NETWORK_INTERFACE}
+; interval = 5.0
+; format-connected = <label-connected>
+; label-connected = %{A3:nm-connection-editor &:}󰈀 %ifname%%{A}
 
 [module/title]
 type = internal/xwindow
