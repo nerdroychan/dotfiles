@@ -25,7 +25,6 @@ if [ "$r" == "y" ] && [ ! -z "$DESTINATION" ]; then
               --encrypt-key "$ENCKEY" \
               --sign-key "$SIGNKEY" \
               --exclude "$HOME/.*" \
-              --exclude "$HOME/Downloads" \
               --exclude "$HOME/VM" \
               "$HOME/" \
               "$DESTINATION/"
