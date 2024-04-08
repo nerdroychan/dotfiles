@@ -266,5 +266,10 @@ bindsym $mod+Shift+y exec --no-startup-id "$HOME/.config/i3/kill.sh && $HOME/.co
 # polybar
 exec_always --no-startup-id "$HOME/.config/polybar/kill.sh && $HOME/.config/polybar/startup.sh"
 
+# playerctl
+bindsym $mod+F10 exec --no-startup-id "playerctl --player=mpv,%any previous"
+bindsym $mod+F11 exec --no-startup-id "playerctl --player=mpv,%any play-pause"
+bindsym $mod+F12 exec --no-startup-id "playerctl --player=mpv,%any next"
+
 # exit i3 (logs you out of your X session)
 bindsym ctrl+$mod+Shift+q exec "$HOME/.config/polybar/kill.sh && $HOME/.config/i3/kill.sh && i3-msg exit"
