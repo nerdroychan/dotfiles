@@ -35,23 +35,37 @@ vim.o.undofile = true
 vim.cmd([[match Search "\s\+$"]])
 
 -- keymaps
+---- disable arrow keys
 vim.keymap.set("n", "<up>", "<nop>")
 vim.keymap.set("n", "<down>", "<nop>")
-vim.keymap.set("n", "<left>", "<cmd>bprev<CR>")
-vim.keymap.set("n", "<right>", "<cmd>bnext<CR>")
 vim.keymap.set("i", "<up>", "<nop>")
 vim.keymap.set("i", "<down>", "<nop>")
 vim.keymap.set("i", "<left>", "<nop>")
 vim.keymap.set("i", "<right>", "<nop>")
+---- but let left/right switch buffer
+vim.keymap.set("n", "<left>", "<cmd>bprev<CR>")
+vim.keymap.set("n", "<right>", "<cmd>bnext<CR>")
+---- better movement on line wraps
 vim.keymap.set("n", "j", "gj")
 vim.keymap.set("n", "k", "gk")
 vim.keymap.set("n", "J", "10gj")
 vim.keymap.set("n", "K", "10gk")
+---- always center search results
+vim.keymap.set("n", "n", "nzz")
+vim.keymap.set("n", "N", "Nzz")
+---- clear highlights with enter
 vim.keymap.set("n", "<CR>", "<cmd>noh<CR><CR>")
+---- switch buffer with Ctrl+N/P
 vim.keymap.set("n", "<C-N>", "<cmd>bnext<CR>")
 vim.keymap.set("n", "<C-P>", "<cmd>bprev<CR>")
+---- sometimes shift key does not register
 vim.keymap.set("n", ";", ":")
+---- quick save
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>")
+---- home row same-time movement
+vim.keymap.set('n', 'H', '^')
+vim.keymap.set('n', 'L', '$')
+---- function keys
 vim.keymap.set("", "<F2>", "<cmd>10Lexplore<CR>")
 vim.keymap.set("", "<F4>", "<cmd>set paste!<CR>")
 
