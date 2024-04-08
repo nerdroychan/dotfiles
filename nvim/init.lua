@@ -1,6 +1,5 @@
--- leader is neat
+-- make space a leader key
 vim.keymap.set("n", "<Space>", "<Nop>", { silent = true })
-vim.g.mapleader = " "
 
 -- tabs
 vim.o.expandtab = true
@@ -61,10 +60,10 @@ vim.keymap.set("n", "<C-P>", "<cmd>bprev<CR>")
 ---- sometimes shift key does not register
 vim.keymap.set("n", ";", ":")
 ---- quick save
-vim.keymap.set("n", "<leader>w", "<cmd>w<cr>")
+vim.keymap.set("n", "<space>w", "<cmd>w<cr>")
 ---- home row same-time movement
-vim.keymap.set('n', 'H', '^')
-vim.keymap.set('n', 'L', '$')
+vim.keymap.set("n", "H", "^")
+vim.keymap.set("n", "L", "$")
 ---- function keys
 vim.keymap.set("", "<F2>", "<cmd>10Lexplore<CR>")
 vim.keymap.set("", "<F4>", "<cmd>set paste!<CR>")
@@ -154,5 +153,131 @@ require("lazy").setup({
         config = function()
             vim.g.rooter_silent_chdir = 1
         end,
+    },
+    -- all lsp stuff goes below this line
+    {
+        "neovim/nvim-lspconfig",
+        lazy = false,
+        config = function()
+            -- Setup language servers.
+            local lspconfig = require("lspconfig")
+
+            -- Server-specific settings. See `:help lspconfig-setup`
+            lspconfig.rust_analyzer.setup {
+                settings = {
+                    ["rust-analyzer"] = {
+                        cargo = {
+                            allFeatures = true,
+                        },
+                    },
+                },
+            }
+
+            -- Global mappings.
+            -- See `:help vim.diagnostic.*` for documentation on any of the below functions
+            vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
+            vim.keymap.set("n", "<space>[", vim.diagnostic.goto_prev) -- non-default
+            vim.keymap.set("n", "<space>]", vim.diagnostic.goto_next) -- non-default
+            vim.keymap.set("n", "<space>l", vim.diagnostic.setloclist)
+
+            -- Use LspAttach autocommand to only map the following keys
+            -- after the language server attaches to the current buffer
+            vim.api.nvim_create_autocmd("LspAttach", {
+                group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+                callback = function(ev)
+                    -- Enable completion triggered by <c-x><c-o>
+                    vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+
+                    -- Buffer local mappings.
+                    -- See `:help vim.lsp.*` for documentation on any of the below functions
+                    local opts = { buffer = ev.buf }
+                    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+                    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+                    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+                    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+                    vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+                    vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
+                    vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, opts)
+                    vim.keymap.set("n", "<space>wl", function()
+                        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+                    end, opts)
+                    vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts)
+                    vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
+                    vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
+                    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+                    vim.keymap.set("n", "<space>f", function()
+                        vim.lsp.buf.format { async = true }
+                    end, opts)
+                end,
+            })
+        end
+    },
+    {
+        "hrsh7th/nvim-cmp",
+        event = "InsertEnter",
+        dependencies = {
+            "neovim/nvim-lspconfig",
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-cmdline",
+            "hrsh7th/nvim-cmp",
+        },
+        config = function()
+            local has_words_before = function()
+                unpack = unpack or table.unpack
+                local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+                return col ~= 0 and
+                vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s")
+                == nil
+            end
+
+            local feedkey = function(key, mode)
+                vim.api.nvim_feedkeys(
+                    vim.api.nvim_replace_termcodes(key, true, true, true), mode, true
+                )
+            end
+
+            local cmp = require"cmp"
+            cmp.setup({
+                snippet = {
+                    expand = function(args)
+                        vim.fn["vsnip#anonymous"](args.body)
+                    end,
+                },
+                window = {
+                    -- completion = cmp.config.window.bordered(),
+                    -- documentation = cmp.config.window.bordered(),
+                },
+                -- https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings#super-tab-like-mapping
+                mapping = {
+                    ["<Tab>"] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                            cmp.select_next_item()
+                        elseif vim.fn["vsnip#available"](1) == 1 then
+                            feedkey("<Plug>(vsnip-expand-or-jump)", "")
+                        elseif has_words_before() then
+                            cmp.complete()
+                        else
+                            fallback() -- The fallback function sends a already mapped key.
+                                       -- In this case, it's probably `<Tab>`.
+                        end
+                    end, { "i", "s" }),
+                    ["<S-Tab>"] = cmp.mapping(function()
+                        if cmp.visible() then
+                            cmp.select_prev_item()
+                        elseif vim.fn["vsnip#jumpable"](-1) == 1 then
+                            feedkey("<Plug>(vsnip-jump-prev)", "")
+                        end
+                    end, { "i", "s" }),
+                },
+                sources = cmp.config.sources({
+                    { name = "nvim_lsp" },
+                    { name = "vsnip" },
+                }, {
+                    { name = "buffer" },
+                })
+            })
+        end
     },
 })
