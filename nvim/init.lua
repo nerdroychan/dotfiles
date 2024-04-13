@@ -160,7 +160,7 @@ require("lazy").setup({
             local lspconfig = require("lspconfig")
 
             -- Server-specific settings. See `:help lspconfig-setup`
-            lspconfig.rust_analyzer.setup {
+            lspconfig.rust_analyzer.setup { -- rust
                 settings = {
                     ["rust-analyzer"] = {
                         cargo = {
@@ -169,6 +169,8 @@ require("lazy").setup({
                     },
                 },
             }
+
+            lspconfig.clangd.setup {} -- c/c++
 
             -- Global mappings.
             -- See `:help vim.diagnostic.*` for documentation on any of the below functions
