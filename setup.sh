@@ -70,12 +70,6 @@ function __modprobe {
     sudo cp $DIR/modprobe/* /etc/modprobe.d/
 }
 
-function __systemd {
-    eval $SUDO
-    sudo cp $DIR/systemd/* /etc/systemd/system/
-    sudo systemctl enable suspend@$USER
-}
-
 function __pacman {
     eval $SUDO
     sudo cp $DIR/pacman/pacman.conf /etc/pacman.conf

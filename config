@@ -10,7 +10,6 @@ __PACMAN=y
 __PICOM=y
 __POLYBAR=y
 __ROFI=y
-__SYSTEMD=y
 __TMUX=y
 __VIM=y
 __NVIM=y
