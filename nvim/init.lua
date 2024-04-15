@@ -156,6 +156,11 @@ require("lazy").setup({
         "neovim/nvim-lspconfig",
         lazy = false,
         config = function()
+            -- Disable semantic highlights
+            for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+                vim.api.nvim_set_hl(0, group, {})
+            end
+
             -- Setup language servers.
             local lspconfig = require("lspconfig")
 
@@ -221,6 +226,8 @@ require("lazy").setup({
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-cmdline",
             "hrsh7th/nvim-cmp",
+            "hrsh7th/cmp-vsnip",
+            "hrsh7th/vim-vsnip",
         },
         config = function()
             local has_words_before = function()
