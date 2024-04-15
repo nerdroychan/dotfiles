@@ -8,4 +8,7 @@ unshare -c -n fcitx5 &
 unshare -c -n redshift -t 6500:5000 -l 41.88:-87.62 &
 unshare -c -n picom -CGb &
 
+# xss-lock to lock on suspend
+xss-lock -- $HOME/.lock.sh
+
 exit 0
