@@ -12,10 +12,22 @@ vim.o.softtabstop = 4
 vim.o.showmatch = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
+vim.o.number = true
 vim.o.relativenumber = true
 vim.o.foldmethod = "marker"
 vim.o.vb = true
 vim.o.colorcolumn = "72,100"
+
+-- autoread
+vim.o.autoread = true
+vim.api.nvim_create_autocmd({ "VimResume", "BufEnter", "FocusGained" }, {
+    command = "if mode() != 'c' | checktime | endif",
+    pattern = { "*" },
+})
+vim.api.nvim_create_autocmd({ "FileChangedShellPost" }, {
+    command = "echohl WarningMsg | echo \"File changed on disk. Buffer reloaded.\" | echohl None",
+    pattern = { "*" },
+})
 
 -- vimdiff (need to use .opt)
 vim.opt.diffopt:append("iwhite")
@@ -276,6 +288,7 @@ require("lazy").setup({
                             feedkey("<Plug>(vsnip-jump-prev)", "")
                         end
                     end, { "i", "s" }),
+                    ["<CR>"] = cmp.mapping.confirm({ select = true })
                 },
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },
