@@ -155,14 +155,6 @@ require("lazy").setup({
         "airblade/vim-gitgutter",
         lazy = false,
     },
-    -- change pwd to git root
-    {
-        "airblade/vim-rooter",
-        lazy = false,
-        config = function()
-            vim.g.rooter_silent_chdir = 1
-        end,
-    },
     -- all lsp stuff goes below this line
     {
         "neovim/nvim-lspconfig",
