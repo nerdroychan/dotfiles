@@ -1,6 +1,10 @@
 -- make space a leader key
 vim.keymap.set("n", "<Space>", "<Nop>", { silent = true })
 
+-- disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- tabs
 vim.o.expandtab = true
 vim.o.smarttab = true
@@ -33,11 +37,6 @@ vim.api.nvim_create_autocmd({ "FileChangedShellPost" }, {
 vim.opt.diffopt:append("iwhite")
 vim.opt.diffopt:append("algorithm:histogram")
 vim.opt.diffopt:append("indent-heuristic")
-
--- netrw
-vim.g.netrw_liststyle = 3
-vim.g.netrw_banner = 0
-vim.g.netrw_keepdir = 0
 
 -- global undofile
 vim.o.undofile = true
@@ -97,7 +96,6 @@ require("lazy").setup({
     -- gruvbox ftw, and no need for special themes on other plugins
     {
         "morhetz/gruvbox",
-        lazy = false,
         priority = 1000,
         init = function()
             vim.g.gruvbox_italic = 1
@@ -120,7 +118,6 @@ require("lazy").setup({
     -- the airline for basic status
     {
         "vim-airline/vim-airline",
-        lazy = false,
         init = function() -- small hack to inject option without init
             vim.g.airline_symbols_ascii = 1
             vim.g["airline#extensions#tabline#enabled"] = 1
@@ -132,10 +129,50 @@ require("lazy").setup({
             vim.o.showmode = false
         end,
     },
+    -- neo-tree instead of netrw
+    {
+        "nvim-neo-tree/neo-tree.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            -- "nvim-tree/nvim-web-devicons",
+            "MunifTanjim/nui.nvim",
+        },
+        config = function()
+            require("neo-tree").setup({
+                close_if_last_window = false,
+                hijack_netrw_behavior = "open_default",
+                window = {
+                    position = "float",
+                    mappings = {
+                        ["/"] = "filter_on_submit",
+                        ["f"] = "fuzzy_finder",
+                    },
+                },
+                event_handlers = {
+                    {
+                        event = "file_opened",
+                        handler = function(file_path)
+                            require("neo-tree.command").execute({ action = "close" })
+                        end
+                    },
+                },
+            })
+            vim.api.nvim_create_user_command(
+                "Ex",
+                function(args)
+                    local cmd = "Neotree reveal"
+                    if (args["args"]) then
+                        cmd = cmd .. " " .. args["args"]
+                    end
+                    vim.cmd(cmd)
+                end,
+                { nargs = "?" }
+            )
+        end,
+    },
     -- toggle tags using F3
     {
         "majutsushi/tagbar",
-        lazy = false,
         config = function()
             vim.keymap.set("", "<F3>", "<cmd>TagbarToggle<CR>")
         end,
@@ -143,22 +180,18 @@ require("lazy").setup({
     -- match up
     {
         "andymass/vim-matchup",
-        lazy = false,
     },
     -- auto close parentheses
     {
         "cohama/lexima.vim",
-        lazy = false,
     },
     -- show git status
     {
         "airblade/vim-gitgutter",
-        lazy = false,
     },
     -- all lsp stuff goes below this line
     {
         "neovim/nvim-lspconfig",
-        lazy = false,
         config = function()
             -- Disable semantic highlights
             for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
