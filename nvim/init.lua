@@ -152,6 +152,11 @@ require("lazy").setup({
                     {
                         event = "file_opened",
                         handler = function(file_path)
+                            -- clear all filters
+                            local state = require("neo-tree.sources.manager").get_state("filesystem")
+                            local fs = require("neo-tree.sources.filesystem")
+                            fs.reset_search(state, false)
+                            -- close neo-tree window
                             require("neo-tree.command").execute({ action = "close" })
                         end
                     },
