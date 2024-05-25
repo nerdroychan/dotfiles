@@ -138,9 +138,11 @@ require("lazy").setup({
             "MunifTanjim/nui.nvim",
         },
         config = function()
+            vim.api.nvim_set_hl(0, "NormalFloat", { fg = "none", bg = "none" })
             require("neo-tree").setup({
                 close_if_last_window = false,
                 hijack_netrw_behavior = "open_default",
+                popup_border_style = "rounded",
                 window = {
                     position = "float",
                     mappings = {
@@ -296,6 +298,9 @@ require("lazy").setup({
                 window = {
                     -- completion = cmp.config.window.bordered(),
                     -- documentation = cmp.config.window.bordered(),
+                },
+                completion = {
+                    autocomplete = false,
                 },
                 -- https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings#super-tab-like-mapping
                 mapping = {
