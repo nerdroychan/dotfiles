@@ -57,18 +57,27 @@ alias la='run_ls -lah'
 alias grep='grep --color'
 
 # vi-vim-nvim
-function run_vim() {
+function which_vim() {
     command -v nvim &> /dev/null
     if [[ "$?" -eq 0 ]]; then
-        nvim "$@"
+        echo 'nvim'
     else
-        vim "$@"
+        command -v vim &> /dev/null
+        if [[ "$?" -eq 0 ]]; then
+            echo 'vim'
+        else
+            echo 'vi'
+        fi
     fi
 }
-
+export VISUAL=$(which_vim)
+export EDITOR=$VISUAL
+function run_vim() {
+    $(which_vim) "$@"
+}
 alias vim='run_vim'
 alias vi='vim'
-alias vimdiff='vim -d'
+alias vimdiff='run_vim -d'
 
 # misc aliases
 alias c='clear'
@@ -76,11 +85,9 @@ alias r='reset'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias cw='cd $HOME/Workspace'
-alias mt='mkdir /tmp/$USER.tmp &> /dev/null'
-alias lt='mt; echo /tmp/$USER.tmp; export T=/tmp/$USER.tmp'
-alias ct='mt; cd /tmp/$USER.tmp'
-alias rt='[[ -d /tmp/$USER.tmp ]] && rm -rf /tmp/$USER.tmp'
-alias open='xdg-open'
+alias ct='export SCRATCHDIR=$(mktemp -d); cd $SCRATCHDIR'
+alias rt='[[ -d $SCRATCHDIR ]] && rm -r $SCRATCHDIR'
+alias rrt='rm -r /tmp/tmp.*'
 alias t='(command -v tmux &> /dev/null) && ((tmux a &> /dev/null) || (cd; tmux))'
 alias remake='make -B'
 alias utags='ctags -R . /usr/include'

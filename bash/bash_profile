@@ -2,8 +2,8 @@
 # ~/.bash_profile
 #
 
-# Editors
-export VISUAL=vim
+# Editors (you have VI right?)
+export VISUAL=vi
 export EDITOR=$VISUAL
 
 # Bash-specific
