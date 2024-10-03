@@ -1,0 +1,8 @@
+# Empty iptables rule file
+*filter
+:INPUT DROP [0:0]
+:FORWARD DROP [0:0]
+:OUTPUT ACCEPT [0:0]
+-A INPUT -i lo -m comment --comment "allow local" -j ACCEPT
+-A INPUT -m conntrack --ctstate RELATED,ESTABLISHED,DNAT -j ACCEPT
+COMMIT
