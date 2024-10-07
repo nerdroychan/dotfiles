@@ -80,14 +80,6 @@ function __xsecurelock {
     ln -sf $DIR/xsecurelock/lock.sh $HOME/.lock.sh
 }
 
-function __mpv {
-    simple_link mpv
-}
-
-function __firejail {
-    simple_link firejail
-}
-
 function __alacritty {
     simple_link alacritty
 }

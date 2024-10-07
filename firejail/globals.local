@@ -1,6 +1,0 @@
-include disable-xdg.inc
-blacklist ${HOME}/*
-
-dbus-system none
-dbus-user none
-rmenv DBUS_SESSION_BUS_ADDRESS

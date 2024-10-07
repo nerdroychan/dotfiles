@@ -1,11 +1,9 @@
 __ALACRITTY=y
 __BASH=y
-__FIREJAIL=y
 __FONTCONFIG=y
 __GIT=y
 __I3=y
 __MODPROBE=y
-__MPV=y
 __PACMAN=y
 __PICOM=y
 __POLYBAR=y
