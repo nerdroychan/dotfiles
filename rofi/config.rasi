@@ -143,5 +143,4 @@ configuration {
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 }
 
-
-@theme "theme"
+@import "gruvbox-dark-hard"
