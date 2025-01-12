@@ -92,3 +92,4 @@ alias t='(command -v tmux &> /dev/null) && ((tmux a &> /dev/null) || (cd; tmux))
 alias remake='make -B'
 alias utags='ctags -R . /usr/include'
 alias pgtar='tar --use-compress-program='"'pigz -9'"' -c -f'
+alias ossh='ssh -o UserKnownHostsFile=/dev/null'
