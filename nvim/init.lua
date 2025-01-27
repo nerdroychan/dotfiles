@@ -44,6 +44,14 @@ vim.o.undofile = true
 -- highlight trailing spaces
 vim.cmd([[match Search "\s\+$"]])
 
+-- spellcheck
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+    pattern = { "*.tex", "*.md", "*.txt", "*.html", "*.htm" },
+    callback = function()
+        vim.opt_local.spell = true
+    end,
+})
+
 -- keymaps
 ---- disable arrow keys
 vim.keymap.set("n", "<up>", "<nop>")
