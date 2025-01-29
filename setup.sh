@@ -115,6 +115,10 @@ function __gdb {
     ln -sf $DIR/gdb/gdb-dashboard/.gdbinit $HOME/.gdb-dashboard
 }
 
+function __htop {
+    simple_link htop
+}
+
 source config
 
 for f in $(compgen -A function); do

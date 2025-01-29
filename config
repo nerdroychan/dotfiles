@@ -15,3 +15,4 @@ __X11=y
 __XSECURELOCK=y
 __GTK=y
 __GNUPG=y
+__HTOP=y
