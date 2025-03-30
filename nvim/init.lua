@@ -134,6 +134,7 @@ require("lazy").setup({
             vim.g["airline#extensions#whitespace#enabled"] = 1
         end,
         config = function()
+            vim.cmd([[hi StatusLine cterm=None gui=None]])
             vim.o.showmode = false
         end,
     },
