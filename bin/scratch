@@ -8,3 +8,8 @@ if [[ $# -eq 0 ]] ; then
 fi
 
 podman run -it --rm "${@}"
+
+RUNNING=$(podman ps -a --noheading | wc -l)
+if [ "$RUNNING" -eq 0 ]; then
+    killall -q -w -u $USER catatonit
+fi
