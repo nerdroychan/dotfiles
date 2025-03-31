@@ -135,6 +135,7 @@ require("lazy").setup({
         end,
         config = function()
             vim.cmd([[hi StatusLine cterm=None gui=None]])
+            vim.cmd([[hi StatusLineNC cterm=None gui=None]])
             vim.o.showmode = false
         end,
     },
