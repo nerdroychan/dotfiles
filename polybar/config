@@ -162,8 +162,8 @@ label = 󰅐 %date% %time%
 [module/vpn]
 type = custom/script
 interval = 10
-# always use wg0 as the name of gateway
-exec = ip -4 addr | grep -oP 'wg0' || echo %{F#8f8f8f}N/A%{F-}
+# always use mullvad as the name of gateway
+exec = ip -4 addr | grep -oP 'mullvad' || echo %{F#8f8f8f}N/A%{F-}
 format = <label>
 label = 󰒄 %output%
 
