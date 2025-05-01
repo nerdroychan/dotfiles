@@ -230,6 +230,8 @@ require("lazy").setup({
                 },
             }
 
+            lspconfig.gopls.setup {} -- golang
+
             lspconfig.clangd.setup {} -- c/c++
 
             -- Global mappings.
