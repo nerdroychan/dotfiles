@@ -97,7 +97,9 @@ function __rofi {
 }
 
 function __gtk {
-    ln -sf $DIR/gtk/gtkrc-2.0 $HOME/.gtkrc-2.0
+    ln -sf $DIR/gtk/gtk-2.0/gtkrc-2.0 $HOME/.gtkrc-2.0
+    mkdir -p $HOME/.config/gtk-3.0 &> /dev/null
+    ln -sf $DIR/gtk/gtk-3.0/settings.ini $HOME/.config/gtk-3.0/
 }
 
 function __gnupg {
