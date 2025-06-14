@@ -1,3 +1,5 @@
+7zip
+adobe-source-code-pro-fonts
 adobe-source-han-sans-cn-fonts
 adobe-source-han-sans-jp-fonts
 adobe-source-han-sans-kr-fonts
@@ -12,7 +14,6 @@ alacritty
 alsa-tools
 alsa-utils
 amd-ucode
-apcupsd
 arandr
 archinstall
 asunder
@@ -43,8 +44,11 @@ cppcheck
 cpupower
 cronie
 ctags
+cups
+cups-pdf
 dex
 dmidecode
+dnscrypt-proxy
 duplicity
 edk2-ovmf
 efibootmgr
@@ -104,7 +108,6 @@ libaacs
 libimobiledevice
 libreoffice-still
 liburing
-libva-mesa-driver
 libva-utils
 libva-vdpau-driver
 libvdpau-va-gl
@@ -121,6 +124,7 @@ lshw
 lsof
 lsscsi
 lvm2
+lynx
 m4
 make
 man-pages
@@ -129,7 +133,6 @@ mediainfo
 memtester
 mesa-demos
 mesa-utils
-mesa-vdpau
 minted
 mkinitcpio-netconf
 mkinitcpio-tinyssh
@@ -158,7 +161,6 @@ openmp
 openresolv
 opensnitch
 openssh
-p7zip
 pacman-contrib
 pacutils
 pamixer
@@ -226,8 +228,10 @@ strongswan
 sudo
 sysbench
 task
+tcpdump
 texlive-basic
 texlive-bibtexextra
+texlive-binextra
 texlive-fontsextra
 texlive-formatsextra
 texlive-games
@@ -327,6 +331,7 @@ xorg-xwininfo
 xorg-xwud
 xournalpp
 xsecurelock
+xsel
 xss-lock
 xterm
 yapf
