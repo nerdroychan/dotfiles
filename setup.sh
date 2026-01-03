@@ -7,6 +7,12 @@ if [ "$DIR" != "$HOME/.dotfiles" ]; then
     exit 1
 fi
 
+# the default is linux-based distro, and macos is the outlier
+OS=linux
+if [[ "$OSTYPE" == 'darwin'* ]]; then
+    OS=macos
+fi
+
 mkdir -p $HOME/.config &> /dev/null
 
 SUDO="sudo -l -U $USER &> /dev/null || return"
@@ -108,7 +114,12 @@ function __gnupg {
     mkdir -p $HOME/.gnupg &> /dev/null
     chmod 700 $HOME/.gnupg
     rm $HOME/.gnupg/*.conf &> /dev/null
-    ln -sf $DIR/gnupg/*.conf $HOME/.gnupg/
+    ln -sf $DIR/gnupg/gpg.conf $HOME/.gnupg/gpg.conf
+    if [ "$OS" == "macos" ]; then
+        ln -sf $DIR/gnupg/gpg-agent.conf.darwin $HOME/.gnupg/gpg-agent.conf
+    else
+        ln -sf $DIR/gnupg/gpg-agent.conf.linux $HOME/.gnupg/gpg-agent.conf
+    fi
 }
 
 function __gdb {
