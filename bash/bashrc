@@ -30,8 +30,11 @@ if command -v fzf &> /dev/null; then
 fi
 
 # bash-completion
-[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
-    . /usr/share/bash-completion/bash_completion
+BASH_COMPLETION_PATH=/usr/share/bash-completion/bash_completion
+if [[ "$OSTYPE" == 'darwin'* ]]; then
+    BASH_COMPLETION_PATH=/opt/homebrew/etc/bash_completion
+fi
+[[ $PS1 && -f $BASH_COMPLETION_PATH ]] && source $BASH_COMPLETION_PATH
 
 # gpg
 unset SSH_AGENT_PID
@@ -94,5 +97,7 @@ alias remake='make -B'
 alias utags='ctags -R . /usr/include'
 alias pgtar='tar --use-compress-program='"'pigz -9'"' -c -f'
 alias ossh='ssh -o UserKnownHostsFile=/dev/null'
-alias pbcopy='xsel --clipboard --input'
-alias pbpaste='xsel --clipboard --output'
+if ! command -v pbcopy &> /dev/null; then
+    alias pbcopy='xsel --clipboard --input'
+    alias pbpaste='xsel --clipboard --output'
+fi
