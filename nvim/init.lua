@@ -215,11 +215,8 @@ require("lazy").setup({
                 vim.api.nvim_set_hl(0, group, {})
             end
 
-            -- Setup language servers.
-            local lspconfig = require("lspconfig")
-
             -- Server-specific settings. See `:help lspconfig-setup`
-            lspconfig.rust_analyzer.setup { -- rust
+            vim.lsp.config("rust_analyzer", {
                 settings = {
                     ["rust-analyzer"] = {
                         cargo = {
@@ -228,11 +225,10 @@ require("lazy").setup({
                         },
                     },
                 },
-            }
-
-            lspconfig.gopls.setup {} -- golang
-
-            lspconfig.clangd.setup {} -- c/c++
+            })
+            vim.lsp.enable("rust_analyzer")
+            vim.lsp.enable("gopls")
+            vim.lsp.enable("clangd")
 
             -- Global mappings.
             -- See `:help vim.diagnostic.*` for documentation on any of the below functions
