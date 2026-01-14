@@ -19,7 +19,8 @@ if [[ "$SSH_TTY" ]]; then
     PS1_SSH='(ssh) '
 fi
 
-export PS1="[\[$(tput bold)\]\[\033[33m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[32m\]\h\[$(tput sgr0)\]:\[$(tput sgr0)\]\[\033[38;5;7m\]\w\[$(tput sgr0)\]]\[$(tput sgr0)\] \t\[\033[34m\]\$(git-branch)\[$(tput sgr0)\] > \[$(tput sgr0)\]\[\033[35m\][\j]\[$(tput sgr0)\]\n\[$(tput bold)\]\${PS1_SSH}\$~>\[$(tput sgr0)\] \[$(tput sgr0)\]"
+# do not export $PS1 as the subshell might be run as a different user
+PS1="[\[$(tput bold)\]\[\033[33m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[32m\]\h\[$(tput sgr0)\]:\[$(tput sgr0)\]\[\033[38;5;7m\]\w\[$(tput sgr0)\]]\[$(tput sgr0)\] \t\[\033[34m\]\$(git-branch)\[$(tput sgr0)\] > \[$(tput sgr0)\]\[\033[35m\][\j]\[$(tput sgr0)\]\n\[$(tput bold)\]\${PS1_SSH}\$~>\[$(tput sgr0)\] \[$(tput sgr0)\]"
 
 # disable ^S
 stty -ixon
