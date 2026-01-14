@@ -63,8 +63,8 @@ function __x11 {
 }
 
 function __bash {
-    ln -sf $DIR/bash/bash_profile $HOME/.bash_profile
-    ln -sf $DIR/bash/bashrc $HOME/.bashrc
+    ln -sf $DIR/bash/profile $HOME/.bash_profile
+    ln -sf $DIR/bash/rc $HOME/.bashrc
 }
 
 function __fontconfig {
